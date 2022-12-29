@@ -23,6 +23,7 @@ pnpm install
 ```
 
 ## Run Server
+
 ```sh
 pnpm dev
 ```
@@ -31,16 +32,15 @@ pnpm dev
 
 👤 **Ali Zulfikar**
 
-* Website: https://alizul01.github.io/
-* Twitter: [@panggilajazul](https://twitter.com/panggilajazul)
-* Github: [@alizul01](https://github.com/alizul01)
-* LinkedIn: [@alizulfikar](https://linkedin.com/in/alizulfikar)
+- Website: https://alizul01.github.io/
+- Twitter: [@panggilajazul](https://twitter.com/panggilajazul)
+- Github: [@alizul01](https://github.com/alizul01)
+- LinkedIn: [@alizulfikar](https://linkedin.com/in/alizulfikar)
 
 ## 🤝 Contributing
 
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/alizul01/polinema-innovation-tribe/issues). 
+Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/alizul01/polinema-innovation-tribe/issues).
 
 ## Show your support
 
 Give a ⭐️ if this project helped you!
-
