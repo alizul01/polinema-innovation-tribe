@@ -1,4 +1,4 @@
-<h1 align="center">Welcome to polinema-innovation-tribe 👋</h1>
+<h1 align="center">Welcome to Polinema Innovation Tribe 👋</h1>
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
   <a href="https://github.com/alizul01/polinema-innovation-tribe" target="_blank">
@@ -20,6 +20,11 @@
 
 ```sh
 pnpm install
+```
+
+## Run Server
+```sh
+pnpm dev
 ```
 
 ## Author
