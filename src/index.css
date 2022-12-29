@@ -4,11 +4,11 @@
 @tailwind utilities;
 
 @layer base {
-    .active {
-        @apply font-bold text-white;
-    }
+  .active {
+    @apply font-bold text-white;
+  }
 
-    body {
-        @apply bg-[#131A22];
-    }
+  body {
+    @apply bg-[#131A22];
+  }
 }
