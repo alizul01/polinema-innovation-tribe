@@ -1,11 +1,11 @@
 import React from 'react';
 
-function About() {
+function Idea() {
     return (
         <div>
-            Ini About
+            Ini Idea
         </div>
     );
 }
 
-export default About;
+export default Idea;
