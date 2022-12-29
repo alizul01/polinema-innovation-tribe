@@ -6,7 +6,7 @@ function Navbar() {
     const [navbar, setNavbar] = useState(false);
     return (
         <nav className={"w-full bg-[#131A22] shadow"}>
-            <div className={"md:flex md:items-center lg:max-w-7xl md:px-8 mx-auto px-4 justify-between"}>
+            <div className={"md:flex md:items-center lg:max-w-[92rem] pt-2 md:px-8 mx-auto px-4 justify-between"}>
                 <div id={"left-side"}>
                     <div className={"flex items-center justify-between py-3 md:py-5 md:block"}>
                         <a href={"#"}>
@@ -52,20 +52,23 @@ function Navbar() {
                 </div>
                 <div id={"right-side"}>
                     <div className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${navbar ? 'block' : 'hidden'}`}>
-                        <ul className={"text-slate-500 font-bold flex space-y-3 md:space-y-0 items-center justify-center md:space-x-3 md:flex-row flex-col"}>
+                        <ul className={"text-sm text-slate-500 font-bold flex space-y-3 md:space-y-0 items-center justify-center md:space-x-10 md:flex-row flex-col"}>
                             <li>
                                 <NavLink to={'/'}>Home</NavLink>
                             </li>
                             <li>
-                                <NavLink to={"/idea"}>Idea</NavLink>
+                                <NavLink to={"/competition"}>Competition</NavLink>
+                            </li>
+                            <li>
+                                <NavLink to={"/idea"}>Idea Sandbox</NavLink>
                             </li>
                         </ul>
-                        <div className="mt-3 space-y-2 lg:hidden md:inline-block">
-                            <a href="#" className="inline-block w-full px-4 py-2 text-center text-white bg-purple-500 rounded-md shadow hover:bg-gray-800">
-                                Sign in
+                        <div className="mt-3 space-y-2 md:hidden sm:inline-block">
+                            <a href="#" className="text-sm inline-block w-full px-4 py-2 text-center text-white bg-purple-500 rounded-md shadow hover:bg-gray-800">
+                                Login
                             </a>
-                            <a href="#" className="inline-block w-full px-4 py-2 text-center text-gray-800 bg-white rounded-md shadow hover:bg-gray-100">
-                                Sign up
+                            <a href="#" className="text-sm inline-block w-full px-4 py-2 text-center text-gray-800 bg-white rounded-md shadow hover:bg-gray-100">
+                                Register
                             </a>
                         </div>
                     </div>
@@ -73,15 +76,15 @@ function Navbar() {
                 <div className="hidden space-x-2 md:inline-block">
                     <a
                         href="#"
-                        className="px-4 py-2 text-white rounded-md shadow hover:bg-gray-800"
+                        className="text-sm font-semibold px-4 py-2 text-white rounded-md shadow hover:bg-gray-800"
                     >
-                        Sign in
+                        Login
                     </a>
                     <a
                         href="#"
-                        className="px-4 py-2 text-white bg-gradient-to-r from-purple-500 to-blue-500 rounded-md shadow hover:bg-gray-100"
+                        className="text-sm px-4 py-2 text-white bg-gradient-to-r from-purple-500 to-blue-500 rounded-md shadow hover:bg-gray-100"
                     >
-                        Sign up
+                        Register
                     </a>
                 </div>
             </div>
