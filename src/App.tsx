@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './App.css'
 import {BrowserRouter, Link, NavLink, Route, Routes} from "react-router-dom";
 import Home from "./pages/Home";
-import Navigate from "./components/Navigate";
+import Navbar from "./components/Navbar";
 import Idea from "./pages/Idea";
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
       <BrowserRouter>
           <div>
               <header>
-                  <Navigate />
+                  <Navbar />
               </header>
               <main className={"container"}>
                   <Routes>
