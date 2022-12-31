@@ -23,13 +23,13 @@ function Hero() {
       </div>
       <div className="pt-12 md:pt-12 flex flex-row gap-3 text-xs md:text-lg">
         <button className="rounded-lg bg-gradient-to-r from-purple-500 to-blue-500 text-white px-4 py-2.5 font-semibold flex gap-2 justify-center items-center hover:shadow-slate-50 hover:shadow-sm transition ease-in-out duration-600">
-          Get Started <ArrowRightCircleIcon style={{ fontSize: "24px" }} />
+          Get Started <ArrowRightCircleIcon color={"white"} fontSize={"18"} />
         </button>
         <button className="rounded-lg bg-slate-700 px-4 py-2.5 font-semibold flex gap-2 justify-center items-center hover:shadow-slate-50 hover:shadow-sm transition ease-in-out duration-600">
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-100 to-slate-50 ">
             How it Works?
           </span>
-          <QuestionMarkCircleIcon style={{ color: "white", fontSize: 24 }} />
+          <QuestionMarkCircleIcon color={"white"} fontSize={"18"} />
         </button>
       </div>
     </section>
