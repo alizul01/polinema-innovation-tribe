@@ -1,5 +1,6 @@
 import React from 'react';
-import {HiArrowCircleRight, HiQuestionMarkCircle} from "react-icons/hi";
+import ArrowRightCircleIcon from "~icons/heroicons/arrow-right-circle-solid";
+import QuestionMarkCircleIcon from '~icons/heroicons/question-mark-circle-solid'
 
 function Hero() {
     return (
@@ -17,10 +18,10 @@ function Hero() {
             </div>
             <div className={"pt-12 md:pt-12 flex flex-row gap-3 text-xs md:text-lg"}>
                 <button className={"rounded-lg bg-gradient-to-r from-purple-500 to-blue-500 text-white px-4 py-2.5 font-semibold flex gap-2 justify-center items-center hover:shadow-slate-50 hover:shadow-sm transition ease-in-out duration-600"}>
-                    Get Started <HiArrowCircleRight size={"24"} />
+                    Get Started <ArrowRightCircleIcon style={{fontSize: "24px"}} />
                 </button>
                 <button className={"rounded-lg bg-slate-700 px-4 py-2.5 font-semibold flex gap-2 justify-center items-center hover:shadow-slate-50 hover:shadow-sm transition ease-in-out duration-600"}>
-                    <span className={"text-transparent bg-clip-text bg-gradient-to-r from-slate-100 to-slate-50 "}> How it Works? </span> <HiQuestionMarkCircle color={"white"} size={"24"} />
+                    <span className={"text-transparent bg-clip-text bg-gradient-to-r from-slate-100 to-slate-50 "}> How it Works? </span> <QuestionMarkCircleIcon style={{color: "white", fontSize: 24}} />
                 </button>
             </div>
         </section>
