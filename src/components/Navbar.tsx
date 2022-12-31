@@ -5,8 +5,8 @@ function Navbar() {
     const [isDarkMode, setDarkMode] = useState(false);
     const [navbar, setNavbar] = useState(false);
     return (
-        <nav className={"w-full bg-[#131A22] shadow"}>
-            <div className={"md:flex md:items-center lg:max-w-[92rem] pt-2 md:px-8 mx-auto px-4 justify-between"}>
+        <nav className={"w-full bg-[#131A22]"}>
+            <div className={"md:flex md:items-center lg:max-w-[92rem] md:px-8 mx-auto px-4 justify-between"}>
                 <div id={"left-side"}>
                     <div className={"flex items-center justify-between py-3 md:py-5 md:block"}>
                         <a href={"#"}>

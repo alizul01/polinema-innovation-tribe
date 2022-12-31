@@ -5,8 +5,8 @@ function Idea() {
         document.title = "Politribe | Idea";
     }, []);
     return (
-        <div>
-            Ini Idea
+        <div className={"text-white"}>
+            Idea page
         </div>
     );
 }

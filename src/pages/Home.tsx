@@ -1,4 +1,5 @@
 import React, {useEffect} from 'react';
+import Hero from "../parts/HomePage/Hero";
 
 function Home() {
     useEffect(() => {
@@ -6,7 +7,8 @@ function Home() {
     }, []);
     return (
         <div>
-            Ini Home
+            <Hero />
+            <div className={"border-slate-700 border mt-12 block w-full"}></div>
         </div>
     );
 }
