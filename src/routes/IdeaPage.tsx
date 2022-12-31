@@ -1,10 +1,8 @@
 import React, { useEffect } from "react";
 
-function Idea() {
+export function IdeaPage() {
   useEffect(() => {
     document.title = "Politribe | Idea";
   }, []);
   return <div className={"text-white"}>Idea page</div>;
 }
-
-export default Idea;

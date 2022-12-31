@@ -1,10 +1,11 @@
 import React, { useEffect } from "react";
 import Hero from "../parts/HomePage/Hero";
 
-function Home() {
+export function HomePage() {
   useEffect(() => {
     document.title = "Politribe | Home";
   }, []);
+
   return (
     <div>
       <Hero />
@@ -12,5 +13,3 @@ function Home() {
     </div>
   );
 }
-
-export default Home;
