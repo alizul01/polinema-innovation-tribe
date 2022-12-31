@@ -1,6 +1,5 @@
-import React, { useState } from "react";
 import "./App.css";
-import { BrowserRouter, Link, NavLink, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
 import Idea from "./pages/Idea";
@@ -13,12 +12,12 @@ function App() {
         <header>
           <Navbar />
         </header>
-        <main className={"m-8"}>
+        <main className="m-8">
           <Routes>
-            <Route path={"/"} element={<Home />} />
-            <Route path={"/idea"} element={<Idea />} />
-            <Route path={"/competition"} element={<Competition />} />
-            <Route path={"*"} element={<Home />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/idea" element={<Idea />} />
+            <Route path="/competition" element={<Competition />} />
+            <Route path="*" element={<Home />} />
           </Routes>
         </main>
       </div>

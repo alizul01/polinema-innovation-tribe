@@ -1,31 +1,23 @@
-import React, { useState } from "react";
+import React, { useReducer } from "react";
 import { NavLink } from "react-router-dom";
-import { DarkModeSwitch } from "react-toggle-dark-mode";
+
 function Navbar() {
-  const [isDarkMode, setDarkMode] = useState(false);
-  const [navbar, setNavbar] = useState(false);
+  const [isOpen, toggleNavbar] = useReducer((prev) => !prev, false);
+
   return (
-    <nav className={"w-full bg-[#131A22]"}>
-      <div
-        className={
-          "md:flex md:items-center lg:max-w-[92rem] md:px-8 mx-auto px-4 justify-between"
-        }
-      >
-        <div id={"left-side"}>
-          <div
-            className={
-              "flex items-center justify-between py-3 md:py-5 md:block"
-            }
-          >
-            <a href={"#"}>
-              <h2 className={"text-2xl font-bold text-white"}>Politribe</h2>
+    <nav className="w-full bg-[#131A22]">
+      <div className="md:flex md:items-center lg:max-w-[92rem] md:px-8 mx-auto px-4 justify-between">
+        <div id="left-side">
+          <div className="flex items-center justify-between py-3 md:py-5 md:block">
+            <a href="/">
+              <h2 className="text-2xl font-bold text-white">Politribe</h2>
             </a>
-            <div className={"md:hidden"}>
+            <div className="md:hidden">
               <button
                 className="p-2 text-gray-700 rounded-md outline-none "
-                onClick={() => setNavbar(!navbar)}
+                onClick={toggleNavbar}
               >
-                {navbar ? (
+                {isOpen ? (
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="w-6 h-6 text-white"
@@ -58,25 +50,21 @@ function Navbar() {
             </div>
           </div>
         </div>
-        <div id={"right-side"}>
+        <div id="right-side">
           <div
             className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${
-              navbar ? "block" : "hidden"
+              isOpen ? "block" : "hidden"
             }`}
           >
-            <ul
-              className={
-                "text-sm text-slate-500 font-bold flex space-y-3 md:space-y-0 items-center justify-center md:space-x-10 md:flex-row flex-col"
-              }
-            >
+            <ul className="text-sm text-slate-500 font-bold flex space-y-3 md:space-y-0 items-center justify-center md:space-x-10 md:flex-row flex-col">
               <li>
-                <NavLink to={"/"}>Home</NavLink>
+                <NavLink to="/">Home</NavLink>
               </li>
               <li>
-                <NavLink to={"/competition"}>Competition</NavLink>
+                <NavLink to="/competition">Competition</NavLink>
               </li>
               <li>
-                <NavLink to={"/idea"}>Idea Sandbox</NavLink>
+                <NavLink to="/idea">Idea Sandbox</NavLink>
               </li>
             </ul>
             <div className="mt-3 space-y-2 md:hidden sm:inline-block">
