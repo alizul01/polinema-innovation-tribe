@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Hero from "../parts/HomePage/Hero";
 import ContributorSection from "~/parts/HomePage/ContributorSection";
 import BenefitSection from "~/parts/HomePage/BenefitSection";
@@ -19,11 +19,7 @@ const contributors = [
 ];
 
 
-export function HomePage() {
-  useEffect(() => {
-    document.title = "Politribe | Home";
-  }, []);
-
+export default function HomePage() {
   return (
     <div>
       <Hero />

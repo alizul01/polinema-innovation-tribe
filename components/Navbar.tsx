@@ -1,7 +1,10 @@
-import React, { useReducer } from "react";
-import { NavLink } from "react-router-dom";
+"use client";
 
-function Navbar() {
+import Link from "next/link";
+import React, { useReducer } from "react";
+import { NavLink } from "./NavLink";
+
+export function Navbar() {
   const [isOpen, toggleNavbar] = useReducer((prev) => !prev, false);
 
   return (
@@ -9,9 +12,9 @@ function Navbar() {
       <div className="md:flex md:items-center lg:max-w-[92rem] md:px-8 mx-auto px-4 justify-between">
         <div id="left-side">
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
-            <NavLink to="/">
+            <Link href="/">
               <h2 className="text-2xl font-bold text-white">Politribe</h2>
-            </NavLink>
+            </Link>
             <div className="md:hidden">
               <button
                 className="p-2 text-gray-700 rounded-md outline-none "
@@ -58,48 +61,52 @@ function Navbar() {
           >
             <ul className="text-sm text-slate-500 font-bold flex space-y-3 md:space-y-0 items-center justify-center md:space-x-10 md:flex-row flex-col">
               <li>
-                <NavLink to="/">Home</NavLink>
+                <NavLink href="/" activeClass="text-white">
+                  Home
+                </NavLink>
               </li>
               <li>
-                <NavLink to="/competition">Competition</NavLink>
+                <NavLink href="/competition" activeClass="text-white">
+                  Competition
+                </NavLink>
               </li>
               <li>
-                <NavLink to="/idea">Idea Sandbox</NavLink>
+                <NavLink href="/idea" activeClass="text-white">
+                  Idea Sandbox
+                </NavLink>
               </li>
             </ul>
             <div className="mt-3 space-y-2 md:hidden sm:inline-block">
-              <a
+              <Link
                 href="#"
                 className="text-sm inline-block w-full px-4 py-2 text-center text-white bg-slate-700 rounded-md shadow hover:bg-gray-800"
               >
                 Login
-              </a>
-              <a
+              </Link>
+              <Link
                 href="#"
-                className="text-sm inline-block w-full px-4 py-2 text-white text-center bg-gradient-to-r from-purple-500 to-blue-500 rounded-md shadow hover:bg-gray-100"
+                className="text-sm inline-block w-full px-4 py-2 text-white text-center bg-gradient-href-r from-purple-500 href-blue-500 rounded-md shadow hover:bg-gray-100"
               >
                 Register
-              </a>
+              </Link>
             </div>
           </div>
         </div>
         <div className="hidden space-x-2 md:inline-block">
-          <a
+          <Link
             href="/login"
             className="text-sm font-semibold px-4 py-2 text-white rounded-md shadow hover:bg-gray-800"
           >
             Login
-          </a>
-          <a
+          </Link>
+          <Link
             href="/register"
-            className="text-sm px-4 py-2 text-white bg-gradient-to-r from-purple-500 to-blue-500 rounded-md shadow hover:bg-gray-100"
+            className="text-sm px-4 py-2 text-white bg-gradient-href-r from-purple-500 href-blue-500 rounded-md shadow hover:bg-gray-100"
           >
             Register
-          </a>
+          </Link>
         </div>
       </div>
     </nav>
   );
 }
-
-export default Navbar;
