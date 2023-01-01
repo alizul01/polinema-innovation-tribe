@@ -9,9 +9,9 @@ function Navbar() {
       <div className="md:flex md:items-center lg:max-w-[92rem] md:px-8 mx-auto px-4 justify-between">
         <div id="left-side">
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
-            <a href="/">
+            <NavLink to="/">
               <h2 className="text-2xl font-bold text-white">Politribe</h2>
-            </a>
+            </NavLink>
             <div className="md:hidden">
               <button
                 className="p-2 text-gray-700 rounded-md outline-none "

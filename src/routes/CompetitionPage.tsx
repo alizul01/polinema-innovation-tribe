@@ -1,7 +1,5 @@
 import React from "react";
 
-function Competition() {
+export function CompetitionPage() {
   return <div className={"text-white"}>Competition page</div>;
 }
-
-export default Competition;
