@@ -7,7 +7,7 @@ type CardType = {
 }
 
 type CardComponent = {
-  card: cardType
+  card: CardType
 }
 
 const Card: React.FC<CardComponent> = ({card}) => {
