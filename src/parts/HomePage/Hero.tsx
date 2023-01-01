@@ -2,7 +2,7 @@ import React from "react";
 import ArrowRightCircleIcon from "~icons/heroicons/arrow-right-circle-solid";
 import QuestionMarkCircleIcon from "~icons/heroicons/question-mark-circle-solid";
 
-function Hero() {
+const Hero: React.FC = () => {
   return (
     <section
       className="w-full pt-6 md:pt-16 flex flex-col items-center justify-center"
