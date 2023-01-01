@@ -1,6 +1,6 @@
 import React from "react";
 
-type cardType = {
+type CardType = {
   icon: React.ReactElement,
   title: string,
   desc: string,
