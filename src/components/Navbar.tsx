@@ -70,13 +70,13 @@ function Navbar() {
             <div className="mt-3 space-y-2 md:hidden sm:inline-block">
               <a
                 href="#"
-                className="text-sm inline-block w-full px-4 py-2 text-center text-white bg-purple-500 rounded-md shadow hover:bg-gray-800"
+                className="text-sm inline-block w-full px-4 py-2 text-center text-white bg-slate-700 rounded-md shadow hover:bg-gray-800"
               >
                 Login
               </a>
               <a
                 href="#"
-                className="text-sm inline-block w-full px-4 py-2 text-center text-gray-800 bg-white rounded-md shadow hover:bg-gray-100"
+                className="text-sm inline-block w-full px-4 py-2 text-white text-center bg-gradient-to-r from-purple-500 to-blue-500 rounded-md shadow hover:bg-gray-100"
               >
                 Register
               </a>
@@ -85,13 +85,13 @@ function Navbar() {
         </div>
         <div className="hidden space-x-2 md:inline-block">
           <a
-            href="#"
+            href="/login"
             className="text-sm font-semibold px-4 py-2 text-white rounded-md shadow hover:bg-gray-800"
           >
             Login
           </a>
           <a
-            href="#"
+            href="/register"
             className="text-sm px-4 py-2 text-white bg-gradient-to-r from-purple-500 to-blue-500 rounded-md shadow hover:bg-gray-100"
           >
             Register

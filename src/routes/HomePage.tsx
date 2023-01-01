@@ -1,13 +1,14 @@
 import React, { useEffect } from "react";
 import Hero from "../parts/HomePage/Hero";
 import ContributorSection from "~/parts/HomePage/ContributorSection";
+import BenefitSection from "~/parts/HomePage/BenefitSection";
 
-const inisiators = [
+const contributors = [
   {
     name: 'Ali Zulfikar',
     avatarUrl: 'https://avatars.githubusercontent.com/u/62384197?v=4',
     githubUrl: 'https://github.com/alizul01',
-    jobDesc: 'Inisiator & Front-end'
+    jobDesc: 'Initiator & Front-end'
   },
   {
     name: 'Elianiva',
@@ -26,8 +27,9 @@ export function HomePage() {
   return (
     <div>
       <Hero />
-      <div className={"border-slate-700 border my-4 block w-full"} />
-      <ContributorSection inisiators={inisiators} />
+      <div className={"border-slate-700 border my-12 block w-full"} />
+      <BenefitSection />
+      <ContributorSection contributors={contributors} />
     </div>
   );
 }
