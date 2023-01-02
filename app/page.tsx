@@ -23,7 +23,6 @@ export default function HomePage() {
   return (
     <div>
       <Hero />
-      <div className={"border-slate-700 border my-12 block w-full"} />
       <BenefitSection />
       <ContributorSection contributors={contributors} />
     </div>
