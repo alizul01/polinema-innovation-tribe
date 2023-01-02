@@ -8,7 +8,7 @@ export function Navbar() {
   const [isOpen, toggleNavbar] = useReducer((prev) => !prev, false);
 
   return (
-    <nav className="w-full bg-[#131A22]">
+    <nav className="w-full bg-[#131A22] sticky shadow-sm shadow">
       <div className="md:flex md:items-center lg:max-w-[92rem] md:px-8 mx-auto px-4 justify-between">
         <div id="left-side">
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
@@ -77,34 +77,35 @@ export function Navbar() {
               </li>
             </ul>
             <div className="mt-3 space-y-2 md:hidden sm:inline-block">
-              <Link
-                href="#"
-                className="text-sm inline-block w-full px-4 py-2 text-center text-white bg-slate-700 rounded-md shadow hover:bg-gray-800"
+              <NavLink href="/login" activeClass="font-bold">
+                <div className={"text-sm inline-block w-full px-4 py-2 text-center text-white bg-slate-700 rounded-md shadow hover:bg-gray-800"}>
+                    Login
+                </div>
+              </NavLink>
+              <NavLink
+                href="/register" activeClass="font-bold"
               >
-                Login
-              </Link>
-              <Link
-                href="#"
-                className="text-sm inline-block w-full px-4 py-2 text-white text-center bg-gradient-href-r from-purple-500 href-blue-500 rounded-md shadow hover:bg-gray-100"
-              >
-                Register
-              </Link>
+                <div className="text-sm inline-block w-full mt-2 px-4 py-2 text-white text-center bg-gradient-to-r from-purple-500 to-blue-500 rounded-md shadow hover:bg-gray-100">
+                  Register
+                </div>
+              </NavLink>
             </div>
           </div>
         </div>
-        <div className="hidden space-x-2 md:inline-block">
-          <Link
-            href="/login"
-            className="text-sm font-semibold px-4 py-2 text-white rounded-md shadow hover:bg-gray-800"
-          >
-            Login
-          </Link>
-          <Link
+        <div className="hidden space-x-2 md:flex text-white">
+          <NavLink href="/login" activeClass="font-bold">
+            <div className={"text-sm px-4 py-2 text-center text-white bg-slate-700 rounded-md shadow hover:bg-gray-800"}>
+              Login
+            </div>
+          </NavLink>
+          <NavLink
             href="/register"
-            className="text-sm px-4 py-2 text-white bg-gradient-href-r from-purple-500 href-blue-500 rounded-md shadow hover:bg-gray-100"
+            activeClass={"font-bold"}
           >
-            Register
-          </Link>
+            <div className="text-sm px-4 py-2 text-white bg-gradient-to-r from-purple-500 to-blue-500 rounded-md shadow hover:bg-gray-100">
+              Register
+            </div>
+          </NavLink>
         </div>
       </div>
     </nav>
