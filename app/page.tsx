@@ -8,7 +8,7 @@ const contributors = [
     name: 'Ali Zulfikar',
     avatarUrl: 'https://avatars.githubusercontent.com/u/62384197?v=4',
     githubUrl: 'https://github.com/alizul01',
-    jobDesc: 'Initiator & Front-end'
+    jobDesc: 'Owner & Front-end'
   },
   {
     name: 'Elianiva',
