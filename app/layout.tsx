@@ -1,4 +1,5 @@
 import type { PropsWithChildren } from "react";
+import Footer from "~/components/Footer";
 import { Navbar } from "~/components/Navbar";
 import "~/styles/globals.css";
 
@@ -18,6 +19,7 @@ export default function RootLayout(props: PropsWithChildren<{}>) {
         <body>
           <Navbar />
           <main className="m-8">{props.children}</main>
+          <Footer />
         </body>
       </html>
     </>
