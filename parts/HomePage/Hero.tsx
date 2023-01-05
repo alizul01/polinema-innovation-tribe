@@ -13,25 +13,29 @@ const Hero: React.FC = () => {
         <h4 className="text-center text-sm md:text-lg text-purple-400 font-semibold capitalize pb-2">
           Leading the way with innovative thinking
         </h4>
-        <h1 className="text-4xl md:text-7xl text-white font-bold text-center">
+        <h1 className="text-5xl md:text-7xl text-white font-bold text-center">
           <span>Unleash Your</span> Creativity With Politribe
         </h1>
       </div>
-      <div className="pt-12">
-        <h4 className="text-center text-lg md:text-xl font-semibold text-slate-400">
-          Discover your full potential with Polinema&apos;s innovative team
+      <div className="pt-12 max-w-4xl">
+        <h4 className="text-center text-lg md:text-xl font-normal text-slate-400">
+          <span>Join us and let your creativity and innovation shine as we work together to bring new ideas to life. With Politribe, the possibilities are endless.</span>
         </h4>
       </div>
-      <div className="pt-12 md:pt-12 flex flex-row gap-3 text-xs md:text-lg">
+      <div className="pt-12 md:pt-12 flex justify-center items-center flex-row space-x-8 md:space-x-12 text-xs md:text-lg">
         <button className="rounded-lg bg-gradient-to-r from-purple-500 to-blue-500 text-white px-4 py-2.5 font-semibold flex gap-2 justify-center items-center hover:shadow-slate-50 hover:shadow-sm transition ease-in-out duration-600">
           Get Started <ArrowRightCircleIcon color={"white"} fontSize={"18"} />
         </button>
-        <button className="rounded-lg bg-slate-700 px-4 py-2.5 font-semibold flex gap-2 justify-center items-center hover:shadow-slate-50 hover:shadow-sm transition ease-in-out duration-600">
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-100 to-slate-50 ">
+
+        <div className={"relative"}>
+          <div className={"absolute inset-0.5 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg blur opacity-75"} />
+          <button className="relative bg-slate-800 rounded-lg px-4 py-2.5 font-semibold flex gap-2 justify-center items-center">
+          <span className="text-slate-50 ">
             How it Works?
           </span>
-          <QuestionMarkCircleIcon color={"white"} fontSize={"18"} />
-        </button>
+            <QuestionMarkCircleIcon color={"white"} fontSize={"18"} />
+          </button>
+        </div>
       </div>
     </section>
   );

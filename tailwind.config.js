@@ -8,7 +8,11 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        elblack: "#131A22",
+      }
+    },
   },
   plugins: [require("flowbite/plugin")],
 };

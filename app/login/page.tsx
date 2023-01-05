@@ -1,13 +1,11 @@
+/* eslint-disable react/display-name */
 import React from "react";
 import Link from "next/link";
 
 const LoginPage: React.FC = React.memo(() => {
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-  }
   return (
     <section className={"w-full flex justify-center items-center"}>
-      <form className={"space-y-6 bg-slate-800 border border-slate-700 rounded-lg p-6 md:p-8 md:w-[30%]"}>
+      <form className={"space-y-6 bg-slate-800 border border-slate-700 rounded-lg p-8 w-[70%] lg:w-[30%]"}>
         <h5 className={"text-xl font-medium text-slate-100 "}>
           Login to Politribe
         </h5>
