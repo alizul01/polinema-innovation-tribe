@@ -16,9 +16,11 @@ export default function RootLayout(props: PropsWithChildren<{}>) {
           />
           <title>Politribe</title>
         </head>
-        <body>
-          <Navbar />
-          <main className="m-8">{props.children}</main>
+        <body className="flex justify-between flex-col">
+          <div>
+            <Navbar />
+            <main className="m-8">{props.children}</main>
+          </div>
           <Footer />
         </body>
       </html>
