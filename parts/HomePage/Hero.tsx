@@ -5,11 +5,19 @@ import QuestionMarkCircleIcon from "~icons/heroicons/question-mark-circle-solid"
 const Hero: React.FC = () => {
   return (
     <section
-      className="w-full pt-6 md:pt-16 flex flex-col items-center justify-center relative"
+      className="w-full pt-1 md:pt-8 flex flex-col items-center justify-center relative"
       id="hero"
     >
       <div className={"gradient-01 -z-99 absolute h-[50%] w-[50%] inset-0 opacity-100 md:opacity-40 rounded-full"} />
-      <div className="z-10 md:max-w-4xl pt-2">
+      <div className="z-10 md:max-w-4xl">
+        <div className={"flex p-2 items-center justify-center"}>
+          <div className={"relative"}>
+            <div className={"rounded-full absolute -inset-0.5 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg blur opacity-75"} />
+            <div className={"p-3 rounded-full bg-gradient-to-r from-slate-800 to-gray-900 relative"}>
+              <img src={"logo/PIT@512.svg"} className={"w-8"}/>
+            </div>
+          </div>
+        </div>
         <h4 className="text-center text-sm md:text-lg text-purple-400 font-semibold capitalize pb-2">
           Leading the way with innovative thinking
         </h4>

@@ -12,10 +12,12 @@ export default function RootLayout(props: PropsWithChildren<{}>) {
         </head>
         <body className="flex justify-between flex-col">
           <div>
-            <Navbar />
+            {<Navbar />}
             <main className="m-8">{props.children}</main>
           </div>
           <Footer />
+          <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MXJ2P4R"
+                            height="0" width="0" style={{display: "none", visibility: "hidden"}}></iframe></noscript>
         </body>
       </html>
     </>

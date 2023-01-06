@@ -18,9 +18,9 @@ const ContributorSection: React.FC<ContributorSectionProps> = ({contributors}) =
         <h1 className={"text-slate-500 text-center font-semibold"}>
           Build by
         </h1>
-        <div className={"flex-col md:flex-row gap-6 flex flex-wrap justify-center"}>
+        <div className={"flex-row gap-6 flex flex-wrap justify-center"}>
           {contributors.map((contributors, index) => (
-            <a href={contributors.githubUrl}>
+            <a href={contributors.githubUrl} target={"_SEJ"} rel={"noopener"}>
               <div className={"text-white flex gap-3 items-center"}>
                 <div className={"bg-slate-300 w-fit p-1 rounded-full"}>
                   <img className={"min-w-[2rem]s max-w-[2.5rem] rounded-full"} src={contributors.avatarUrl} />

@@ -8,12 +8,14 @@ export function Navbar() {
   const [isOpen, toggleNavbar] = useReducer((prev) => !prev, false);
 
   return (
-    <nav className="w-full bg-[#131A22] sticky shadow-sm shadow">
+    <nav className="w-full bg-[#131A22] sticky shadow-sm shadow border-b border-slate-800">
       <div className="md:flex md:items-center lg:max-w-[92rem] md:px-8 mx-auto px-4 justify-between">
         <div id="left-side">
-          <div className="flex items-center justify-between py-3 md:py-5 md:block">
+          <div className="flex items-center justify-between py-2 md:py-4 md:block">
             <Link href="/">
-              <h2 className="text-2xl font-bold text-white">Politribe</h2>
+              <h2 className="text-xl md:text-2xl font-bold text-white flex gap-2 items-center">
+                <img src={"logo/PIT@512.svg"} className={"w-8"} />
+              </h2>
             </Link>
             <div className="md:hidden">
               <button

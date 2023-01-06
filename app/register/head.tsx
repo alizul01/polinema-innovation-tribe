@@ -1,7 +1,18 @@
+// import next script
+import Script from "next/script";
+import Seo from "~/components/Seo";
+
+type SeoDataManager = {
+  title: string,
+}
+
+const seoData: SeoDataManager = {
+  title: "Register New Account"
+}
 export default function Head() {
   return (
     <>
-      <title>Register | Politribe</title>
+      <Seo seoData={seoData}  />
     </>
   );
 }
