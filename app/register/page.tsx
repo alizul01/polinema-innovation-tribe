@@ -1,11 +1,11 @@
 /* eslint-disable react/display-name */
-import React from "react";
 import Link from "next/link";
+import React from "react";
 
 const RegisterPage: React.FC = React.memo(() => {
   return (
     <section className={"w-full flex justify-center items-center my-5"}>
-       <form className={"space-y-6 bg-slate-800 border border-slate-700 rounded-lg p-8 w-[70%] lg:w-[30%]"}>
+       <form className={"space-y-6 bg-slate-800 border border-slate-700 rounded-lg p-8 w-[100%] lg:w-[30%]"}>
         <h5 className={"text-xl font-medium text-slate-100 "}>
           Register to Politribe
         </h5>
@@ -39,7 +39,7 @@ const RegisterPage: React.FC = React.memo(() => {
           <Link href="/" className="ml-auto text-sm hover:underline text-purple-500">Forgot Password?</Link>
         </div>
         <button type="submit"
-                className="w-full text-white focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-purple-600 hover:bg-purple-700 focus:ring-purple-800">Login
+                className="w-full text-white focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-purple-600 hover:bg-purple-700 focus:ring-purple-800">Register
         </button>
         <div className="text-sm font-medium text-purple-300">
           Already registered? <Link href="/login" className="hover:underline text-purple-500">Login</Link>

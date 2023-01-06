@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import React, { useReducer } from "react";
+import { useReducer } from "react";
 import { NavLink } from "./NavLink";
 
 export function Navbar() {
@@ -78,7 +78,7 @@ export function Navbar() {
                 </NavLink>
               </li>
             </ul>
-            <div className="mt-3 space-y-2 md:hidden sm:inline-block">
+            <div className="mt-3 space-y-2 w-full md:hidden sm:inline-block">
               <NavLink href="/login" activeClass="font-bold">
                 <div className={"text-sm inline-block w-full px-4 py-2 text-center text-white bg-slate-700 rounded-md shadow hover:bg-gray-800"}>
                     Login
