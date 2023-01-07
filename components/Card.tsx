@@ -23,7 +23,6 @@ const Card: React.FC<CardComponent> = ({card}) => {
         </div>
         <p className="mb-3 font-normal text-gray-400">{card.desc}</p>
       </div>
-
     </>
   )
 }
