@@ -24,7 +24,7 @@ const myProfile: any = {
     phone: "+628123456789"
 } // sementara aja
 
-const ProfilePage: React.FC<Profile> = ({information}) => {
+const ProfilePage: React.FC = () => {
   // @ts-ignore
   return (
     <div className={"w-full md:items-center justify-center md:px-56 gap-12 text-white flex flex-col"}>

@@ -6,7 +6,7 @@ import { NavLink } from "./NavLink";
 
 export function Navbar() {
   const [isOpen, toggleNavbar] = useReducer((prev) => !prev, false);
-  
+
   return (
     <div>
       <nav className="w-full bg-[#131A22] sticky shadow-sm shadow border-b border-slate-800">
