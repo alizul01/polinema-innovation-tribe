@@ -9,7 +9,7 @@ const Hero: React.FC = () => {
       className="w-full pt-1 md:pt-8 flex flex-col items-center justify-center relative"
       id="hero"
     >
-      <div className="gradient-01 -z-99 absolute h-[50%] w-[50%] inset-0 opacity-100 md:opacity-40 rounded-full" />
+      <div className="gradient-01 -z-[99] absolute h-[50%] w-[50%] inset-0 opacity-100 md:opacity-40 rounded-full" />
       <div className="z-10 md:max-w-4xl">
         <div className="flex p-2 items-center justify-center">
           <div className="relative">

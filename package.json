@@ -22,11 +22,13 @@
     "next": "13.1.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "tinycolor2": "^1.5.2",
     "typescript": "4.9.4"
   },
   "devDependencies": {
     "@iconify-json/heroicons": "^1.1.6",
     "@svgr/webpack": "^6.5.1",
+    "@types/tinycolor2": "^1.4.3",
     "autoprefixer": "^10.4.13",
     "eslint-config-kentcdodds": "^20.4.0",
     "postcss": "^8.4.20",
