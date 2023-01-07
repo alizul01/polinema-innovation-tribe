@@ -11,7 +11,7 @@ export function Navbar() {
   return (
     <div>
       <nav className="w-full bg-[#131A22] sticky shadow border-b border-slate-800">
-        <div className="md:flex md:items-center lg:max-w-[92rem] md:px-8 mx-auto px-4 justify-between">
+        <div className="md:grid md:grid-cols-3 md:items-center lg:max-w-[92rem] md:px-8 mx-auto px-4 justify-between">
           <div id="left-side">
             <div className="flex items-center justify-between py-2 md:py-4 md:block">
               <Link href="/">
@@ -94,7 +94,7 @@ export function Navbar() {
               </div>
             </div>
           </div>
-          <div className="hidden space-x-2 md:flex text-white">
+          <div className="hidden space-x-2 md:flex text-white justify-self-end">
             <Link href="/login">
               <div className="text-sm px-4 py-2 text-center text-white bg-slate-700 rounded-md shadow hover:bg-gray-800">
                 Login
