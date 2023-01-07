@@ -11,6 +11,9 @@ const nextConfig = {
     );
     return config;
   },
+  images: {
+    domains: ["avatars.githubusercontent.com", "media.licdn.com"],
+  },
   experimental: {
     appDir: true,
   },
