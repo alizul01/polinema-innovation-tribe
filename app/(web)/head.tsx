@@ -7,6 +7,7 @@ type SeoDataManager = {
 const seoData: SeoDataManager = {
   title: "Home",
 };
+
 export default function Head() {
   return (
     <>

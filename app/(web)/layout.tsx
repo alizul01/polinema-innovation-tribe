@@ -7,9 +7,6 @@ export default function RootLayout(props: PropsWithChildren<{}>) {
   return (
     <>
       <html lang="en">
-        <head>
-          <title>Politribe</title>
-        </head>
         <body className="flex justify-between flex-col h-full">
           <div className="flex-1">
             <Navbar />

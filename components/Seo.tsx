@@ -19,7 +19,7 @@ const Seo: React.FC<SeoProps> = ({ seoData }) => {
         name="description"
         content="Polinema Innovation Tribe adalah wadah yang memberikan kesempatan kepada mahasiswa untuk mengembangkan ide-ide kreatifnya bersama dengan tim yang terdiri dari mahasiswa-mahasiswa yang memiliki visi yang sama."
       />
-      <title>Politribe | {seoData.title}</title>
+      <title>{["Politribe", " | ", seoData.title].join(" ")}</title>
       <meta name="robots" content="index,follow" />
       <link
         rel="canonical"
