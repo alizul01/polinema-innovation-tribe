@@ -17,7 +17,12 @@ const nextConfig = {
     return config;
   },
   images: {
-    domains: ["avatars.githubusercontent.com", "media.licdn.com"],
+    domains: [
+      "avatars.githubusercontent.com",
+      "media.licdn.com",
+      "unsplash.com",
+      "source.unsplash.com",
+    ],
   },
   experimental: {
     appDir: true,
