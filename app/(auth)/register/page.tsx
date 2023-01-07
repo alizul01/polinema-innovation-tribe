@@ -4,6 +4,8 @@ import Link from "next/link";
 import UserIcon from "~icons/heroicons/user-solid";
 import TermsSection from "~/parts/auth/Terms-Section";
 import ArrowLeft from "~icons/heroicons/arrow-left-circle-solid";
+import PolitribeLogo from "~/icons/ic_politribe-logo.svg";
+import GoogleIcon from "~/icons/ic_google-icon.svg";
 
 const RegisterPage: React.FC = React.memo(() => {
   return (
@@ -16,7 +18,7 @@ const RegisterPage: React.FC = React.memo(() => {
          <div className={"relative w-fit"}>
            <div className={"rounded-full absolute -inset-0.5 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg blur opacity-75"} />
            <div className={"p-3 rounded-full bg-gradient-to-r from-slate-800 to-gray-900 relative"}>
-             <img src={"logo/PIT@512.svg"} className={"w-8"}/>
+             <PolitribeLogo className="w-8 h-8" />
            </div>
          </div>
          <div className={"text-center"}>
@@ -29,7 +31,7 @@ const RegisterPage: React.FC = React.memo(() => {
          </div>
          <div className={"w-full space-y-3"}>
            <button className={"flex w-full items-center justify-center space-x-2 text-white bg-slate-800 p-3 rounded-sm"}>
-             <img src={"icon/google-icon.svg"} className={"w-4"}/>
+             <GoogleIcon />
              <a className={"text-regular text-sm"}>
                Register with Google
              </a>
