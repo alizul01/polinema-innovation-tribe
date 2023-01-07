@@ -47,3 +47,19 @@
   );
   filter: blur(260px);
 }
+
+::-webkit-scrollbar {
+  @apply bg-elblack w-3.5
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-800 rounded-full
+}
+
+::-webkit-scrollbar-thumb:active {
+  @apply bg-slate-700
+}
+
+::selection {
+  @apply bg-purple-600 text-white
+}
