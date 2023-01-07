@@ -4,10 +4,13 @@ specifiers:
   '@iconify-json/heroicons': ^1.1.6
   '@next/font': 13.1.1
   '@svgr/webpack': ^6.5.1
+  '@tailwindcss/line-clamp': ^0.4.2
   '@types/node': 18.11.18
   '@types/react': 18.0.26
   '@types/react-dom': 18.0.10
+  '@types/tinycolor2': ^1.4.3
   autoprefixer: ^10.4.13
+  date-fns: ^2.29.3
   eslint: 8.31.0
   eslint-config-kentcdodds: ^20.4.0
   eslint-config-next: 13.1.1
@@ -19,6 +22,7 @@ specifiers:
   react: 18.2.0
   react-dom: 18.2.0
   tailwindcss: ^3.2.4
+  tinycolor2: ^1.5.2
   typescript: 4.9.4
   unplugin-icons: ^0.14.15
 
@@ -27,6 +31,7 @@ dependencies:
   '@types/node': 18.11.18
   '@types/react': 18.0.26
   '@types/react-dom': 18.0.10
+  date-fns: 2.29.3
   eslint: 8.31.0
   eslint-config-next: 13.1.1_iukboom6ndih5an6iafl45j2fe
   flowbite: 1.5.5
@@ -34,11 +39,14 @@ dependencies:
   next: 13.1.1_biqbaboplfbrettd7655fr4n2y
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
+  tinycolor2: 1.5.2
   typescript: 4.9.4
 
 devDependencies:
   '@iconify-json/heroicons': 1.1.6
   '@svgr/webpack': 6.5.1
+  '@tailwindcss/line-clamp': 0.4.2_tailwindcss@3.2.4
+  '@types/tinycolor2': 1.4.3
   autoprefixer: 10.4.13_postcss@8.4.20
   eslint-config-kentcdodds: 20.4.0_iukboom6ndih5an6iafl45j2fe
   postcss: 8.4.20
@@ -1851,6 +1859,14 @@ packages:
       tslib: 2.4.1
     dev: false
 
+  /@tailwindcss/line-clamp/0.4.2_tailwindcss@3.2.4:
+    resolution: {integrity: sha512-HFzAQuqYCjyy/SX9sLGB1lroPzmcnWv1FHkIpmypte10hptf4oPUfucryMKovZh2u0uiS9U5Ty3GghWfEJGwVw==}
+    peerDependencies:
+      tailwindcss: '>=2.0.0 || >=3.0.0 || >=3.0.0-alpha.1'
+    dependencies:
+      tailwindcss: 3.2.4_postcss@8.4.20
+    dev: true
+
   /@testing-library/dom/8.19.1:
     resolution: {integrity: sha512-P6iIPyYQ+qH8CvGauAqanhVnjrnRe0IZFSYCeGkSRW9q3u8bdVn2NPI+lasFyVsEQn1J/IFmp5Aax41+dAP9wg==}
     engines: {node: '>=12'}
@@ -1941,6 +1957,10 @@ packages:
 
   /@types/semver/7.3.13:
     resolution: {integrity: sha512-21cFJr9z3g5dW8B0CVI9g2O9beqaThGQ6ZFBqHfwhzLDKUxaqTIy3vnfah/UPkfOiF2pLq+tGz+W8RyCskuslw==}
+    dev: true
+
+  /@types/tinycolor2/1.4.3:
+    resolution: {integrity: sha512-Kf1w9NE5HEgGxCRyIcRXR/ZYtDv0V8FVPtYHwLxl0O+maGX0erE77pQlD0gpP+/KByMZ87mOA79SjifhSB3PjQ==}
     dev: true
 
   /@typescript-eslint/eslint-plugin/5.47.1_axni7f4fgvh6tlufnh6hwgsifq:
@@ -2613,6 +2633,11 @@ packages:
 
   /damerau-levenshtein/1.0.8:
     resolution: {integrity: sha512-sdQSFB7+llfUcQHUQO3+B8ERRj0Oa4w9POWMI/puGtuf7gFywGmkaLCElnudfTiKZV+NvHqL0ifzdrI8Ro7ESA==}
+
+  /date-fns/2.29.3:
+    resolution: {integrity: sha512-dDCnyH2WnnKusqvZZ6+jA1O51Ibt8ZMRNkDZdyAyK4YfbDwa/cEmuztzG5pk6hqlp9aSBPYcjOlktquahGwGeA==}
+    engines: {node: '>=0.11'}
+    dev: false
 
   /debounce/1.2.1:
     resolution: {integrity: sha512-XRRe6Glud4rd/ZGQfiV1ruXSfbvfJedlV9Y6zOlP+2K04vBYiJEte6stfFkCP03aMnY5tsipamumUjL14fofug==}
@@ -5080,6 +5105,10 @@ packages:
     dependencies:
       globalyzer: 0.1.0
       globrex: 0.1.2
+    dev: false
+
+  /tinycolor2/1.5.2:
+    resolution: {integrity: sha512-h80m9GPFGbcLzZByXlNSEhp1gf8Dy+VX/2JCGUZsWLo7lV1mnE/XlxGYgRBoMLJh1lIDXP0EMC4RPTjlRaV+Bg==}
     dev: false
 
   /tmp/0.0.33:

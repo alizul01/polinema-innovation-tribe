@@ -9,10 +9,20 @@ const nextConfig = {
         extension: "jsx",
       })
     );
+    config.module.rules.push({
+      test: /\.svg$/i,
+      issuer: /\.[jt]sx?$/,
+      use: ["@svgr/webpack"],
+    });
     return config;
   },
   images: {
-    domains: ["avatars.githubusercontent.com", "media.licdn.com"],
+    domains: [
+      "avatars.githubusercontent.com",
+      "media.licdn.com",
+      "unsplash.com",
+      "source.unsplash.com",
+    ],
   },
   experimental: {
     appDir: true,

@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import React, { useReducer } from "react";
+import PolitribeLogo from "~/icons/ic_politribe-logo.svg";
 import { NavLink } from "./NavLink";
 
 export function Navbar() {
@@ -9,13 +10,13 @@ export function Navbar() {
 
   return (
     <div>
-      <nav className="w-full bg-[#131A22] sticky shadow-sm shadow border-b border-slate-800">
-        <div className="md:flex md:items-center lg:max-w-[92rem] md:px-8 mx-auto px-4 justify-between">
+      <nav className="w-full sticky shadow border-b border-slate-800">
+        <div className="md:grid md:grid-cols-3 md:items-center lg:max-w-[92rem] md:px-8 mx-auto px-4 justify-between">
           <div id="left-side">
             <div className="flex items-center justify-between py-2 md:py-4 md:block">
               <Link href="/">
                 <h2 className="text-xl md:text-2xl font-bold text-white flex gap-2 items-center">
-                  <img src={"logo/PIT@512.svg"} className={"w-8"} />
+                  <PolitribeLogo className="w-8 h-8" />
                 </h2>
               </Link>
               <div className="md:hidden">
@@ -81,13 +82,11 @@ export function Navbar() {
               </ul>
               <div className="mt-3 space-y-2 md:hidden sm:inline-block">
                 <Link href="/login">
-                  <div className={"text-sm inline-block w-full px-4 py-2 text-center text-white bg-slate-700 rounded-md shadow hover:bg-gray-800"}>
+                  <div className="text-sm inline-block w-full px-4 py-2 text-center text-white bg-slate-700 rounded-md shadow hover:bg-gray-800">
                     Login
                   </div>
                 </Link>
-                <Link
-                  href="/register"
-                >
+                <Link href="/register">
                   <div className="text-sm inline-block w-full mt-2 px-4 py-2 text-white text-center bg-gradient-to-r from-purple-500 to-blue-500 rounded-md shadow hover:bg-gray-100">
                     Register
                   </div>
@@ -95,15 +94,13 @@ export function Navbar() {
               </div>
             </div>
           </div>
-          <div className="hidden space-x-2 md:flex text-white">
+          <div className="hidden space-x-2 md:flex text-white justify-self-end">
             <Link href="/login">
-              <div className={"text-sm px-4 py-2 text-center text-white bg-slate-700 rounded-md shadow hover:bg-gray-800"}>
+              <div className="text-sm px-4 py-2 text-center text-white bg-slate-700 rounded-md shadow hover:bg-gray-800">
                 Login
               </div>
             </Link>
-            <Link
-              href="/register"
-            >
+            <Link href="/register">
               <div className="text-sm px-4 py-2 text-white bg-gradient-to-r from-purple-500 to-blue-500 rounded-md shadow hover:bg-gray-100">
                 Register
               </div>
