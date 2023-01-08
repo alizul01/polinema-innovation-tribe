@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import React, { useReducer } from "react";
 import PolitribeLogo from "~/icons/ic_politribe-logo.svg";
