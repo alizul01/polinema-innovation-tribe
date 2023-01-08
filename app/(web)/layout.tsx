@@ -6,7 +6,6 @@ import "~/styles/globals.css";
 import {useRouter} from "next/navigation";
 import {Suspense} from "react";
 import Loading from "~/app/(auth)/loading";
-import 'flowbite';
 export default function RootLayout(props: PropsWithChildren<{}>) {
   const router = useRouter();
   return (
