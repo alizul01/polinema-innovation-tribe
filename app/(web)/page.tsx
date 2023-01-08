@@ -2,6 +2,8 @@ import React from "react";
 import Hero from "~/parts/HomePage/Hero";
 import ContributorSection from "~/parts/HomePage/ContributorSection";
 import BenefitSection from "~/parts/HomePage/BenefitSection";
+import Step from "~/parts/HomePage/Step/Step";
+import Forms from "~/parts/HomePage/Forms";
 
 type Contributor = {
   name: string,
@@ -37,6 +39,8 @@ export default function HomePage() {
     <div>
       <Hero />
       <BenefitSection />
+      <Step />
+      <Forms />
       <ContributorSection contributors={contributors} />
     </div>
   );
