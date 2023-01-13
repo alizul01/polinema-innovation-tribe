@@ -1,11 +1,11 @@
 /* eslint-disable react/display-name */
-import React from "react";
 import Link from "next/link";
-import UserIcon from "~icons/heroicons/user-solid";
+import React from "react";
+import GoogleIcon from "~/icons/ic_google-icon.svg";
+import PolitribeLogo from "~/icons/ic_politribe-logo.svg";
 import TermsSection from "~/parts/auth/Terms-Section";
 import ArrowLeft from "~icons/heroicons/arrow-left-circle-solid";
-import PolitribeLogo from "~/icons/ic_politribe-logo.svg";
-import GoogleIcon from "~/icons/ic_google-icon.svg";
+import UserIcon from "~icons/heroicons/user-solid";
 
 const RegisterPage: React.FC = React.memo(() => {
   return (
@@ -38,7 +38,7 @@ const RegisterPage: React.FC = React.memo(() => {
            </button>
            <button className={"flex w-full items-center justify-center space-x-2 text-white bg-slate-800 p-3 rounded-sm"}>
              <UserIcon />
-             <a className={"text-regular text-sm"}>
+             <a className={"text-regular text-sm"} href="/email">
                Register with Email
              </a>
            </button>
