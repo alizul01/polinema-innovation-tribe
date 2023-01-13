@@ -23,20 +23,6 @@ const RegisterForm = () => {
       </h1>
       <div className="py-4 px-8">
         <div className="flex mb-4">
-          {/* <div className="w-1/2 mr-1">
-            <label
-              className="block text-grey-darker text-sm font-bold mb-2"
-              htmlFor="first_name"
-            >
-              First Name
-            </label>
-            <input
-              className="appearance-none border rounded w-full py-2 px-3 text-grey-darker"
-              id="first_name"
-              type="text"
-              placeholder="Your first name"
-            />
-          </div> */}
           <div className="w-1/2 mr-1">
             <MyField name="firstName" placeHolder="First Name" />
           </div>
@@ -71,18 +57,6 @@ const RegisterForm = () => {
           }
         />
       </div>
-      {/* <div className="text-sm font-medium text-purple-200">
-        Already registered?{" "}
-        <Link href="/login" className="hover:underline text-purple-400">
-          Login
-        </Link>
-      </div>
-      <TermsSection title={"Register"} />
-      <div
-        className={
-          "gradient-02 -z-40 absolute h-[40%] w-[40%] right-0 md:opacity-20 rounded-full"
-        }
-      /> */}
     </form>
   );
 };
@@ -90,51 +64,6 @@ const EmailPage = () => {
   return (
     <section className={"h-screen flex justify-center items-center"}>
       <RegisterForm />
-      {/* <form
-        className={
-          "space-y-6 w-[80%] md:w-[70%] lg:w-[80%] rounded-lg flex flex-col justify-center items-center"
-        }
-      >
-        <Link
-          href={"/"}
-          className={"flex gap-1 items-center text-center text-blue-400"}
-        >
-          <ArrowLeft /> Back
-        </Link>
-        <div className={"relative w-fit"}>
-          <div
-            className={
-              "rounded-full absolute -inset-0.5 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg blur opacity-75"
-            }
-          />
-          <div
-            className={
-              "p-3 rounded-full bg-gradient-to-r from-slate-800 to-gray-900 relative"
-            }
-          >
-            <PolitribeLogo className="w-8 h-8" />
-          </div>
-        </div>
-        <div className={"text-center"}>
-          <h4 className={"text-blue-300 font-regular text-md"}>Welcome to</h4>
-          <h1 className={"text-white text-xl font-bold"}>
-            Polinema Innovation Tribe
-          </h1>
-        </div>
-        <div className={"w-full space-y-3"}></div>
-        <div className="text-sm font-medium text-purple-200">
-          Already registered?{" "}
-          <Link href="/login" className="hover:underline text-purple-400">
-            Login
-          </Link>
-        </div>
-        <TermsSection title={"Register"} />
-        <div
-          className={
-            "gradient-02 -z-40 absolute h-[40%] w-[40%] right-0 md:opacity-20 rounded-full"
-          }
-        />
-      </form> */}
     </section>
   );
 };
