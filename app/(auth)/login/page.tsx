@@ -17,7 +17,7 @@ export default function LoginPage() {
     e.preventDefault();
 
     const { error } = await supabase.auth.signInWithOAuth({
-      provider: "google",
+      provider: "google"
     });
 
     if (error !== null) {
