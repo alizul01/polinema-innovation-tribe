@@ -17,10 +17,7 @@ export default function LoginPage() {
     e.preventDefault();
 
     const { error } = await supabase.auth.signInWithOAuth({
-      provider: "google",
-      options: {
-        redirectTo: 'https://*.vercel.app'
-      }
+      provider: "google"
     });
 
     if (error !== null) {
