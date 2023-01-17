@@ -1,13 +1,30 @@
+"use client";
+
 /* eslint-disable react/display-name */
-import React from "react";
+import React, { type MouseEvent } from "react";
 import Link from "next/link";
 import TermsSection from "~/parts/auth/Terms-Section";
 import PolitribeLogo from "~/icons/ic_politribe-logo.svg";
 import GoogleIcon from "~/icons/ic_google-icon.svg";
+import { useSupabase } from "~/components/SupabaseProvider";
 import UserIcon from "~icons/heroicons/user-solid";
 import ArrowLeft from "~icons/heroicons/arrow-left-circle-solid";
 
-const LoginPage: React.FC = React.memo(() => {
+export default function LoginPage() {
+  const { supabase } = useSupabase();
+
+  async function handleGoogleLogin(e: MouseEvent<HTMLButtonElement>) {
+    e.preventDefault();
+
+    const { error } = await supabase.auth.signInWithOAuth({
+      provider: "google",
+    });
+
+    if (error !== null) {
+      console.log({ error });
+    }
+  }
+
   return (
     <section className="h-screen flex justify-center items-center">
       <div className="gradient-01 -z-99 absolute h-[50%] w-[50%] inset-0 opacity-100 md:opacity-20 rounded-full" />
@@ -35,7 +52,10 @@ const LoginPage: React.FC = React.memo(() => {
           </h1>
         </div>
         <div className="w-full space-y-3">
-          <button className="flex w-full items-center justify-center space-x-2 text-white bg-slate-800 p-3 rounded-sm">
+          <button
+            className="flex w-full items-center justify-center space-x-2 text-white bg-slate-800 p-3 rounded-sm"
+            onClick={handleGoogleLogin}
+          >
             <GoogleIcon />
             <a className="text-regular text-sm">Login with Google</a>
           </button>
@@ -45,7 +65,7 @@ const LoginPage: React.FC = React.memo(() => {
           </button>
         </div>
         <div className="text-sm font-medium text-purple-200">
-          Not Registered Yet?{" "}
+          Not Registered Yet?
           <Link href="/register" className="hover:underline text-purple-400">
             Register Now!
           </Link>
@@ -55,6 +75,4 @@ const LoginPage: React.FC = React.memo(() => {
       </form>
     </section>
   );
-});
-
-export default LoginPage;
+}
