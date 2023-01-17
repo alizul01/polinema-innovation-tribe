@@ -11,7 +11,7 @@ export type IdeaCardProps = Idea & {};
 
 export function IdeaCard(props: IdeaCardProps) {
   return (
-    <div className="p-8 border border-slate-300/20 bg-slate-800/20 rounded-lg flex gap-6">
+    <div className="p-8 border border-slate-300/20 bg-slate-800/20 rounded-lg flex gap-6 flex-wrap">
       <div className="relative w-12">
         <style jsx>{`
           .profile-line::before {
@@ -37,7 +37,7 @@ export function IdeaCard(props: IdeaCardProps) {
           />
         </div>
       </div>
-      <div className="flex-1">
+      <div className="flex-1 w-full">
         <span className="text-slate-100 font-medium text-2xl block">
           {props.title}
         </span>
@@ -49,7 +49,7 @@ export function IdeaCard(props: IdeaCardProps) {
           {props.description}
         </p>
         <hr className="w-full h-[1px] bg-gradient-to-r from-slate-300/20 to-slate-300/0 border-none my-4 -ml-12" />
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between flex-col md:flex-row">
           <div className="text-slate-400 flex items-center gap-2">
             <CommentIcon />
             {props.comments.length > 0 ? (
