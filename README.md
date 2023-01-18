@@ -1,3 +1,4 @@
+<img alt="politribe-image" src="https://user-images.githubusercontent.com/62384197/213069068-8d005e4a-9fef-45bf-b972-ba7730dd8c7c.png" width="512px" />
 
 # Polinema Innovation Tribe
 
