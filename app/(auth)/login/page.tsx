@@ -1,20 +1,13 @@
 "use client";
 
 /* eslint-disable react/display-name */
-<<<<<<< HEAD
-=======
-import React, { type MouseEvent } from "react";
->>>>>>> a0da17a285e3037d80e1d6a18ede52c355a0ce14
 import Link from "next/link";
-import React from "react";
+import type { MouseEvent } from "react";
+
+import { useSupabase } from "~/components/SupabaseProvider";
 import GoogleIcon from "~/icons/ic_google-icon.svg";
-<<<<<<< HEAD
 import PolitribeLogo from "~/icons/ic_politribe-logo.svg";
 import TermsSection from "~/parts/auth/Terms-Section";
-=======
-import { useSupabase } from "~/components/SupabaseProvider";
-import UserIcon from "~icons/heroicons/user-solid";
->>>>>>> a0da17a285e3037d80e1d6a18ede52c355a0ce14
 import ArrowLeft from "~icons/heroicons/arrow-left-circle-solid";
 import UserIcon from "~icons/heroicons/user-solid";
 
@@ -25,7 +18,7 @@ export default function LoginPage() {
     e.preventDefault();
 
     const { error } = await supabase.auth.signInWithOAuth({
-      provider: "google"
+      provider: "google",
     });
 
     if (error !== null) {
