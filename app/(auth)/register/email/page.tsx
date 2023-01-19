@@ -4,31 +4,30 @@ import Link from "next/link";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
 import TermsSection from "~/parts/auth/Terms-Section";
-// type Inputs = {
-//   firstName: string;
-//   lastName: string;
-//   email: string;
-//   password: string;
-// };
+type Inputs = {
+  firstName: string;
+  lastName: string;
+  email: string;
+  password: string;
+};
 const schema = z.object({
-  firstName: z.string().nonempty({ message: "Required" }),
-  lastName: z.string().nonempty({ message: "Required" }),
+  firstName: z.string().nonempty({ message: "First Name must be filled" }),
+  lastName: z.string().nonempty({ message: "Last Name must be filled" }),
   email: z
     .string()
-    .nonempty({ message: "Required" })
+    .nonempty({ message: "Email must be filled" })
     .email({ message: "Must be valid" }),
-  password: z.string().nonempty({ message: "Required" }),
+  password: z.string().nonempty({ message: "Password Name must be filled" }),
 });
 const EmailPage = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({
+  } = useForm<Inputs>({
     resolver: zodResolver(schema),
     shouldUseNativeValidation: true,
   });
-  console.log(errors);
   return (
     <section className={"h-screen flex justify-center items-center flex-col"}>
       <h1 className="font-bold text-2xl md:text-5xl text-white mb-9 border-b-4 border-purple-500 pb-4">
@@ -47,6 +46,11 @@ const EmailPage = () => {
                 type={"text"}
                 {...register("firstName")}
               />
+              {errors.firstName && (
+                <p className="mt-1  text-red-500 font-bold">
+                  {errors.firstName.message?.toString()}
+                </p>
+              )}
             </div>
             <div className="w-1/2 ml-1">
               <input
@@ -55,6 +59,11 @@ const EmailPage = () => {
                 type={"text"}
                 {...register("lastName")}
               />
+              {errors.lastName && (
+                <p className="mt-1  text-red-500 font-bold">
+                  {errors.lastName.message?.toString()}
+                </p>
+              )}
             </div>
           </div>
           <div className="mb-4">
@@ -64,6 +73,11 @@ const EmailPage = () => {
               type={"email"}
               {...register("email")}
             />
+            {errors.email && (
+              <p className="mt-1  text-red-500 font-bold">
+                {errors.email.message?.toString()}
+              </p>
+            )}
           </div>
           <div className="mb-4">
             <input
@@ -72,6 +86,11 @@ const EmailPage = () => {
               type={"password"}
               {...register("password")}
             />
+            {errors.password && (
+              <p className="mt-1  text-red-500 font-bold">
+                {errors.password.message?.toString()}
+              </p>
+            )}
           </div>
           <button
             className="rounded-lg bg-purple-500 text-white px-4 py-2.5 font-semibold flex gap-2 justify-center items-center hover:shadow-slate-50 hover:shadow-sm transition ease-in-out duration-600"

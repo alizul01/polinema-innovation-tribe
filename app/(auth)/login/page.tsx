@@ -1,11 +1,11 @@
 /* eslint-disable react/display-name */
-import React from "react";
 import Link from "next/link";
-import TermsSection from "~/parts/auth/Terms-Section";
-import PolitribeLogo from "~/icons/ic_politribe-logo.svg";
+import React from "react";
 import GoogleIcon from "~/icons/ic_google-icon.svg";
-import UserIcon from "~icons/heroicons/user-solid";
+import PolitribeLogo from "~/icons/ic_politribe-logo.svg";
+import TermsSection from "~/parts/auth/Terms-Section";
 import ArrowLeft from "~icons/heroicons/arrow-left-circle-solid";
+import UserIcon from "~icons/heroicons/user-solid";
 
 const LoginPage: React.FC = React.memo(() => {
   return (
@@ -41,7 +41,9 @@ const LoginPage: React.FC = React.memo(() => {
           </button>
           <button className="flex w-full items-center justify-center space-x-2 text-white bg-slate-800 p-3 rounded-sm">
             <UserIcon />
-            <a className="text-regular text-sm">Login with Email</a>
+            <Link href="./login/email" className="text-regular text-sm">
+              Login with Email
+            </Link>
           </button>
         </div>
         <div className="text-sm font-medium text-purple-200">
