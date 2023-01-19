@@ -1,9 +1,11 @@
 import Link from "next/link";
 import React, { useReducer } from "react";
 import PolitribeLogo from "~/icons/ic_politribe-logo.svg";
+import { useSupabase } from "~/components/SupabaseProvider";
 import { NavLink } from "./NavLink";
 
 export function Navbar() {
+  const { session } = useSupabase();
   const [isOpen, toggleNavbar] = useReducer((prev) => !prev, false);
 
   return (
@@ -78,31 +80,46 @@ export function Navbar() {
                   </NavLink>
                 </li>
               </ul>
-              <div className="mt-3 space-y-2 md:hidden sm:inline-block">
+              <div className="mt-3 space-y-2 md:hidden sm:inline-block w-full">
+                {session === null ? (
+                  <>
+                    <Link href="/login">
+                      <div className="text-sm inline-block w-full px-4 py-2 text-center text-white bg-slate-700 rounded-md shadow hover:bg-gray-800">
+                        Login
+                      </div>
+                    </Link>
+                    <Link href="/register">
+                      <div className="text-sm inline-block w-full mt-2 px-4 py-2 text-white text-center bg-gradient-to-r from-purple-500 to-blue-500 rounded-md shadow hover:bg-gray-100">
+                        Register
+                      </div>
+                    </Link>
+                  </>
+                ) : (
+                  <span className="text-sm inline-block w-full mt-2 px-4 py-2 text-slate-300 text-center bg-gradient-to-r">
+                    {session.user.email}
+                  </span>
+                )}
+              </div>
+            </div>
+          </div>
+
+          <div className="hidden space-x-2 md:flex text-white justify-self-end">
+            {session === null ? (
+              <>
                 <Link href="/login">
-                  <div className="text-sm inline-block w-full px-4 py-2 text-center text-white bg-slate-700 rounded-md shadow hover:bg-gray-800">
+                  <div className="text-sm px-4 py-2 text-center text-white bg-slate-700 rounded-md shadow hover:bg-gray-800">
                     Login
                   </div>
                 </Link>
                 <Link href="/register">
-                  <div className="text-sm inline-block w-full mt-2 px-4 py-2 text-white text-center bg-gradient-to-r from-purple-500 to-blue-500 rounded-md shadow hover:bg-gray-100">
+                  <div className="text-sm px-4 py-2 text-white bg-gradient-to-r from-purple-500 to-blue-500 rounded-md shadow hover:bg-gray-100">
                     Register
                   </div>
                 </Link>
-              </div>
-            </div>
-          </div>
-          <div className="hidden space-x-2 md:flex text-white justify-self-end">
-            <Link href="/login">
-              <div className="text-sm px-4 py-2 text-center text-white bg-slate-700 rounded-md shadow hover:bg-gray-800">
-                Login
-              </div>
-            </Link>
-            <Link href="/register">
-              <div className="text-sm px-4 py-2 text-white bg-gradient-to-r from-purple-500 to-blue-500 rounded-md shadow hover:bg-gray-100">
-                Register
-              </div>
-            </Link>
+              </>
+            ) : (
+              <span className="text-slate-300">{session.user.email}</span>
+            )}
           </div>
         </div>
       </nav>

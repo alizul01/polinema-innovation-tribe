@@ -15,7 +15,7 @@ export default function RootLayout(props: PropsWithChildren<{}>) {
           <div className="flex-1">
             <Suspense fallback={<Loading />}>
               <Navbar />
-              <main className="p-8 h-full">{props.children}</main>
+              <main className="p-6 h-full">{props.children}</main>
             </Suspense>
           </div>
           <Footer />

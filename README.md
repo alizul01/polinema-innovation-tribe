@@ -1,46 +1,56 @@
-<h1 align="center">Welcome to Polinema Innovation Tribe 👋</h1>
+<img alt="politribe-image" src="https://user-images.githubusercontent.com/62384197/213069068-8d005e4a-9fef-45bf-b972-ba7730dd8c7c.png" width="512px" />
+
+# Polinema Innovation Tribe
+
+⭐ Polinema Innovation Tribe adalah wadah yang memberikan kesempatan kepada mahasiswa untuk mengembangkan ide-ide kreatifnya bersama dengan tim yang terdiri dari mahasiswa-mahasiswa yang memiliki visi yang sama.
+
+
+
+
+## Badges
+
 <p>
-  <img alt="Version" src="https://img.shields.io/badge/version-0.0.1-blue.svg?cacheSeconds=2592000" />
+  <img alt="Version" src="https://img.shields.io/badge/version-0.5.0-blue.svg?cacheSeconds=2592000" />
   <a href="https://github.com/alizul01/polinema-innovation-tribe" target="_blank">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
   </a>
   <a href="#" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
   </a>
-  <a href="https://twitter.com/panggilajazul" target="_blank">
-    <img alt="Twitter: panggilajazul" src="https://img.shields.io/twitter/follow/panggilajazul.svg?style=social" />
-  </a>
 </p>
 
-> Polinema Innovation Tribe adalah wadah yang memberikan kesempatan kepada mahasiswa untuk mengembangkan ide-ide kreatifnya bersama dengan tim yang terdiri dari mahasiswa-mahasiswa yang memiliki visi yang sama.
+## Installation
 
-### 🏠 [Homepage](https://github.com/alizul01/polinema-innovation-tribe)
+Install pnpm first! 
 
-## Install
-
-```sh
-pnpm install
+```bash
+  npm install -g pnpm
 ```
 
-## Run Server
-
-```sh
-pnpm dev
+```bash
+  pnpm install
 ```
 
-## Author
+```bash
+  pnpm dev
+```
 
-👤 **Ali Zulfikar**
+## Authors
 
-- Website: https://alizul01.github.io/
-- Twitter: [@panggilajazul](https://twitter.com/panggilajazul)
-- Github: [@alizul01](https://github.com/alizul01)
-- LinkedIn: [@alizulfikar](https://linkedin.com/in/alizulfikar)
+- [@alizul01](https://www.github.com/alizul01)
+- [@elianiva](https://github.com/elianiva)
 
-## 🤝 Contributing
 
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/alizul01/polinema-innovation-tribe/issues).
+## Contributing
 
-## Show your support
+Contributions are always welcome!
 
-Give a ⭐️ if this project helped you!
+See `contributing.md` for ways to get started.
+
+Please adhere to this project's `code of conduct`.
+
+
+## Feedback
+
+If you have any feedback, please reach out to us at alizulfikar@gmail.com
+
