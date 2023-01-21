@@ -1,14 +1,15 @@
 "use client";
 
 /* eslint-disable react/display-name */
-import React, { type MouseEvent } from "react";
 import Link from "next/link";
-import TermsSection from "~/parts/auth/Terms-Section";
-import PolitribeLogo from "~/icons/ic_politribe-logo.svg";
-import GoogleIcon from "~/icons/ic_google-icon.svg";
+import type { MouseEvent } from "react";
+
 import { useSupabase } from "~/components/SupabaseProvider";
-import UserIcon from "~icons/heroicons/user-solid";
+import GoogleIcon from "~/icons/ic_google-icon.svg";
+import PolitribeLogo from "~/icons/ic_politribe-logo.svg";
+import TermsSection from "~/parts/auth/Terms-Section";
 import ArrowLeft from "~icons/heroicons/arrow-left-circle-solid";
+import UserIcon from "~icons/heroicons/user-solid";
 
 export default function LoginPage() {
   const { supabase } = useSupabase();
@@ -17,7 +18,7 @@ export default function LoginPage() {
     e.preventDefault();
 
     const { error } = await supabase.auth.signInWithOAuth({
-      provider: "google"
+      provider: "google",
     });
 
     if (error !== null) {
@@ -61,7 +62,9 @@ export default function LoginPage() {
           </button>
           <button className="flex w-full items-center justify-center space-x-2 text-white bg-slate-800 p-3 rounded-sm">
             <UserIcon />
-            <a className="text-regular text-sm">Login with Email</a>
+            <Link href="./login/email" className="text-regular text-sm">
+              Login with Email
+            </Link>
           </button>
         </div>
         <div className="text-sm font-medium text-purple-200">

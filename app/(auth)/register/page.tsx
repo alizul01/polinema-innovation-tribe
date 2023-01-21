@@ -38,9 +38,12 @@ const RegisterPage: React.FC = React.memo(() => {
            </button>
            <button className={"flex w-full items-center justify-center space-x-2 text-white bg-slate-800 p-3 rounded-sm"}>
              <UserIcon />
-             <a className={"text-regular text-sm"} href="/email">
-               Register with Email
-             </a>
+             <Link className="text-regular text-sm" href={"./register/email"}>
+             Register with Email
+             </Link>
+             {/* <a className={} href="/email">
+               
+             </a> */}
            </button>
          </div>
         <div className="text-sm font-medium text-purple-200">
