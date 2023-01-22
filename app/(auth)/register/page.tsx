@@ -1,9 +1,9 @@
 /* eslint-disable react/display-name */
 import Link from "next/link";
 import React from "react";
-import GoogleIcon from "~/icons/ic_google-icon.svg";
-import PolitribeLogo from "~/icons/ic_politribe-logo.svg";
-import TermsSection from "~/parts/auth/Terms-Section";
+import GoogleIcon from "~/public/icon/ic_google-icon.svg";
+import PolitribeLogo from "~/public/icon/ic_politribe-logo.svg";
+import TermsSection from "~/parts/Authentication/Terms-Section";
 import ArrowLeft from "~icons/heroicons/arrow-left-circle-solid";
 import UserIcon from "~icons/heroicons/user-solid";
 

@@ -2,13 +2,13 @@
 
 import React from "react"
 import {useForm, SubmitHandler} from "react-hook-form";
-import {InputForm} from "~/components/InputForm";
-import inputData from "~/app/(web)/idea/create/data/inputData";
+import {InputForm} from "~/components/Form/InputForm";
+import inputData from "~/data/Idea/Create/inputData";
 import Box from "~icons/heroicons/inbox-stack-solid";
-import {TipsData} from "~/app/(web)/idea/create/data/TipsData";
-import TipsButton from "~/app/(web)/idea/create/components/TipsButton";
-import {QuotesData} from "~/app/(web)/idea/create/data/QuotesData";
-import BlockQuote from "~/app/(web)/idea/create/components/BlockQuote";
+import {TipsData} from "~/data/Idea/Create/TipsData";
+import TipsButton from "~/parts/Idea/Create/TipsButton";
+import {QuotesData} from "~/data/Idea/Create/QuotesData";
+import BlockQuote from "~/parts/Idea/Create/BlockQuote";
 
 type Inputs = {
   judul_ide?: string

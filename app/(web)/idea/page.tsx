@@ -1,9 +1,9 @@
-import { Header } from "./components/Header";
-import { IdeasList } from "./components/IdeasList";
-import { SearchInput } from "./components/SearchInput";
-import { TagList } from "./components/TagList";
-import { IDEAS } from "./fake-data/ideas";
-import { TAGS } from "./fake-data/tags";
+import { Header } from "../../../parts/Idea/Index/Header";
+import { IdeasList } from "../../../parts/Idea/Index/IdeasList";
+import { SearchInput } from "../../../parts/Idea/Index/SearchInput";
+import { TagList } from "../../../parts/Idea/Index/TagList";
+import { IDEAS } from "../../../data/Idea/Index/ideas";
+import { TAGS } from "../../../data/Idea/Index/tags";
 
 export default function IdeaPage() {
   return (
