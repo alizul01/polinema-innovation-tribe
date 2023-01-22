@@ -2,8 +2,8 @@ import React from "react";
 import type { InputType } from "~/types/Input/InputType";
 export function InputForm (props: InputType) {
   return (
-    <div className={"py-2"}>
-      <label htmlFor={props.id} className={"text-white font-bold block mb-2 text-sm font-medium text-white"}>
+    <div className={"py-3"}>
+      <label htmlFor={props.id} className={"text-white font-bold block mb-2 text-lg font-medium text-white"}>
         {props.label}
       </label>
       <div className={"relative"}>
@@ -14,7 +14,7 @@ export function InputForm (props: InputType) {
             </div>
           ) : ' '
         }
-        <input {...props.register} defaultValue={props.defaultValue} id={props.id} type={props.type} placeholder={props.placeholder} className={["border text-sm rounded-lg block w-full bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-purple-500 p-3 focus:border-purple-500", props.icon ? 'pl-10' : ' '].join(' ')} />
+        <input {...props.register} defaultValue={props.defaultValue} id={props.id} type={props.type} placeholder={props.placeholder} className={["border text-sm rounded-lg block w-full bg-slate-700 border-gray-600 placeholder-gray-300 text-white focus:ring-purple-500 p-4 focus:border-purple-500", props.icon ? 'pl-10' : ' '].join(' ')} autoComplete={"off"} />
       </div>
     </div>
   )
