@@ -1,5 +1,4 @@
 import React from "react";
-import type {CardType} from "~/types/components/Card/CardType";
 import type {CardComponent} from "~/types/components/Card/CardComponent";
 
 const Card: React.FC<CardComponent> = ({card}) => {

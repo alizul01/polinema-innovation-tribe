@@ -5,10 +5,6 @@ type buttonPropsData = {
   screen: "sm" | "md" | "lg"
 }
 
-type buttonSection = {
-  buttonProps: buttonPropsData;
-};
-
 const ButtonAuth: React.FC<buttonPropsData> = ({screen}) => {
   return (
     <div className={[screen == "md" ? "hidden space-x-2 md:flex text-white gap-1" : " "].join(" ")}>
