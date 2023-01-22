@@ -22,7 +22,7 @@ const myProfile: any = {
     aboutme: "Hai namaku adalah abcd! Salam kenal :)",
     email: "alizulfikar032@gmail.com",
     phone: "+628123456789"
-} // sementara aja
+}
 
 const ProfilePage: React.FC = () => {
   return (

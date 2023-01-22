@@ -1,7 +1,7 @@
 "use client"; // kalo di server kok sering banget kena masalah Hydration (aku test pake network slow 3G pasti bakal begitu)
 import type { PropsWithChildren } from "react";
-import Footer from "~/components/Footer";
-import { Navbar } from "~/components/Navbar";
+import Footer from "~/components/Footer/Footer";
+import { Navbar } from "~/components/Navigation/Navbar";
 import "~/styles/globals.css";
 import {useRouter} from "next/navigation";
 import {Suspense} from "react";

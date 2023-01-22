@@ -1,5 +1,5 @@
 // import next script
-import Seo from "~/components/Seo";
+import Seo from "~/components/SEO/Seo";
 
 type SeoDataManager = {
   title: string,

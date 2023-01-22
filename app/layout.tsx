@@ -1,6 +1,6 @@
 import type { PropsWithChildren } from "react";
-import SupabaseProvider from "~/components/SupabaseProvider";
-import SupabaseListener from "~/components/SupabaseListener";
+import SupabaseProvider from "~/components/Supabase/SupabaseProvider";
+import SupabaseListener from "~/components/Supabase/SupabaseListener";
 import { createServerClient } from "~/utils/supabase-server";
 
 // do not cache this layout

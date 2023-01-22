@@ -3,7 +3,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
-import TermsSection from "~/parts/auth/Terms-Section";
+import TermsSection from "~/parts/Authentication/Terms-Section";
 type Inputs = {
   firstName: string;
   lastName: string;
