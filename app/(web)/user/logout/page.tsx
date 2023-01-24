@@ -16,7 +16,7 @@ const ProfilePage: React.FC = () => {
           window.location.href = "/";
         })
     };
-  }, []);
+  }, [signout]);
 
   return (
     <div
