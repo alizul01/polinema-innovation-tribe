@@ -1,11 +1,14 @@
 import Link from "next/link";
-import React, { useReducer } from "react";
+import React, {Fragment, useReducer} from "react";
 import PolitribeLogo from "~/public/icon/ic_politribe-logo.svg";
-import { useSupabase } from "~/components/Supabase/SupabaseProvider";
-import { NavLink } from "./NavLink";
+import {useSupabase} from "~/components/Supabase/SupabaseProvider";
+import {NavLink} from "./NavLink";
+import UserIcon from "~icons/heroicons/user-solid";
+import {Menu, Transition} from '@headlessui/react'
+import UserNavigation from "~/data/Navigation/UserNavigation";
 
 export function Navbar() {
-  const { session } = useSupabase();
+  const {session} = useSupabase();
   const [isOpen, toggleNavbar] = useReducer((prev) => !prev, false);
 
   return (
@@ -16,7 +19,7 @@ export function Navbar() {
             <div className="flex items-center justify-between py-2 md:py-4 md:block">
               <Link href="/">
                 <h2 className="text-xl md:text-2xl font-bold text-white flex gap-2 items-center">
-                  <PolitribeLogo className="w-8 h-8" />
+                  <PolitribeLogo className="w-8 h-8"/>
                 </h2>
               </Link>
               <div className="md:hidden">
@@ -63,7 +66,8 @@ export function Navbar() {
                 isOpen ? "block" : "hidden"
               }`}
             >
-              <ul className="text-sm text-slate-500 font-bold flex space-y-3 md:space-y-0 items-center justify-center md:space-x-10 md:flex-row flex-col">
+              <ul
+                className="text-sm text-slate-500 font-bold flex space-y-3 md:space-y-0 items-center justify-center md:space-x-10 md:flex-row flex-col">
                 <li>
                   <NavLink href="/" activeClass="text-white">
                     Home
@@ -84,20 +88,25 @@ export function Navbar() {
                 {session === null ? (
                   <>
                     <Link href="/login">
-                      <div className="text-sm inline-block w-full px-4 py-2 text-center text-white bg-slate-700 rounded-md shadow hover:bg-gray-800">
+                      <div
+                        className="text-sm inline-block w-full px-4 py-2 text-center text-white bg-slate-700 rounded-md shadow hover:bg-gray-800">
                         Login
                       </div>
                     </Link>
                     <Link href="/register">
-                      <div className="text-sm inline-block w-full mt-2 px-4 py-2 text-white text-center bg-gradient-to-r from-purple-500 to-blue-500 rounded-md shadow hover:bg-gray-100">
+                      <div
+                        className="text-sm inline-block w-full mt-2 px-4 py-2 text-white text-center bg-gradient-to-r from-purple-500 to-blue-500 rounded-md shadow hover:bg-gray-100">
                         Register
                       </div>
                     </Link>
                   </>
                 ) : (
-                  <span className="text-sm inline-block w-full mt-2 px-4 py-2 text-slate-300 text-center bg-gradient-to-r">
-                    {session.user.email}
-                  </span>
+                  <div
+                    className="text-sm inline-block w-full mt-2 px-4 py-2 text-slate-300 text-center bg-gradient-to-r">
+                    <span className={"rounded-full w-16 h-16"}>
+                      {session.user.email}
+                    </span>
+                  </div>
                 )}
               </div>
             </div>
@@ -107,18 +116,50 @@ export function Navbar() {
             {session === null ? (
               <>
                 <Link href="/login">
-                  <div className="text-sm px-4 py-2 text-center text-white bg-slate-700 rounded-md shadow hover:bg-gray-800">
+                  <div
+                    className="text-sm px-4 py-2 text-center text-white bg-slate-700 rounded-md shadow hover:bg-gray-800">
                     Login
                   </div>
                 </Link>
                 <Link href="/register">
-                  <div className="text-sm px-4 py-2 text-white bg-gradient-to-r from-purple-500 to-blue-500 rounded-md shadow hover:bg-gray-100">
+                  <div
+                    className="text-sm px-4 py-2 text-white bg-gradient-to-r from-purple-500 to-blue-500 rounded-md shadow hover:bg-gray-100">
                     Register
                   </div>
                 </Link>
               </>
             ) : (
-              <span className="text-slate-300">{session.user.email}</span>
+              <Menu as={"div"} className={"relative"}>
+                <Menu.Button
+                  className={"w-10 h-10 flex justify-center items-center border-2 border-slate-600 rounded-full cursor-pointer"}>
+                  <UserIcon/>
+                </Menu.Button>
+                <Transition
+                  as={"div"}
+                  enter="transition ease-out duration-100"
+                  enterFrom="transform opacity-0 scale-95"
+                  enterTo="transform opacity-100 scale-100"
+                  leave="transition ease-in duration-75"
+                  leaveFrom="transform opacity-100 scale-100"
+                  leaveTo="transform opacity-0 scale-95"
+                >
+                  <Menu.Items
+                    className="absolute right-0 mt-2 w-56 rounded-md bg-slate-800 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none flex flex-col gap-2 p-3 z-40">
+                    {UserNavigation.map((item) => (
+                      <Menu.Item key={item.url} as={Fragment}>
+                        {({active}) => (
+                          <a href={item.url} className={[`${
+                            active ? "bg-slate-900" : "bg-slate-800"
+                          }`, 'p-2 rounded-md flex items-center justify-start gap-2'].join(" ")}>
+                            <div>{item.icon}</div>
+                            <div>{item.name}</div>
+                          </a>
+                        )}
+                      </Menu.Item>
+                    ))}
+                  </Menu.Items>
+                </Transition>
+              </Menu>
             )}
           </div>
         </div>

@@ -14,8 +14,10 @@ export default function RootLayout(props: PropsWithChildren<{}>) {
         <body className="flex justify-between flex-col h-full">
           <div className="flex-1">
             <Suspense fallback={<Loading />}>
-              <Navbar />
-              <main className="p-6 h-full">{props.children}</main>
+              <div className={"z-20"}>
+                <Navbar />
+              </div>
+              <main className="p-6 h-full z-10">{props.children}</main>
             </Suspense>
           </div>
           <Footer />
