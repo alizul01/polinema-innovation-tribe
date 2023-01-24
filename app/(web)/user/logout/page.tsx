@@ -11,7 +11,8 @@ const ProfilePage: React.FC = () => {
   useEffect(() => {
     return () => {
       signout()
-        .finally(() => {
+        .then(value => {
+          console.log(value)
           window.location.href = "/";
         })
     };
