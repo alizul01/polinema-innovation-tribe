@@ -6,7 +6,7 @@ import QuestionMarkCircleIcon from "~icons/heroicons/question-mark-circle-solid"
 const Hero: React.FC = () => {
   return (
     <section
-      className="w-full pt-1 md:pt-8 flex flex-col items-center justify-center relative"
+      className="w-full pt-1 md:pt-8 flex flex-col items-center justify-center relative -z-50"
       id="hero"
     >
       <div className="gradient-01 -z-[99] absolute h-[50%] w-[50%] inset-0 opacity-100 md:opacity-40 rounded-full" />

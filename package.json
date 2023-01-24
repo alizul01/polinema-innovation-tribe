@@ -11,6 +11,7 @@
     "format": "prettier --write ."
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.7",
     "@hookform/resolvers": "^2.9.10",
     "@next/font": "13.1.1",
     "@supabase/auth-helpers-nextjs": "^0.5.2",
