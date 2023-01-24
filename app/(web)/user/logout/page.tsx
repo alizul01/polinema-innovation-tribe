@@ -1,6 +1,7 @@
 "use client"
 import React, {useEffect} from "react";
 import {useSupabase} from "~/components/Supabase/SupabaseProvider";
+import {Simulate} from "react-dom/test-utils";
 const ProfilePage: React.FC = () => {
   const { supabase } = useSupabase();
 
@@ -8,15 +9,22 @@ const ProfilePage: React.FC = () => {
     const { error } = await supabase.auth.signOut()
   }
 
-  useEffect(() => {
-    return () => {
-      signout()
+  async function handleSignout () {
+    await signout()
         .then(value => {
           console.log(value)
           window.location.href = "/";
-        })
+        }).catch(reason => {
+          console.log("Error bestie")
+      })
     };
-  }, [signout]);
+
+  useEffect(() => {
+    return () => {
+      handleSignout()
+    };
+  }, []);
+
 
   return (
     <div
