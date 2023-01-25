@@ -8,7 +8,8 @@ export const IDEAS: Idea[] = [
     title: "A new way to recycle plastic",
     author: {
       name: "Jane Doe",
-      profileImage: "https://source.unsplash.com/random/?person,face",
+      username: "janedoe",
+      profileImage: "https://source.unsplash.com/1080x1080/?person,face",
       bio: "I am an environmental scientist and avid recycler, always looking for new ways to reduce waste and protect our planet.",
     },
     description:
@@ -30,7 +31,8 @@ export const IDEAS: Idea[] = [
         id: 1,
         author: {
           name: "John Smith",
-          profileImage: "https://source.unsplash.com/random/?profile,face",
+          username: "johnsmith13",
+          profileImage: "https://source.unsplash.com/1080x1080/?person,face",
           bio: "Passionate environmentalist dedicated to sustainability.",
         },
         text: "This is a great idea! I've been looking for ways to reduce plastic waste in my community, and this solution seems like it could really make a difference.",
@@ -43,7 +45,8 @@ export const IDEAS: Idea[] = [
     title: "An app for organizing neighborhood clean-ups",
     author: {
       name: "James Smith",
-      profileImage: "https://source.unsplash.com/random/?human,face",
+      username: "james_smith12",
+      profileImage: "https://source.unsplash.com/1080x1080/?human,face",
       bio: "I am a software developer and community organizer, passionate about using technology to bring people together for positive change.",
     },
     description:
@@ -73,7 +76,8 @@ export const IDEAS: Idea[] = [
     title: "A new way to recycle plastic",
     author: {
       name: "Jane Doe",
-      profileImage: "https://source.unsplash.com/random/?person,face",
+      username: "janedoe3",
+      profileImage: "https://source.unsplash.com/1080x1080/?person,face",
       bio: "I am an environmental scientist and avid recycler, always looking for new ways to reduce waste and protect our planet.",
     },
     description:
@@ -90,7 +94,8 @@ export const IDEAS: Idea[] = [
         id: 1,
         author: {
           name: "John Smith",
-          profileImage: "https://source.unsplash.com/random/?profile,face",
+          username: "johnsmith12",
+          profileImage: "https://source.unsplash.com/1080x1080/?profile,face",
           bio: "Passionate environmentalist dedicated to sustainability.",
         },
         text: "This is a great idea! I've been looking for ways to reduce plastic waste in my community, and this solution seems like it could really make a difference.",
@@ -99,7 +104,8 @@ export const IDEAS: Idea[] = [
         id: 2,
         author: {
           name: "Kate Williams",
-          profileImage: "https://source.unsplash.com/random/?person,profile",
+          username: "katewilliams",
+          profileImage: "https://source.unsplash.com/1080x1080/?person,profile",
           bio: "New to environmentalism, eager to learn and make a difference.",
         },
         text: "I'm interested in learning more about the enzyme you mentioned. Could you provide more details or sources for further information?",
@@ -108,7 +114,8 @@ export const IDEAS: Idea[] = [
         id: 3,
         author: {
           name: "John Smith",
-          profileImage: "https://source.unsplash.com/random/?profile,face",
+          username: "johnsmith",
+          profileImage: "https://source.unsplash.com/1080x1080/?profile,face",
           bio: "Passionate environmentalist dedicated to sustainability.",
         },
         text: "This is a great idea! I've been looking for ways to reduce plastic waste in my community, and this solution seems like it could really make a difference.",
@@ -117,7 +124,8 @@ export const IDEAS: Idea[] = [
         id: 4,
         author: {
           name: "Kate Williams",
-          profileImage: "https://source.unsplash.com/random/?person,profile",
+          username: "katewilliams",
+          profileImage: "https://source.unsplash.com/1080x1080/?person,profile",
           bio: "New to environmentalism, eager to learn and make a difference.",
         },
         text: "I'm interested in learning more about the enzyme you mentioned. Could you provide more details or sources for further information?",
@@ -130,7 +138,8 @@ export const IDEAS: Idea[] = [
     title: "An app for organizing neighborhood clean-ups",
     author: {
       name: "James Smith",
-      profileImage: "https://source.unsplash.com/random/?human,face",
+      username: "jamessmith12",
+      profileImage: "https://source.unsplash.com/1080x1080/?human,face",
       bio: "I am a software developer and community organizer, passionate about using technology to bring people together for positive change.",
     },
     description:
@@ -152,8 +161,9 @@ export const IDEAS: Idea[] = [
         id: 1,
         author: {
           name: "Emily Johnson",
+          username: "@emilyjohnson",
           profileImage:
-            "https://source.unsplash.com/random/?human,profile,face",
+            "https://source.unsplash.com/1080x1080/?human,profile,face",
           bio: "Committed to building strong communities through involvement and action.",
         },
         text: "This is a fantastic idea! I've been wanting to get more involved in community clean-ups, but it can be hard to find out about them or coordinate with others. An app like this would make it so much easier.",
@@ -162,7 +172,8 @@ export const IDEAS: Idea[] = [
         id: 2,
         author: {
           name: "Brian Thompson",
-          profileImage: "https://source.unsplash.com/random/?person,human,face",
+          username: "@brianthompson",
+          profileImage: "https://source.unsplash.com/1080x1080/?person,human,face",
           bio: "Software developer with a passion for using technology to better the community.",
         },
         text: "I agree, this could be a great way to bring people together and make a positive impact on the environment. I'd definitely be interested in helping to build this app.",
@@ -171,7 +182,8 @@ export const IDEAS: Idea[] = [
         id: 3,
         author: {
           name: "Brian Thompson",
-          profileImage: "https://source.unsplash.com/random/?person,human,face",
+          username: "@brianthompson",
+          profileImage: "https://source.unsplash.com/1080x1080/?person,human,face",
           bio: "Software developer with a passion for using technology to better the community.",
         },
         text: "I agree, this could be a great way to bring people together and make a positive impact on the environment. I'd definitely be interested in helping to build this app.",
