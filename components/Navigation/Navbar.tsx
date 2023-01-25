@@ -10,10 +10,9 @@ import UserNavigation from "~/data/Navigation/UserNavigation";
 export function Navbar() {
   const {session} = useSupabase();
   const [isOpen, toggleNavbar] = useReducer((prev) => !prev, false);
-
   return (
-    <div>
-      <nav className="w-full sticky shadow border-b border-slate-800">
+    <div className={"z-[999]"}>
+      <nav className="w-full sticky top-0 shadow border-b border-slate-800">
         <div className="md:grid md:grid-cols-3 md:items-center lg:max-w-[92rem] md:px-8 mx-auto px-4 justify-between">
           <div id="left-side">
             <div className="flex items-center justify-between py-2 md:py-4 md:block">
@@ -22,7 +21,7 @@ export function Navbar() {
                   <PolitribeLogo className="w-8 h-8"/>
                 </h2>
               </Link>
-              <div className="md:hidden">
+              <div className="md:hidden flex gap-2 ">
                 <button
                   className="p-2 text-gray-700 rounded-md outline-none "
                   onClick={toggleNavbar}
@@ -57,6 +56,40 @@ export function Navbar() {
                     </svg>
                   )}
                 </button>
+                {session !== null && <Menu as={"div"} className={"relative text-white"}>
+                  <Menu.Button
+                    className={"w-10 h-10 flex justify-center items-center border-2 border-slate-600 rounded-full cursor-pointer"}>
+                    <UserIcon/>
+                  </Menu.Button>
+                  <Transition
+                    as={"div"}
+                    enter="transition ease-out duration-100"
+                    enterFrom="transform opacity-0 scale-95"
+                    enterTo="transform opacity-100 scale-100"
+                    leave="transition ease-in duration-75"
+                    leaveFrom="transform opacity-100 scale-100"
+                    leaveTo="transform opacity-0 scale-95"
+                  >
+                    <Menu.Items
+                      className="absolute right-0 mt-2 w-56 rounded-md bg-slate-800 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none flex flex-col gap-2 p-3 z-40">
+                      <Menu.Item as="div" className={['bg-slate-800 p-2 rounded-md flex items-center justify-start gap-2'].join(" ")}>
+                        Halo, {session.user.user_metadata.full_name}
+                      </Menu.Item>
+                      {UserNavigation.map((item) => (
+                        <Menu.Item key={item.url} as={Fragment}>
+                          {({active}) => (
+                            <a href={item.url} className={[`${
+                              active ? "bg-slate-900" : "bg-slate-800"
+                            }`, 'p-2 rounded-md flex items-center justify-start gap-2'].join(" ")}>
+                              <div>{item.icon}</div>
+                              <div>{item.name}</div>
+                            </a>
+                          )}
+                        </Menu.Item>
+                      ))}
+                    </Menu.Items>
+                  </Transition>
+                </Menu>}
               </div>
             </div>
           </div>
@@ -85,7 +118,7 @@ export function Navbar() {
                 </li>
               </ul>
               <div className="mt-3 space-y-2 md:hidden sm:inline-block w-full">
-                {session === null ? (
+                {session === null && (
                   <>
                     <Link href="/login">
                       <div
@@ -100,13 +133,6 @@ export function Navbar() {
                       </div>
                     </Link>
                   </>
-                ) : (
-                  <div
-                    className="text-sm inline-block w-full mt-2 px-4 py-2 text-slate-300 text-center bg-gradient-to-r">
-                    <span className={"rounded-full w-16 h-16"}>
-                      {session.user.email}
-                    </span>
-                  </div>
                 )}
               </div>
             </div>
@@ -129,10 +155,10 @@ export function Navbar() {
                 </Link>
               </>
             ) : (
-              <Menu as={"div"} className={"relative"}>
+              <Menu as={"div"} className={"relative text-white z-50"}>
                 <Menu.Button
                   className={"w-10 h-10 flex justify-center items-center border-2 border-slate-600 rounded-full cursor-pointer"}>
-                  <UserIcon/>
+                  {session.user.app_metadata.provider === "google" ? <img className={"w-10 h-10 rounded-full"}  src={session.user.user_metadata.picture} /> : <UserIcon />}
                 </Menu.Button>
                 <Transition
                   as={"div"}
@@ -142,9 +168,13 @@ export function Navbar() {
                   leave="transition ease-in duration-75"
                   leaveFrom="transform opacity-100 scale-100"
                   leaveTo="transform opacity-0 scale-95"
+                  className={"z-50"}
                 >
                   <Menu.Items
-                    className="absolute right-0 mt-2 w-56 rounded-md bg-slate-800 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none flex flex-col gap-2 p-3 z-40">
+                    className="absolute right-0 mt-2 w-56 rounded-md bg-slate-800 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none flex flex-col gap-2 p-3 z-50">
+                    <Menu.Item as="div" className={['bg-slate-800 p-2 rounded-md flex items-center justify-start gap-2'].join(" ")}>
+                      Halo, {session.user.user_metadata.full_name}
+                    </Menu.Item>
                     {UserNavigation.map((item) => (
                       <Menu.Item key={item.url} as={Fragment}>
                         {({active}) => (

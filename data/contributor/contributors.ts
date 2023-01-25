@@ -5,7 +5,7 @@ export const contributors: Contributor[] = [
     name: 'Ali Zulfikar',
     avatarUrl: 'https://avatars.githubusercontent.com/u/62384197?v=4',
     githubUrl: 'https://github.com/alizul01',
-    jobDesc: 'Owner & Front-end'
+    jobDesc: 'Owner & Fullstack'
   },
   {
     name: 'Elianiva',

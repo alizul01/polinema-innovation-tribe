@@ -1,7 +1,9 @@
+import Seo from "~/components/SEO/Seo";
+
 export default function Head() {
   return (
     <>
-      <title>Competition | Politribe</title>
+      <Seo seoData={{ title: "Competition" }} />
     </>
   );
 }

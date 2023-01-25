@@ -7,12 +7,6 @@ import inputData from "~/data/Idea/Create/inputData";
 import Box from "~icons/heroicons/inbox-stack-solid";
 import {TipsData} from "~/data/Idea/Create/TipsData";
 import TipsButton from "~/parts/Idea/Create/TipsButton";
-import {QuotesData} from "~/data/Idea/Create/QuotesData";
-import BlockQuote from "~/parts/Idea/Create/BlockQuote";
-
-type Inputs = {
-  judul_ide?: string
-}
 
 const create: React.FC = () => {
   const {register, formState: {errors}, handleSubmit, watch} = useForm();

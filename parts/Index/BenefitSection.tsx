@@ -34,7 +34,7 @@ const BenefitSection: React.FC = () => {
       className="w-full py-12 gap-3 flex flex-col items-center justify-center"
       id="benefit"
     >
-      <div className="gradient-02 -z-40 absolute h-[40%] w-[40%] right-0 md:opacity-30 rounded-full" />
+      <div className="gradient-02 -z-40 absolute h-[30%] w-[30%] right-0 md:opacity-30 rounded-full" />
       <div className="max-w-4xl z-10 text-center flex flex-col gap-3">
         <div>
           <p className="font-semibold text-purple-400 text-sm md:text-lg">

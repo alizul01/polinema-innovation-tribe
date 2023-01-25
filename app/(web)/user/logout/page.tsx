@@ -2,29 +2,27 @@
 import React, {useEffect} from "react";
 import {useSupabase} from "~/components/Supabase/SupabaseProvider";
 import {Simulate} from "react-dom/test-utils";
+import {useRouter} from "next/navigation";
 const ProfilePage: React.FC = () => {
   const { supabase } = useSupabase();
+  const router = useRouter();
 
   async function signout() {
     const { error } = await supabase.auth.signOut()
   }
 
   async function handleSignout () {
-    await signout()
-        .then(value => {
-          console.log(value)
-          window.location.href = "/";
-        }).catch(reason => {
-          console.log("Error bestie")
-      })
-    };
+    await signout().then(value => {
+      console.log(value)
+      router.push("/")
+    })
+  }
 
   useEffect(() => {
     return () => {
-      handleSignout()
+      handleSignout().then(r => console.log(r))
     };
   }, []);
-
 
   return (
     <div

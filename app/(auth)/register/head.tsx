@@ -1,4 +1,3 @@
-// import next script
 import Seo from "~/components/SEO/Seo";
 
 type SeoDataManager = {
