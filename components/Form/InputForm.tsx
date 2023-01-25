@@ -1,6 +1,5 @@
 import React from "react";
 import type {InputType} from "~/types/Input/InputType";
-import {useForm} from "react-hook-form";
 export const InputForm: React.FC<InputType> = ({ type, placeholder, icon, label, id, register, defaultValue }) => {
   return (
     <div className={"py-3"}>
