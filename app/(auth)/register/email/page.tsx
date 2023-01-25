@@ -1,128 +1,72 @@
-"use client";
-import { zodResolver } from "@hookform/resolvers/zod";
-import Link from "next/link";
-import { useForm } from "react-hook-form";
-import * as z from "zod";
+"use client"
+
+import React, {useState} from "react"
+import {SubmitHandler, useForm} from "react-hook-form";
+import {InputFormTest} from "~/components/Form/InputForm";
+import AuthRegister from "~/data/Auth/AuthRegister";
+import {useSupabase} from "~/components/Supabase/SupabaseProvider";
 import TermsSection from "~/parts/Authentication/Terms-Section";
-type Inputs = {
-  firstName: string;
-  lastName: string;
-  email: string;
-  password: string;
-};
-const schema = z.object({
-  firstName: z.string().nonempty({ message: "First Name must be filled" }),
-  lastName: z.string().nonempty({ message: "Last Name must be filled" }),
-  email: z
-    .string()
-    .nonempty({ message: "Email must be filled" })
-    .email({ message: "Must be valid" }),
-  password: z.string().nonempty({ message: "Password Name must be filled" }),
-});
-const EmailPage = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<Inputs>({
-    resolver: zodResolver(schema),
-    shouldUseNativeValidation: true,
-  });
+import Link from "next/link";
+import ArrowLeft from "~icons/heroicons/arrow-left-circle-solid";
+import PolitribeLogo from "~/public/icon/ic_politribe-logo.svg";
+
+type registerType = {
+  email: string,
+  firstName: string,
+  lastName: string,
+  password: string,
+  confirmPassword: string
+}
+
+const Register: React.FC = () => {
+
+  const {supabase} = useSupabase();
+  const [getEmail, setEmail] = useState(" ");
+  const {register, formState: {errors}, handleSubmit, watch} = useForm();
+  const onSubmit: SubmitHandler<any> = async (item: registerType) => {
+    console.log(item.password)
+    let {data, error} = await supabase.auth.signUp({
+      email: item.email,
+      password: item.password
+    })
+  };
   return (
-    <section className={"h-screen flex justify-center items-center flex-col"}>
-      <h1 className="font-bold text-2xl md:text-5xl text-white mb-9 border-b-4 border-purple-500 pb-4">
-        Create New Account
-      </h1>
-      <form
-        onSubmit={handleSubmit((data) => console.log(data))}
-        className="mx-auto rounded shadow md:w-[60%] lg:w-[40%] p-8 w-full bg-gray-800 bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-20 border"
-      >
-        <div className="py-4 px-8">
-          <div className="flex mb-4">
-            <div className="w-1/2 mr-1">
-              <input
-                className=" px-4 py-2 rounded-full border border-slate-300/25 bg-slate-700/25 outline-none border-wthie w-full text-white placeholder:text-slate-500"
-                placeholder="first name"
-                type={"text"}
-                {...register("firstName")}
-              />
-              {errors.firstName && (
-                <p className="mt-1  text-red-500 font-bold">
-                  {errors.firstName.message?.toString()}
-                </p>
-              )}
-            </div>
-            <div className="w-1/2 ml-1">
-              <input
-                className=" px-4 py-2 rounded-full border border-slate-300/25 bg-slate-700/25 outline-none border-wthie w-full text-white placeholder:text-slate-500"
-                placeholder="last name"
-                type={"text"}
-                {...register("lastName")}
-              />
-              {errors.lastName && (
-                <p className="mt-1  text-red-500 font-bold">
-                  {errors.lastName.message?.toString()}
-                </p>
-              )}
-            </div>
-          </div>
-          <div className="mb-4">
-            <input
-              className=" px-4 py-2 rounded-full border border-slate-300/25 bg-slate-700/25 outline-none border-wthie w-full text-white placeholder:text-slate-500"
-              placeholder="Email"
-              type={"email"}
-              {...register("email")}
-            />
-            {errors.email && (
-              <p className="mt-1  text-red-500 font-bold">
-                {errors.email.message?.toString()}
-              </p>
-            )}
-          </div>
-          <div className="mb-4">
-            <input
-              className=" px-4 py-2 rounded-full border border-slate-300/25 bg-slate-700/25 outline-none border-wthie w-full text-white placeholder:text-slate-500"
-              placeholder="password"
-              type={"password"}
-              {...register("password")}
-            />
-            {errors.password && (
-              <p className="mt-1  text-red-500 font-bold">
-                {errors.password.message?.toString()}
-              </p>
-            )}
-          </div>
-          <button
-            className="rounded-lg bg-purple-500 text-white px-4 py-2.5 font-semibold flex gap-2 justify-center items-center hover:shadow-slate-50 hover:shadow-sm transition ease-in-out duration-600"
-            type="submit"
-          >
-            Sign Up
-          </button>
-          {/* <button
-            className="bg-blue-400 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full mb-4"
-            type="submit"
-          >
-            Sign Up
-          </button> */}
-          <div className="text-sm font-medium text-purple-200 text-center">
-            Already registered?{" "}
-            <Link href="/login" className="hover:underline text-purple-400">
-              Login
-            </Link>
-          </div>
-          <div className="text-sm font-medium text-purple-200 text-center">
-            <TermsSection title={"Register"} />
-          </div>
-
-          <div
-            className={
-              "gradient-02 -z-40 absolute h-[40%] w-[40%] right-0 md:opacity-20 rounded-full"
-            }
-          />
+    <div className={"w-full h-fit lg:h-screen py-4 px-2 flex flex-col gap-4 justify-center items-center"}>
+      <Link href={"/register"} className={"flex gap-1 items-center text-center text-blue-400"}>
+        <ArrowLeft/> Back
+      </Link>
+      <div className={"relative w-fit"}>
+        <div
+          className={"rounded-full absolute -inset-0.5 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg blur opacity-75"}/>
+        <div className={"p-3 rounded-full bg-gradient-to-r from-slate-800 to-gray-900 relative"}>
+          <PolitribeLogo className="w-8 h-8"/>
         </div>
+      </div>
+      <div className={"text-center"}>
+        <h4 className={"text-blue-300 font-regular text-md"}>
+          Register to
+        </h4>
+        <h1 className={"text-white text-xl font-bold"}>
+          Polinema Innovation Tribe
+        </h1>
+      </div>
+      <div className={"fixed text-white bg-red-900"}>
+      </div>
+      <form onSubmit={handleSubmit(onSubmit)} className={"mt-4 max-w-md flex flex-wrap"}>
+        {AuthRegister.map((data, index) => (
+          <InputFormTest key={index} label={data.label} placeholder={data.placeholder} id={data.id}
+                         type={data.type} register={register(`${data.id}`)} width={data?.width}/>
+        ))}
+        <input
+          className={"focus:outline-none flex w-full text-center justify-center items-center cursor-pointer text-white focus:ring-4 font-medium rounded-lg text-sm px-5 py-2.5 my-6 bg-purple-600 hover:bg-purple-700 transition-all duration-500 ease-in-out hover:scale-95 focus:ring-purple-900"}
+          type={"submit"}/>
+        <p className={"text-center w-full font-semibold text-white"}>
+          Already Registered? <Link href={"/login"} className={"text-purple-500 hover:text-purple-600"}>Login</Link>
+        </p>
+        <TermsSection title={"Register"}/>
       </form>
-    </section>
-  );
-};
+    </div>
+  )
+}
 
-export default EmailPage;
+export default Register

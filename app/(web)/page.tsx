@@ -9,12 +9,12 @@ import {contributors} from "~/data/contributor/contributors";
 
 export default function HomePage() {
   return (
-    <div>
+    <>
       <Hero />
       <BenefitSection />
       <Step />
       <Forms />
       <ContributorSection contributors={contributors} />
-    </div>
+    </>
   );
 }

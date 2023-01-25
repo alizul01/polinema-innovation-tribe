@@ -10,7 +10,7 @@ import ArrowRightCircleIcon from "~icons/heroicons/arrow-right-circle-solid";
 const Step = () => {
   return (
     <section className={"w-full py-2 md:py-16 flex flex-col items-center justify-center relative gap-2"}>
-      <div className="gradient-01 -z-[99] absolute h-[50%] w-[50%] top-0 left-0 opacity-40 md:opacity-20 rounded-full" />
+      <div className="gradient-01 -z-[99] absolute h-[20%] w-[20%] top-0 left-0 opacity-40 md:opacity-20 rounded-full" />
       <div className={"pb-24"}>
         <h1 className={"font-extrabold md:text-6xl p-3 text-transparent text-center text-3xl bg-clip-text bg-gradient-to-r from-purple-400 to-blue-500"}> This Could Be The Beginning of <span className={"md:text-7xl bg-gradient-to-r text-transparent text-center text-3xl bg-clip-text bg-gradient-to-r from-gray-50 to-slate-100"}>
           Something Big
@@ -188,7 +188,7 @@ const Step = () => {
           <Compete className={"w-full"} />
         </div>
       </div>
-      <div className="gradient-01 -z-[99] absolute h-[50%] w-[50%] bottom-0 right-0 opacity-30 md:opacity-20 rounded-full" />
+      <div className="gradient-01 -z-[99] absolute h-[20%] w-[20%] bottom-0 right-0 opacity-30 md:opacity-20 rounded-full" />
     </section>
   );
 }
