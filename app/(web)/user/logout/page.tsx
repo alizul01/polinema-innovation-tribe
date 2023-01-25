@@ -11,18 +11,9 @@ const ProfilePage: React.FC = () => {
     const { error } = await supabase.auth.signOut()
   }
 
-  async function handleSignout () {
-    await signout().then(value => {
-      console.log(value)
-      router.push("/")
-    })
-  }
-
   useEffect(() => {
-    return () => {
-      handleSignout().then(r => console.log(r))
-    };
-  }, []);
+    signout().then(() => router.push("/"))
+  }, [])
 
   return (
     <div
