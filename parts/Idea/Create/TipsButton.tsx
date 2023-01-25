@@ -9,7 +9,7 @@ const TipsButton: React.FC<TipsType> = ({name}) => {
   }
   return (
     <div>
-      <div className={["w-full text-white flex flex-row justify-between items-center p-2 rounded-md transition-all ease-in-out hover:scale-95 duration-300 cursor-pointer", checked ? "bg-green-500 hover:bg-green-600" : "bg-gray-500 hover:bg-gray-400"].join(" ")}>
+      <div className={["w-full text-white flex flex-row justify-between items-center p-2 rounded-md transition-all ease-in-out hover:scale-95 duration-300 cursor-pointer", checked ? "bg-green-500 hover:bg-green-600" : "bg-gray-700 hover:bg-gray-600"].join(" ")}>
         <h1 className={"font-bold"}>
           {name}
         </h1>

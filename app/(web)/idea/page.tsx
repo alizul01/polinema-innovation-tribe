@@ -1,9 +1,9 @@
-import { Header } from "../../../parts/Idea/Index/Header";
-import { IdeasList } from "../../../parts/Idea/Index/IdeasList";
-import { SearchInput } from "../../../parts/Idea/Index/SearchInput";
-import { TagList } from "../../../parts/Idea/Index/TagList";
-import { IDEAS } from "../../../data/Idea/Index/ideas";
-import { TAGS } from "../../../data/Idea/Index/tags";
+import { Header } from "~/parts/Idea/Index/Header";
+import { IdeasList } from "~/parts/Idea/Index/IdeasList";
+import { SearchInput } from "~/parts/Idea/Index/SearchInput";
+import { TagList } from "~/parts/Idea/Index/TagList";
+import { IDEAS } from "~/data/Idea/Index/ideas";
+import { TAGS } from "~/data/Idea/Index/tags";
 
 export default function IdeaPage() {
   return (

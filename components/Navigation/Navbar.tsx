@@ -72,7 +72,8 @@ export function Navbar() {
                   >
                     <Menu.Items
                       className="absolute right-0 mt-2 w-56 rounded-md bg-slate-800 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none flex flex-col gap-2 p-3 z-40">
-                      <Menu.Item as="div" className={['bg-slate-800 p-2 rounded-md flex items-center justify-start gap-2'].join(" ")}>
+                      <Menu.Item as="div"
+                                 className={['bg-slate-800 p-2 rounded-md flex items-center justify-start gap-2'].join(" ")}>
                         Halo, {session.user.user_metadata.full_name}
                       </Menu.Item>
                       {UserNavigation.map((item) => (
@@ -114,6 +115,11 @@ export function Navbar() {
                 <li>
                   <NavLink href="/idea" activeClass="text-white">
                     Idea Sandbox
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink href="/idea/create" activeClass="text-white">
+                    Create Idea (Temp)
                   </NavLink>
                 </li>
               </ul>
@@ -158,7 +164,8 @@ export function Navbar() {
               <Menu as={"div"} className={"relative text-white z-50"}>
                 <Menu.Button
                   className={"w-10 h-10 flex justify-center items-center border-2 border-slate-600 rounded-full cursor-pointer"}>
-                  {session.user.app_metadata.provider === "google" ? <img className={"w-10 h-10 rounded-full"}  src={session.user.user_metadata.picture} /> : <UserIcon />}
+                  {session.user.app_metadata.provider === "google" ?
+                    <img className={"w-10 h-10 rounded-full"} src={session.user.user_metadata.picture}/> : <UserIcon/>}
                 </Menu.Button>
                 <Transition
                   as={"div"}
@@ -172,7 +179,8 @@ export function Navbar() {
                 >
                   <Menu.Items
                     className="absolute right-0 mt-2 w-56 rounded-md bg-slate-800 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none flex flex-col gap-2 p-3 z-50">
-                    <Menu.Item as="div" className={['bg-slate-800 p-2 rounded-md flex items-center justify-start gap-2'].join(" ")}>
+                    <Menu.Item as="div"
+                               className={['bg-slate-800 p-2 rounded-md flex items-center justify-start gap-2'].join(" ")}>
                       Halo, {session.user.user_metadata.full_name}
                     </Menu.Item>
                     {UserNavigation.map((item) => (
