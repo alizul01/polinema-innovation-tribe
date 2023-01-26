@@ -1,29 +1,30 @@
-import type {UserNavigationType} from "~/types/Navigation/UserNavigationType";
-import UserCircleIcon from "~icons/heroicons/user-circle-solid";
-import Gear from "~icons/heroicons/cog-6-tooth-solid";
-import LightBulb from "~icons/heroicons/light-bulb-solid";
-import ArrowLeft from "~icons/heroicons/arrow-left-on-rectangle-solid";
+import type { UserNavigationType } from "~/types/Navigation/UserNavigationType";
+import { HiUserCircle as UserCircleIcon } from "react-icons/hi2";
+import { HiCog6Tooth as Gear } from "react-icons/hi2";
+import { HiLightBulb as LightBulb } from "react-icons/hi2";
+import { HiArrowLeftOnRectangle as ArrowLeft } from "react-icons/hi2";
+
 const UserNavigation: UserNavigationType[] = [
   {
     name: "My Idea",
     url: "/user/idea",
-    icon: <LightBulb />
+    icon: <LightBulb />,
   },
   {
     name: "My Profile",
     url: "/user/profile",
-    icon: <UserCircleIcon />
+    icon: <UserCircleIcon />,
   },
   {
     name: "Settings",
     url: "/user/setting",
-    icon: <Gear />
+    icon: <Gear />,
   },
   {
     name: "Log Out",
     url: "/user/logout",
-    icon: <ArrowLeft />
-  }
+    icon: <ArrowLeft />,
+  },
 ];
 
 export default UserNavigation;

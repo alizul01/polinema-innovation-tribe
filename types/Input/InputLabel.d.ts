@@ -1,3 +1,3 @@
 export type InputLabel = {
-  name: string
-}
+  name: string;
+};

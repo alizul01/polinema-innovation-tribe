@@ -178,7 +178,8 @@ export const IDEAS: Idea[] = [
         author: {
           name: "Brian Thompson",
           username: "@brianthompson",
-          profileImage: "https://source.unsplash.com/1080x1080/?person,human,face",
+          profileImage:
+            "https://source.unsplash.com/1080x1080/?person,human,face",
           bio: "Software developer with a passion for using technology to better the community.",
         },
         text: "I agree, this could be a great way to bring people together and make a positive impact on the environment. I'd definitely be interested in helping to build this app.",
@@ -188,7 +189,8 @@ export const IDEAS: Idea[] = [
         author: {
           name: "Brian Thompson",
           username: "@brianthompson",
-          profileImage: "https://source.unsplash.com/1080x1080/?person,human,face",
+          profileImage:
+            "https://source.unsplash.com/1080x1080/?person,human,face",
           bio: "Software developer with a passion for using technology to better the community.",
         },
         text: "I agree, this could be a great way to bring people together and make a positive impact on the environment. I'd definitely be interested in helping to build this app.",

@@ -49,17 +49,17 @@
 }
 
 ::-webkit-scrollbar {
-  @apply bg-elblack w-3.5
+  @apply bg-elblack w-3.5;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-slate-800 rounded-full
+  @apply bg-slate-800 rounded-full;
 }
 
 ::-webkit-scrollbar-thumb:active {
-  @apply bg-slate-700
+  @apply bg-slate-700;
 }
 
 ::selection {
-  @apply bg-purple-600 text-white
+  @apply bg-purple-600 text-white;
 }

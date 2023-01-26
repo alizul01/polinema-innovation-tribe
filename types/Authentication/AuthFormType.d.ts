@@ -1,4 +1,3 @@
 export type AuthFormType = {
-  name: "Register" | "Login",
-
-}
+  name: "Register" | "Login";
+};

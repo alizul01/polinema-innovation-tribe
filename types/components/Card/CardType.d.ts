@@ -1,7 +1,7 @@
-import {ReactElement} from "react";
+import { ReactElement } from "react";
 
 export type CardType = {
-  icon: ReactElement,
-  title: string,
-  desc: string,
-}
+  icon: ReactElement;
+  title: string;
+  desc: string;
+};

@@ -1,19 +1,19 @@
-"use client"
-import React, {useEffect} from "react";
-import {useSupabase} from "~/components/Supabase/SupabaseProvider";
-import {Simulate} from "react-dom/test-utils";
-import {useRouter} from "next/navigation";
+"use client";
+import React, { useEffect } from "react";
+import { useSupabase } from "~/components/Supabase/SupabaseProvider";
+import { Simulate } from "react-dom/test-utils";
+import { useRouter } from "next/navigation";
 const ProfilePage: React.FC = () => {
   const { supabase } = useSupabase();
   const router = useRouter();
 
   async function signout() {
-    const { error } = await supabase.auth.signOut()
+    const { error } = await supabase.auth.signOut();
   }
 
   useEffect(() => {
-    signout().then(() => router.push("/"))
-  }, [])
+    signout().then(() => router.push("/"));
+  }, []);
 
   return (
     <div
@@ -40,7 +40,7 @@ const ProfilePage: React.FC = () => {
         <span className="sr-only text-white">Logging Out...</span>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ProfilePage
+export default ProfilePage;

@@ -6,8 +6,8 @@ import PolitribeLogo from "~/public/icon/ic_politribe-logo.svg";
 import TermsSection from "~/parts/Authentication/Terms-Section";
 import type { AuthFormType } from "~/types/Authentication/AuthFormType";
 import { useSupabase } from "~/components/Supabase/SupabaseProvider";
-import ArrowLeft from "~icons/heroicons/arrow-left-circle-solid";
-import UserIcon from "~icons/heroicons/user-solid";
+import { HiArrowLeftCircle as ArrowLeft } from "react-icons/hi2";
+import {HiUser as UserIcon} from "react-icons/hi2"
 
 const AuthForm: React.FC<AuthFormType> = ({ name }) => {
   const { supabase } = useSupabase();

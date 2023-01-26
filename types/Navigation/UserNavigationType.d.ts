@@ -1,7 +1,7 @@
-import type {ReactElement} from "react";
+import type { ReactElement } from "react";
 
 export type UserNavigationType = {
-  name: string,
-  url: string,
-  icon: ReactElement
-}
+  name: string;
+  url: string;
+  icon: ReactElement;
+};
