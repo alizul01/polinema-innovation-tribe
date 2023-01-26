@@ -1,3 +1,3 @@
 export type TermsType = {
-  title: string
-}
+  title: string;
+};

@@ -1,1 +1,6 @@
 dist
+node_modules
+.vercel
+.next
+.github
+pnpm-lock.yaml

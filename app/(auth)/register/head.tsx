@@ -1,16 +1,16 @@
 import Seo from "~/components/SEO/Seo";
 
 type SeoDataManager = {
-  title: string,
-}
+  title: string;
+};
 
 const seoData: SeoDataManager = {
-  title: "Register New Account"
-}
+  title: "Register New Account",
+};
 export default function Head() {
   return (
     <>
-      <Seo seoData={seoData}  />
+      <Seo seoData={seoData} />
     </>
   );
 }

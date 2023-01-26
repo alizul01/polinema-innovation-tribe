@@ -1,8 +1,8 @@
 import React from "react";
 import Card from "~/components/Card/Card";
-import UserGroup from "~icons/heroicons/user-group-solid";
-import LightBulb from "~icons/heroicons/light-bulb-solid";
-import Book from "~icons/heroicons/book-open-solid";
+import { HiUserGroup as UserGroup } from "react-icons/hi2";
+import { HiLightBulb as LightBulb } from "react-icons/hi2";
+import { HiBookOpen as Book } from "react-icons/hi2";
 
 type cardType = {
   icon: React.ReactElement;

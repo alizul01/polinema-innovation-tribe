@@ -29,12 +29,12 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-hook-form": "^7.42.1",
+    "react-icons": "^4.7.1",
     "tinycolor2": "^1.5.2",
     "typescript": "4.9.4",
     "zod": "^3.20.2"
   },
   "devDependencies": {
-    "@iconify-json/heroicons": "^1.1.6",
     "@svgr/webpack": "^6.5.1",
     "@tailwindcss/line-clamp": "^0.4.2",
     "@types/tinycolor2": "^1.4.3",
@@ -42,7 +42,6 @@
     "eslint-config-kentcdodds": "^20.4.0",
     "postcss": "^8.4.20",
     "prettier": "^2.8.1",
-    "tailwindcss": "^3.2.4",
-    "unplugin-icons": "^0.14.15"
+    "tailwindcss": "^3.2.4"
   }
 }

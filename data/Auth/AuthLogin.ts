@@ -1,4 +1,4 @@
-import type {InputType} from "~/types/Input/InputType";
+import type { InputType } from "~/types/Input/InputType";
 
 const AuthLogin: InputType[] = [
   {
@@ -8,14 +8,14 @@ const AuthLogin: InputType[] = [
     placeholder: "email@example.com",
     registerOption: {
       required: true,
-    }
+    },
   },
   {
     id: "password",
     type: "password",
     label: "Password",
     placeholder: "Password",
-  }
+  },
 ];
 
-export default AuthLogin
+export default AuthLogin;

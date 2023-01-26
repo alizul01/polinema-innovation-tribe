@@ -1,11 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import {formatDistanceToNow} from "date-fns";
+import { formatDistanceToNow } from "date-fns";
 import tinycolor from "tinycolor2";
-import type {Idea} from "~/types/Idea/Index/Idea";
-import CommentIcon from "~icons/heroicons/chat-bubble-oval-left";
-import CalendarIcon from "~icons/heroicons/calendar";
+import type { Idea } from "~/types/Idea/Index/Idea";
+import { HiChatBubbleOvalLeft as CommentIcon } from "react-icons/hi2";
+import { HiCalendar as CalendarIcon } from "react-icons/hi2";
 
 export type IdeaCardProps = Idea & {};
 
@@ -26,14 +26,14 @@ export function IdeaCardBackup(props: IdeaCardProps) {
             border-radius: 2rem;
           }
         `}</style>
-        <div className="absolute w-[1px] h-full left-1/2 -translate-x-1/2 bg-slate-300/20 profile-line"/>
+        <div className="absolute w-[1px] h-full left-1/2 -translate-x-1/2 bg-slate-300/20 profile-line" />
         <div className="relative w-12 h-12 rounded-full overflow-hidden">
           <Image
             src={props.author.profileImage}
             alt={props.author.name}
             width={48}
             height={48}
-            style={{objectFit: "cover"}}
+            style={{ objectFit: "cover" }}
           />
         </div>
       </div>
@@ -42,16 +42,16 @@ export function IdeaCardBackup(props: IdeaCardProps) {
           {props.title}
         </span>
         <span className="text-slate-400 flex items-center gap-1 mt-1 text-sm">
-          <CalendarIcon/>
-          {formatDistanceToNow(props.createdAt, {addSuffix: true})}
+          <CalendarIcon />
+          {formatDistanceToNow(props.createdAt, { addSuffix: true })}
         </span>
         <p className="line-clamp-2 text-slate-400 text-lg mt-3 w-full">
           {props.description}
         </p>
-        <hr className="w-full h-[1px] bg-gradient-to-r from-slate-300/20 to-slate-300/0 border-none my-4 -ml-12"/>
+        <hr className="w-full h-[1px] bg-gradient-to-r from-slate-300/20 to-slate-300/0 border-none my-4 -ml-12" />
         <div className="flex items-center justify-between flex-col md:flex-row">
           <div className="text-slate-400 flex items-center gap-2">
-            <CommentIcon/>
+            <CommentIcon />
             {props.comments.length > 0 ? (
               <>
                 {`${props.comments.length} ${
@@ -86,7 +86,10 @@ export function IdeaCardBackup(props: IdeaCardProps) {
 export function IdeaCard(props: IdeaCardProps) {
   return (
     <div
-      className={"p-5 border border-slate-700 bg-slate-800/40 rounded-md flex gap-3 cursor-pointer hover:ring-2 hover:ring-purple-600 hover:scale-105 transition-all duration-500 ease-in-out flex-col"}>
+      className={
+        "p-5 border border-slate-700 bg-slate-800/40 rounded-md flex gap-3 cursor-pointer hover:ring-2 hover:ring-purple-600 hover:scale-105 transition-all duration-500 ease-in-out flex-col"
+      }
+    >
       <div>
         <div className="flex flex-row gap-2 items-center">
           <div className={"w-12 h-12 rounded-full overflow-hidden"}>
@@ -95,7 +98,7 @@ export function IdeaCard(props: IdeaCardProps) {
               alt={props.author.name}
               width={48}
               height={48}
-              style={{objectFit: "cover"}}
+              style={{ objectFit: "cover" }}
             />
           </div>
           <div>
@@ -109,20 +112,22 @@ export function IdeaCard(props: IdeaCardProps) {
         </div>
       </div>
       <div className={"flex flex-col gap-2 flex-1"}>
-        <h1 className={"text-white font-bold text-lg "}>
-          {props.title}
-        </h1>
+        <h1 className={"text-white font-bold text-lg "}>{props.title}</h1>
         <p className={"line-clamp-2 text-slate-400 text-base w-full"}>
           {props.description}
         </p>
         <div className={"flex justify-between md:flex-row flex-col mt-2 gap-2"}>
-          <div className={"flex flex-row gap-2 items-center justify-start md:justify-center"}>
-              <span className="text-slate-400 flex items-center gap-1 text-sm">
-                <CalendarIcon/>
-                {formatDistanceToNow(props.createdAt, {addSuffix: true})}
-              </span>
+          <div
+            className={
+              "flex flex-row gap-2 items-center justify-start md:justify-center"
+            }
+          >
+            <span className="text-slate-400 flex items-center gap-1 text-sm">
+              <CalendarIcon />
+              {formatDistanceToNow(props.createdAt, { addSuffix: true })}
+            </span>
             <div className="text-slate-400 flex items-center gap-2">
-              <CommentIcon/>
+              <CommentIcon />
               {props.comments.length > 0 ? (
                 <>
                   {`${props.comments.length} ${

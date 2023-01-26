@@ -3,16 +3,16 @@ import Script from "next/script";
 import Seo from "~/components/SEO/Seo";
 
 type SeoDataManager = {
-  title: string,
-}
+  title: string;
+};
 
 const seoData: SeoDataManager = {
-  title: "My Idea"
-}
+  title: "My Idea",
+};
 export default function Head() {
   return (
     <>
-      <Seo seoData={seoData}  />
+      <Seo seoData={seoData} />
     </>
   );
 }

@@ -1,4 +1,4 @@
-import SearchIcon from "~icons/heroicons/magnifying-glass";
+import { HiMagnifyingGlass as SearchIcon } from "react-icons/hi2";
 
 export function SearchInput() {
   return (

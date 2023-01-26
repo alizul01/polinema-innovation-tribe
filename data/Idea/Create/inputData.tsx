@@ -1,78 +1,78 @@
-import type {InputType} from "~/types/Input/InputType";
-import LightBulb from "~icons/heroicons/light-bulb-solid";
-import HiShieldExclamation from "~icons/heroicons/shield-exclamation-solid";
-import HiBeaker from "~icons/heroicons/beaker-solid";
-import LockClosed from "~icons/heroicons/lock-closed-solid";
-import Phone from "~icons/heroicons/phone-solid";
-import Envelope from "~icons/heroicons/envelope-solid";
+import type { InputType } from "~/types/Input/InputType";
+import { HiLightBulb as LightBulb } from "react-icons/hi2";
+import { HiShieldExclamation } from "react-icons/hi2";
+import { HiBeaker } from "react-icons/hi2";
+import { HiLockClosed as LockClosed } from "react-icons/hi2";
+import { HiPhone as Phone } from "react-icons/hi2";
+import { HiEnvelope as Envelope } from "react-icons/hi2";
 
 const inputData: InputType[] = [
   {
-    id: 'judul_ide',
-    label: 'Judul Ide',
+    id: "judul_ide",
+    label: "Judul Ide",
     icon: <LightBulb />,
-    placeholder: 'Judul Ide Kamu...',
-    type: "text"
+    placeholder: "Judul Ide Kamu...",
+    type: "text",
   },
   {
-    id: 'masalah_ide',
-    label: 'Masalah',
+    id: "masalah_ide",
+    label: "Masalah",
     icon: <HiShieldExclamation />,
-    placeholder: 'Masalah Yang Kamu Angkat...',
-    type: "text"
+    placeholder: "Masalah Yang Kamu Angkat...",
+    type: "text",
   },
   {
-    id: 'masalah_ide_2',
+    id: "masalah_ide_2",
     icon: <HiShieldExclamation />,
-    placeholder: 'Masalah Yang Kamu Angkat...',
-    type: "text"
+    placeholder: "Masalah Yang Kamu Angkat...",
+    type: "text",
   },
   {
-    id: 'masalah_ide_3',
+    id: "masalah_ide_3",
     icon: <HiShieldExclamation />,
-    placeholder: 'Masalah Yang Kamu Angkat...',
-    type: "text"
+    placeholder: "Masalah Yang Kamu Angkat...",
+    type: "text",
   },
   {
-    id: 'solusi_ide',
+    id: "solusi_ide",
     icon: <HiBeaker />,
-    label: 'Solusi',
-    placeholder: 'Solusi Yang Kamu Tawarkan...',
-    type: "text"
+    label: "Solusi",
+    placeholder: "Solusi Yang Kamu Tawarkan...",
+    type: "text",
   },
   {
-    id: 'solusi_ide2',
+    id: "solusi_ide2",
     icon: <HiBeaker />,
-    placeholder: 'Solusi Yang Kamu Tawarkan...',
-    type: "text"
+    placeholder: "Solusi Yang Kamu Tawarkan...",
+    type: "text",
   },
   {
-    id: 'solusi_ide3',
+    id: "solusi_ide3",
     icon: <HiBeaker />,
-    placeholder: 'Solusi Yang Kamu Tawarkan...',
-    type: "text"
+    placeholder: "Solusi Yang Kamu Tawarkan...",
+    type: "text",
   },
   {
-    id: 'deadline',
-    label: 'Deadline',
+    id: "deadline",
+    label: "Deadline",
     icon: <LockClosed />,
-    placeholder: 'Deadline...',
-    type: "date"
+    placeholder: "Deadline...",
+    type: "date",
   },
   {
-    id: 'whatsapp',
+    id: "whatsapp",
     icon: <Phone />,
-    label: 'WhatsApp',
-    placeholder: '+628123456789',
-    type: "text"
+    label: "WhatsApp",
+    placeholder: "+628123456789",
+    type: "text",
   },
   {
-    id: 'email',
+    id: "email",
     icon: <Envelope />,
-    label: 'Email',
-    placeholder: 'example@gmail.com',
-    type: "email"
+    label: "Email",
+    placeholder: "example@gmail.com",
+    type: "email",
   },
 ];
 
-export default inputData
+export default inputData;

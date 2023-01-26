@@ -1,7 +1,7 @@
 import React from "react";
 import PolitribeLogo from "~/public/icon/ic_politribe-logo.svg";
-import ArrowRightCircleIcon from "~icons/heroicons/arrow-right-circle-solid";
-import QuestionMarkCircleIcon from "~icons/heroicons/question-mark-circle-solid";
+import { HiArrowRightCircle as ArrowRightCircleIcon } from "react-icons/hi2";
+import { HiQuestionMarkCircle as QuestionMarkCircleIcon } from "react-icons/hi2";
 
 const Hero: React.FC = () => {
   return (

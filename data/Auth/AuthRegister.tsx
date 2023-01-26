@@ -1,4 +1,4 @@
-import type {InputType} from "~/types/Input/InputType";
+import type { InputType } from "~/types/Input/InputType";
 
 const AuthRegister: InputType[] = [
   {
@@ -6,14 +6,14 @@ const AuthRegister: InputType[] = [
     type: "text",
     label: "First Name",
     placeholder: "First Name",
-    width: "1/2"
+    width: "1/2",
   },
   {
     id: "lastName",
     type: "text",
     label: "Last Name",
     placeholder: "Last Name",
-    width: "1/2"
+    width: "1/2",
   },
   {
     id: "email",
@@ -22,7 +22,7 @@ const AuthRegister: InputType[] = [
     placeholder: "email@example.com",
     registerOption: {
       required: true,
-    }
+    },
   },
   {
     id: "password",
@@ -35,7 +35,7 @@ const AuthRegister: InputType[] = [
     type: "password",
     label: "Confirm Password",
     placeholder: "Confirm Password",
-  }
+  },
 ];
 
-export default AuthRegister
+export default AuthRegister;
