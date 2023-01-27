@@ -15,6 +15,7 @@ const nextConfig = {
       "media.licdn.com",
       "unsplash.com",
       "source.unsplash.com",
+      "arcetros.vercel.app"
     ],
   },
   experimental: {

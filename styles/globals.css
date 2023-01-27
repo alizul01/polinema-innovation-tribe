@@ -4,6 +4,19 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
 @layer base {
   .active {
     @apply font-bold text-white;
@@ -26,11 +39,21 @@
   }
 
   .btn {
-    @apply rounded-lg px-4 py-2 justify-center items-center w-fit cursor-pointer;
+    @apply rounded-lg px-4 py-2 justify-center items-center w-fit cursor-pointer flex gap-2;
   }
 
   .btn-primary {
-    @apply hover:from-purple-600 hover:to-blue-600 bg-gradient-to-r from-purple-500 to-blue-500 text-white font-semibold hover:shadow-purple-700 hover:shadow-sm transition-all ease-in-out duration-500 focus:ring-purple-900 focus:ring-4;
+    @apply hover:from-purple-600 hover:to-blue-600 bg-gradient-to-r from-purple-500 to-blue-500 text-white font-semibold hover:shadow-purple-700 hover:shadow-md transition-all ease-in-out duration-500 focus:ring-purple-900 focus:ring-4;
+  }
+
+  .btn-secondary {
+    @apply hover:from-slate-600 hover:to-slate-700 bg-gradient-to-r from-slate-500 to-slate-600 text-white font-semibold hover:shadow-blue-700 hover:shadow-md transition-all ease-in-out duration-500 focus:ring-blue-900 focus:ring-4;
+  }
+}
+
+@layer utilities {
+  .float-animation {
+    animation: float 5s ease-in-out infinite;
   }
 }
 
