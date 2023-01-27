@@ -44,11 +44,11 @@ const BenefitSection: React.FC = () => {
             New Experience For You!
           </h1>
         </div>
-        <p className="font-light text-sm text-slate-100">
+        <p className="font-normal text-sm text-slate-200">
           There is a lot of new experience and features that you will get!
         </p>
       </div>
-      <div className="flex flex-col gap-6 md:flex-row z-30">
+      <div className="flex flex-col gap-6 md:flex-row z-30 mt-8">
         {benefits.map((benefit) => (
           <Card card={benefit} key={benefit.title} />
         ))}
