@@ -89,7 +89,10 @@ export function IdeaCard(props: IdeaCardProps) {
     <>
       <Link
         href={`/idea/${props.id}`}
-        className={"p-5 border border-slate-700 bg-slate-800/40 rounded-md flex gap-3 cursor-pointer hover:ring-2 hover:ring-purple-600 hover:scale-105 transition-all duration-500 ease-in-out flex-col"}>
+        className={
+          "p-5 border border-slate-700 bg-slate-800/40 rounded-md flex gap-3 cursor-pointer hover:ring-2 hover:ring-purple-600 hover:scale-105 transition-all duration-500 ease-in-out flex-col"
+        }
+      >
         <div>
           <div className="flex flex-row gap-2 items-center">
             <div className={"w-12 h-12 rounded-full overflow-hidden"}>
@@ -98,7 +101,7 @@ export function IdeaCard(props: IdeaCardProps) {
                 alt={props.author.name}
                 width={48}
                 height={48}
-                style={{objectFit: "cover"}}
+                style={{ objectFit: "cover" }}
               />
             </div>
             <div>
@@ -112,20 +115,24 @@ export function IdeaCard(props: IdeaCardProps) {
           </div>
         </div>
         <div className={"flex flex-col gap-2 flex-1"}>
-          <h1 className={"text-white font-bold text-lg "}>
-            {props.title}
-          </h1>
+          <h1 className={"text-white font-bold text-lg "}>{props.title}</h1>
           <p className={"line-clamp-2 text-slate-400 text-base w-full"}>
             {props.description}
           </p>
-          <div className={"flex justify-between md:flex-row flex-col mt-2 gap-2"}>
-            <div className={"flex flex-row gap-2 items-center justify-start md:justify-center"}>
+          <div
+            className={"flex justify-between md:flex-row flex-col mt-2 gap-2"}
+          >
+            <div
+              className={
+                "flex flex-row gap-2 items-center justify-start md:justify-center"
+              }
+            >
               <span className="text-slate-400 flex items-center gap-1 text-sm">
-                <CalendarIcon/>
-                {formatDistanceToNow(props.createdAt, {addSuffix: true})}
+                <CalendarIcon />
+                {formatDistanceToNow(props.createdAt, { addSuffix: true })}
               </span>
               <div className="text-slate-400 flex items-center gap-2">
-                <CommentIcon/>
+                <CommentIcon />
                 {props.comments.length > 0 ? (
                   <>
                     {`${props.comments.length} ${
@@ -148,8 +155,8 @@ export function IdeaCard(props: IdeaCardProps) {
                       .toPercentageRgbString(),
                   }}
                 >
-                #{tag.slug}
-              </span>
+                  #{tag.slug}
+                </span>
               ))}
             </div>
           </div>

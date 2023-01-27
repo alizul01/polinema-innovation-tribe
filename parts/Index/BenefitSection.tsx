@@ -1,5 +1,5 @@
 import React from "react";
-import Card from "~/components/Card/Card";
+import Card from "~/components/Card";
 import { HiUserGroup as UserGroup } from "react-icons/hi2";
 import { HiLightBulb as LightBulb } from "react-icons/hi2";
 import { HiBookOpen as Book } from "react-icons/hi2";

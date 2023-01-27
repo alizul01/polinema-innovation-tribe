@@ -1,4 +1,4 @@
-import Seo from "~/components/SEO/Seo";
+import Seo from "~/components/Seo";
 
 type SeoDataManager = {
   title: string;
