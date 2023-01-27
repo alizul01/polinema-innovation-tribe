@@ -1,5 +1,4 @@
 /* eslint-disable react/display-name */
-import Link from "next/link";
 import React from "react";
 import AuthForm from "~/parts/Authentication/AuthForm";
 

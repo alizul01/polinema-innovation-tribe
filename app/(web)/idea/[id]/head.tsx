@@ -1,18 +1,18 @@
-import Seo from "~/components/SEO/Seo";
+import Seo from "~/components/Seo";
 import React from "react";
 
 type ideaMeta = {
   params: {
-    id: string
-  }
-}
+    id: string;
+  };
+};
 
-const head: React.FC<ideaMeta> = ({params}) => {
+const head: React.FC<ideaMeta> = ({ params }) => {
   return (
     <>
-      <Seo seoData={{title: params.id}}/>
+      <Seo seoData={{ title: params.id }} />
     </>
   );
-}
+};
 
-export default head
+export default head;

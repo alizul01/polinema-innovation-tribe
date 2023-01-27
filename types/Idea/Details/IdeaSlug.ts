@@ -1,5 +1,5 @@
 export type ideaSlug = {
   params: {
-    id: number
-  }
-}
+    id: number;
+  };
+};

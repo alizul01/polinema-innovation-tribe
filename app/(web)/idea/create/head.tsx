@@ -1,4 +1,4 @@
-import Seo from "~/components/SEO/Seo";
+import Seo from "~/components/Seo";
 
 export default function Head() {
   return (

@@ -20,6 +20,20 @@
   }
 }
 
+@layer components {
+  .sidebar {
+    @apply w-[100%] p-4 border-l-0 lg:w-[20%] h-full border-t border-t-slate-600 md:border-t-0 md:border-l border-l-slate-600 flex flex-col gap-4 rounded-sm;
+  }
+
+  .btn {
+    @apply rounded-lg px-4 py-2 justify-center items-center w-fit cursor-pointer;
+  }
+
+  .btn-primary {
+    @apply hover:from-purple-600 hover:to-blue-600 bg-gradient-to-r from-purple-500 to-blue-500 text-white font-semibold hover:shadow-purple-700 hover:shadow-sm transition-all ease-in-out duration-500 focus:ring-purple-900 focus:ring-4;
+  }
+}
+
 .gradient-01 {
   background-image: linear-gradient(
     270deg,
