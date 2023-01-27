@@ -8,19 +8,19 @@ const ProfileSidebar: React.FC<Author> = (author) => {
     <div className={"flex flex-col gap-2"}>
       <div className={"flex flex-col gap-3"}>
         <Image
-          src={author?.profileImage}
-          alt={author?.name}
+          src={author.profileImage}
+          alt={author.name}
           width={48}
           height={48}
           className={"rounded-full"}
         />
       </div>
       <div className={"flex flex-col gap-1"}>
-        <p className={"text-white text-base font-semibold"}>{author?.name}</p>
+        <p className={"text-white text-base font-semibold"}>{author.name}</p>
         <p className={"text-gray-500 font-normal text-sm"}>
-          @{author?.username}
+          @{author.username}
         </p>
-        <p className={"text-gray-200 font-normal text-sm"}>{author?.bio}</p>
+        <p className={"text-gray-200 font-normal text-sm"}>{author.bio}</p>
       </div>
       <Link
         type={"button"}
