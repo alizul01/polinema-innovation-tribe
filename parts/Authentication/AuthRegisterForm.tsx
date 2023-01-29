@@ -1,15 +1,19 @@
-import React from 'react';
-import {InputFormTest} from "~/components/Form/InputForm";
-import {useSupabase} from "~/components/Supabase/SupabaseProvider";
-import {SubmitHandler, useForm} from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { SubmitHandler, useForm } from "react-hook-form";
+import { InputFormTest } from "~/components/Form/InputForm";
+import { useSupabase } from "~/components/Supabase/SupabaseProvider";
 import AuthRegister from "~/data/Auth/AuthRegister";
-import type {RegisterCredentials} from "~/app/(auth)/register/email/page";
+import { AuthSchema, authSchema } from "./AuthSchema";
 
 function AuthRegisterForm() {
   const { supabase } = useSupabase();
-  const { register, handleSubmit } = useForm<any>();
-  const onSubmit: SubmitHandler<any> = async (item: RegisterCredentials) => {
-    let { data, error } = await supabase.auth.signUp({
+  const { register, handleSubmit, formState:{errors} } = useForm<AuthSchema>(
+    {
+      resolver: zodResolver(authSchema)
+    }
+  );
+  const onSubmit: SubmitHandler<AuthSchema> = async (item: AuthSchema) => {
+    const { data, error } = await supabase.auth.signUp({
       email: item.email,
       password: item.password,
     });
@@ -28,7 +32,7 @@ function AuthRegisterForm() {
             id={data.id}
             type={data.type}
             register={register(data.id)}
-            width={data?.width}
+            width={data.width}
           />
         ))}
         <input
@@ -36,6 +40,7 @@ function AuthRegisterForm() {
             "btn btn-primary"
           }
           type={"submit"}
+          onClick={console.log(errors)}
         />
       </form>
     </>
