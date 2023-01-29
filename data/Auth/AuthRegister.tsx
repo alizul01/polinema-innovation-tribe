@@ -31,7 +31,7 @@ const AuthRegister: InputType[] = [
     placeholder: "Password",
   },
   {
-    id: "confirmPassowrd",
+    id: "confirmPassword",
     type: "password",
     label: "Confirm Password",
     placeholder: "Confirm Password",

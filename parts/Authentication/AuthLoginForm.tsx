@@ -1,16 +1,20 @@
-import React from 'react';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { SubmitHandler, useForm } from "react-hook-form";
+import { InputFormTest } from "~/components/Form/InputForm";
+import { useSupabase } from "~/components/Supabase/SupabaseProvider";
 import AuthLogin from "~/data/Auth/AuthLogin";
-import {InputFormTest} from "~/components/Form/InputForm";
-import {useSupabase} from "~/components/Supabase/SupabaseProvider";
-import {useForm} from "react-hook-form";
-import type {LoginCredentials} from "~/app/(auth)/login/email/page";
+import { AuthSchema, authSchema } from './AuthRegisterForm';
 
 function AuthLoginForm() {
   const { supabase } = useSupabase();
-  const { register, handleSubmit } = useForm<any>();
-  const onSubmit = async (item: LoginCredentials) => {
+  const { register, handleSubmit, formState:{errors} } = useForm<AuthSchema>(
+    {
+      resolver: zodResolver(authSchema),
+    }
+  );
+  const onSubmit: SubmitHandler < AuthSchema> = async (item: AuthSchema) => {
     console.log(item);
-    let { data, error } = await supabase.auth.signInWithPassword({
+    const { data, error } = await supabase.auth.signInWithPassword({
       email: item.email,
       password: item.password,
     });
@@ -30,7 +34,7 @@ function AuthLoginForm() {
             id={data.id}
             type={data.type}
             register={register(data.id)}
-            width={data?.width}
+            width={data.width}
           />
         ))}
         <input
@@ -38,6 +42,7 @@ function AuthLoginForm() {
             "btn btn-primary"
           }
           type={"submit"}
+          onClick={console.log(errors)}
         />
       </form>
     </>
