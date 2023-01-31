@@ -4,10 +4,35 @@ import inputData from "~/data/Idea/Create/inputData";
 import { InputForm } from "~/components/Form/InputForm";
 import { SubmitHandler, useForm } from "react-hook-form";
 import ProTips from "~/parts/Idea/Create/ProTips";
+import {useSupabase} from "~/components/Supabase/SupabaseProvider";
+import type {Idea} from "~/types/Idea/Index/Idea";
+import type {definitions} from "~/generated-types";
+
+export type IdeaBox = definitions['idea_boxes'];
+
 
 function IdeaForm() {
   const { register, handleSubmit } = useForm();
-  const onSubmit: SubmitHandler<any> = (data) => console.log(data);
+  const { session, supabase } = useSupabase();
+
+  const onSubmit: SubmitHandler<any> = (values) => {
+  //   const { data, error } = await supabase
+  //     .from("idea_boxes")
+  //     .insert<IdeaBox>([
+  //       {
+  //         id: crypto.randomUUID(),
+  //         title: values.title,
+  //         problem: values.problem,
+  //         solution: values.solution,
+  //         whatsapp: values.whatsapp,
+  //         username: session?.user.id,
+  //         email: values.email,
+  //         description: values.description
+  //       },
+  //     ]);
+    console.log(values);
+  };
+
   return (
     <div className={"flex flex-col md:flex-row gap-2"}>
       <div
