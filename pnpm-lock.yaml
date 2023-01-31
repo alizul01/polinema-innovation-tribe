@@ -13,6 +13,7 @@ specifiers:
   '@types/react': 18.0.26
   '@types/react-dom': 18.0.10
   '@types/tinycolor2': ^1.4.3
+  '@types/uuid': ^9.0.0
   autoprefixer: ^10.4.13
   date-fns: ^2.29.3
   eslint: 8.31.0
@@ -30,6 +31,7 @@ specifiers:
   tailwindcss: ^3.2.4
   tinycolor2: ^1.5.2
   typescript: 4.9.4
+  uuid: ^9.0.0
   zod: ^3.20.2
 
 dependencies:
@@ -42,6 +44,7 @@ dependencies:
   '@types/node': 18.11.18
   '@types/react': 18.0.26
   '@types/react-dom': 18.0.10
+  '@types/uuid': 9.0.0
   date-fns: 2.29.3
   eslint: 8.31.0
   eslint-config-next: 13.1.1_iukboom6ndih5an6iafl45j2fe
@@ -54,6 +57,7 @@ dependencies:
   react-icons: 4.7.1_react@18.2.0
   tinycolor2: 1.5.2
   typescript: 4.9.4
+  uuid: 9.0.0
   zod: 3.20.2
 
 devDependencies:
@@ -2044,6 +2048,10 @@ packages:
   /@types/tinycolor2/1.4.3:
     resolution: {integrity: sha512-Kf1w9NE5HEgGxCRyIcRXR/ZYtDv0V8FVPtYHwLxl0O+maGX0erE77pQlD0gpP+/KByMZ87mOA79SjifhSB3PjQ==}
     dev: true
+
+  /@types/uuid/9.0.0:
+    resolution: {integrity: sha512-kr90f+ERiQtKWMz5rP32ltJ/BtULDI5RVO0uavn1HQUOwjx0R1h0rnDYNL0CepF1zL5bSY6FISAfd9tOdDhU5Q==}
+    dev: false
 
   /@typescript-eslint/eslint-plugin/5.47.1_axni7f4fgvh6tlufnh6hwgsifq:
     resolution: {integrity: sha512-r4RZ2Jl9kcQN7K/dcOT+J7NAimbiis4sSM9spvWimsBvDegMhKLA5vri2jG19PmIPbDjPeWzfUPQ2hjEzA4Nmg==}
@@ -5413,6 +5421,11 @@ packages:
 
   /util-deprecate/1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
+
+  /uuid/9.0.0:
+    resolution: {integrity: sha512-MXcSTerfPa4uqyzStbRoTgt5XIe3x5+42+q1sDuy3R5MDk66URdLMOZe5aPX/SQd+kuYAh0FdP/pO28IkQyTeg==}
+    hasBin: true
+    dev: false
 
   /v8-compile-cache-lib/3.0.1:
     resolution: {integrity: sha512-wa7YjyUGfNZngI/vtK0UHAN+lgDCxBPCylVXGp0zu59Fz5aiGtNXaq3DhIov063MorB+VfufLh3JlF2KdTK3xg==}

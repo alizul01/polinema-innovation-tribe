@@ -7,6 +7,7 @@ import type { Idea } from "~/types/Idea/Index/Idea";
 import { HiChatBubbleOvalLeft as CommentIcon } from "react-icons/hi2";
 import { HiCalendar as CalendarIcon } from "react-icons/hi2";
 import Link from "next/link";
+import {useSupabase} from "~/components/Supabase/SupabaseProvider";
 
 export type IdeaCardProps = Idea & {};
 

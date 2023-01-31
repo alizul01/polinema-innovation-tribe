@@ -8,48 +8,24 @@ import { HiEnvelope as Envelope } from "react-icons/hi2";
 
 const inputData: InputType[] = [
   {
-    id: "judul_ide",
-    label: "Judul Ide",
+    id: "title",
+    label: "Title",
     icon: <LightBulb />,
-    placeholder: "Judul Ide Kamu...",
+    placeholder: "Idea Title",
     type: "text",
   },
   {
-    id: "masalah_ide",
-    label: "Masalah",
+    id: "prbolem",
+    label: "Problem",
     icon: <HiShieldExclamation />,
-    placeholder: "Masalah Yang Kamu Angkat...",
+    placeholder: "What kind of Problem?",
     type: "text",
   },
   {
-    id: "masalah_ide_2",
-    icon: <HiShieldExclamation />,
-    placeholder: "Masalah Yang Kamu Angkat...",
-    type: "text",
-  },
-  {
-    id: "masalah_ide_3",
-    icon: <HiShieldExclamation />,
-    placeholder: "Masalah Yang Kamu Angkat...",
-    type: "text",
-  },
-  {
-    id: "solusi_ide",
+    id: "solution",
     icon: <HiBeaker />,
-    label: "Solusi",
-    placeholder: "Solusi Yang Kamu Tawarkan...",
-    type: "text",
-  },
-  {
-    id: "solusi_ide2",
-    icon: <HiBeaker />,
-    placeholder: "Solusi Yang Kamu Tawarkan...",
-    type: "text",
-  },
-  {
-    id: "solusi_ide3",
-    icon: <HiBeaker />,
-    placeholder: "Solusi Yang Kamu Tawarkan...",
+    label: "Solution",
+    placeholder: "How do you solve it?",
     type: "text",
   },
   {
