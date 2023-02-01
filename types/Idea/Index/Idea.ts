@@ -1,7 +1,7 @@
+import type { Contact } from "~/types/Idea/Index/Contact";
 import type { Author } from "./Author";
 import type { Comment } from "./Comment";
 import type { Tag } from "./Tag";
-import type {Contact} from "~/types/Idea/Index/Contact";
 
 export type Idea = {
   id: number;
