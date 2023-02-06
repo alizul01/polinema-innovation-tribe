@@ -1,10 +1,5 @@
 import type { InputType } from "~/types/Input/InputType";
-import { HiLightBulb as LightBulb } from "react-icons/hi2";
-import { HiShieldExclamation } from "react-icons/hi2";
-import { HiBeaker } from "react-icons/hi2";
-import { HiLockClosed as LockClosed } from "react-icons/hi2";
-import { HiPhone as Phone } from "react-icons/hi2";
-import { HiEnvelope as Envelope } from "react-icons/hi2";
+import { HiLightBulb as LightBulb, HiEnvelope as Envelope, HiPhone as Phone, HiLockClosed as LockClosed, HiBeaker, HiShieldExclamation } from "react-icons/hi2";
 
 const inputData: InputType[] = [
   {
@@ -15,7 +10,7 @@ const inputData: InputType[] = [
     type: "text",
   },
   {
-    id: "prbolem",
+    id: "problem",
     label: "Problem",
     icon: <HiShieldExclamation />,
     placeholder: "What kind of Problem?",
@@ -27,6 +22,14 @@ const inputData: InputType[] = [
     label: "Solution",
     placeholder: "How do you solve it?",
     type: "text",
+  },
+  {
+    id: "description",
+    icon: <HiBeaker />,
+    label: "Description",
+    placeholder: "What is it?",
+    type: "text",
+    isTextArea: true,
   },
   {
     id: "deadline",

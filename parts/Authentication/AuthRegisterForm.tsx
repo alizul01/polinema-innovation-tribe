@@ -1,15 +1,17 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import React from 'react';
 import {InputFormTest} from "~/components/Form/InputForm";
 import {useSupabase} from "~/components/Supabase/SupabaseProvider";
-import {SubmitHandler, useForm} from "react-hook-form";
+import {useForm} from "react-hook-form";
 import AuthRegister from "~/data/Auth/AuthRegister";
 import type {RegisterCredentials} from "~/app/(auth)/register/email/page";
 
 function AuthRegisterForm() {
   const { supabase } = useSupabase();
-  const { register, handleSubmit } = useForm<any>();
-  const onSubmit: SubmitHandler<any> = async (item: RegisterCredentials) => {
-    let { data, error } = await supabase.auth.signUp({
+  const { register, handleSubmit } = useForm<RegisterCredentials>();
+  const onSubmit = async (item: RegisterCredentials) => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-unsafe-call
+    const { data, error } = await supabase.auth.signInWithPassword({
       email: item.email,
       password: item.password,
     });
@@ -28,7 +30,7 @@ function AuthRegisterForm() {
             id={data.id}
             type={data.type}
             register={register(data.id)}
-            width={data?.width}
+            width={data.width}
           />
         ))}
         <input

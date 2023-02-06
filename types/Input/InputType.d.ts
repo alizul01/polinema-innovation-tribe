@@ -1,4 +1,3 @@
-import type { InputLabel } from "./InputLabel";
 import type { HTMLInputTypeAttribute, ReactElement } from "react";
 import type { UseFormRegister } from "react-hook-form";
 import type { RegisterOptions } from "react-hook-form/dist/types/validator";
@@ -6,7 +5,7 @@ import type { RegisterOptions } from "react-hook-form/dist/types/validator";
 export type InputType = {
   placeholder: string;
   label?: string;
-  id: string;
+  id: Idea;
   type: HTMLInputTypeAttribute;
   icon?: ReactElement;
   defaultValue?: string | ReadonlyArray<string> | number | undefined;
@@ -14,4 +13,5 @@ export type InputType = {
   width?: "1/2" | "full";
   registerOption?: RegisterOptions;
   errors?: ReactElement;
+  isTextArea?: boolean;
 };

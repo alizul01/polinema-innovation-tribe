@@ -9,6 +9,7 @@ export const InputForm: React.FC<InputType> = ({
   id,
   register,
   defaultValue,
+  isTextArea,
 }) => {
   return (
     <div
@@ -18,9 +19,7 @@ export const InputForm: React.FC<InputType> = ({
     >
       <label
         htmlFor={id}
-        className={
-          "text-white font-bold block mb-2 text-sm font-medium text-white"
-        }
+        className={"block mb-2 text-sm font-medium text-white"}
       >
         {label}
       </label>
@@ -28,7 +27,7 @@ export const InputForm: React.FC<InputType> = ({
         {icon ? (
           <div
             className={
-              "absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none"
+              ["absolute flex items-center pl-3 pointer-events-none", isTextArea ? "top-4 left-0" : "left-0 inset-y-0"].join(" ")
             }
           >
             {icon}
@@ -36,18 +35,32 @@ export const InputForm: React.FC<InputType> = ({
         ) : (
           " "
         )}
-        <input
-          {...register}
-          defaultValue={defaultValue}
-          id={id}
-          type={type}
-          placeholder={placeholder}
-          className={[
-            "border text-sm rounded-md block w-full bg-transparent border-slate-700 hover:border-purple-500 placeholder-slate-300 placeholder-font-medium text-white focus:ring-purple-500 py-3 px-4 focus:border-purple-500",
-            icon ? "pl-10" : " ",
-          ].join(" ")}
-          autoComplete={"false"}
-        />
+        {isTextArea ? (
+          <textarea
+            {...register}
+            defaultValue={defaultValue}
+            id={id}
+            placeholder={placeholder}
+            className={[
+              "border text-sm rounded-md block w-full bg-transparent border-slate-700 hover:border-purple-500 placeholder-slate-300 placeholder-font-medium text-white focus:ring-purple-500 py-3 px-4 focus:border-purple-500 items-center justify-center h-24 resize-none",
+              icon ? "pl-10" : " ",
+            ].join(" ")}
+            autoComplete={"false"}
+          ></textarea>
+        ) : (
+          <input
+            {...register}
+            defaultValue={defaultValue}
+            id={id}
+            type={type}
+            placeholder={placeholder}
+            className={[
+              "border text-sm rounded-md block w-full bg-transparent border-slate-700 hover:border-purple-500 placeholder-slate-300 placeholder-font-medium text-white focus:ring-purple-500 py-3 px-4 focus:border-purple-500",
+              icon ? "pl-10" : " ",
+            ].join(" ")}
+            autoComplete={"false"}
+          />
+        )}
       </div>
     </div>
   );
@@ -62,6 +75,7 @@ export const InputFormTest: React.FC<InputType> = ({
   id,
   register,
   defaultValue,
+  isTextArea,
 }) => {
   return (
     <div
@@ -71,9 +85,7 @@ export const InputFormTest: React.FC<InputType> = ({
     >
       <label
         htmlFor={id}
-        className={
-          "text-white font-bold block mb-2 text-sm font-medium text-white"
-        }
+        className={"block mb-2 text-sm font-medium text-white"}
       >
         {label}
       </label>
@@ -89,18 +101,32 @@ export const InputFormTest: React.FC<InputType> = ({
         ) : (
           " "
         )}
-        <input
-          {...register}
-          defaultValue={defaultValue}
-          id={id}
-          type={type}
-          placeholder={placeholder}
-          className={[
-            "border text-sm rounded-md block w-full bg-transparent border-slate-700 hover:border-purple-500 placeholder-slate-300 placeholder-font-medium text-white focus:ring-purple-500 py-2 px-4 focus:border-purple-500",
-            icon ? "pl-10" : " ",
-          ].join(" ")}
-          autoComplete={"false"}
-        />
+        {isTextArea ? (
+          <textarea
+            {...register}
+            defaultValue={defaultValue}
+            id={id}
+            placeholder={placeholder}
+            className={[
+              "border text-sm rounded-md block w-full bg-transparent border-slate-700 hover:border-purple-500 placeholder-slate-300 placeholder-font-medium text-white focus:ring-purple-500 py-3 px-4 focus:border-purple-500",
+              icon ? "pl-10" : " ",
+            ].join(" ")}
+            autoComplete={"false"}
+          ></textarea>
+        ) : (
+          <input
+            {...register}
+            defaultValue={defaultValue}
+            id={id}
+            type={type}
+            placeholder={placeholder}
+            className={[
+              "border text-sm rounded-md block w-full bg-transparent border-slate-700 hover:border-purple-500 placeholder-slate-300 placeholder-font-medium text-white focus:ring-purple-500 py-3 px-4 focus:border-purple-500",
+              icon ? "pl-10" : " ",
+            ].join(" ")}
+            autoComplete={"false"}
+          />
+        )}
       </div>
     </div>
   );

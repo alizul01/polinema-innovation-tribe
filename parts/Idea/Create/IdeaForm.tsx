@@ -41,9 +41,11 @@ function IdeaForm() {
               icon={data.icon}
               label={data.label}
               placeholder={data.placeholder}
+              // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
               id={data.id}
               type={data.type}
-              register={register(`${data.id}`)}
+              isTextArea={data.isTextArea}
+              register={register(data.id)}
             />
           ))}
 
