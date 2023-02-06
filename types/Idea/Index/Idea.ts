@@ -14,4 +14,6 @@ export type Idea = {
   comments: Comment[];
   tags: Tag[];
   contact?: Contact;
+  whatsapp ?: string;
+  email ?: string;
 };
