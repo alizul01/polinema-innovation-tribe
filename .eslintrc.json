@@ -1,3 +1,6 @@
 {
-  "extends": ["next/core-web-vitals", "kentcdodds"]
+  "extends": ["next/core-web-vitals", "kentcdodds"],
+  "rules": {
+    "no-negated-condition": "off"
+  }
 }

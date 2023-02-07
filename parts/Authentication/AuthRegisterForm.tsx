@@ -1,45 +1,68 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-import React from 'react';
-import {InputFormTest} from "~/components/Form/InputForm";
-import {useSupabase} from "~/components/Supabase/SupabaseProvider";
-import {useForm} from "react-hook-form";
-import AuthRegister from "~/data/Auth/AuthRegister";
-import type {RegisterCredentials} from "~/app/(auth)/register/email/page";
+import React from "react";
+import { useSupabase } from "~/components/Supabase/SupabaseProvider";
+import { useForm } from "react-hook-form";
+import { Form } from "~/components/Form/Form";
+import { registrationSchema, RegistrationSchema } from "~/schema/Registration";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { Input } from "~/components/Form/Input";
 
 function AuthRegisterForm() {
   const { supabase } = useSupabase();
-  const { register, handleSubmit } = useForm<RegisterCredentials>();
-  const onSubmit = async (item: RegisterCredentials) => {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-unsafe-call
-    const { data, error } = await supabase.auth.signInWithPassword({
-      email: item.email,
-      password: item.password,
+  const form = useForm<RegistrationSchema>({
+    resolver: zodResolver(registrationSchema),
+  });
+
+  async function handleSubmit(data: RegistrationSchema) {
+    await supabase.auth.signInWithPassword({
+      email: data.email,
+      password: data.password,
     });
-  };
+  }
+
   return (
     <>
-      <form
-        onSubmit={handleSubmit(onSubmit)}
-        className={"mt-4 max-w-md flex flex-wrap"}
+      <Form
+        form={form}
+        onSubmit={handleSubmit}
+        className={"my-4 w-full max-w-md"}
       >
-        {AuthRegister.map((data, index) => (
-          <InputFormTest
-            key={index}
-            label={data.label}
-            placeholder={data.placeholder}
-            id={data.id}
-            type={data.type}
-            register={register(data.id)}
-            width={data.width}
-          />
-        ))}
-        <input
-          className={
-            "btn btn-primary"
-          }
-          type={"submit"}
+        <Input
+          label="Email"
+          id="email"
+          placeholder="email@example.com"
+          {...form.register("email")}
         />
-      </form>
+        <div className="flex gap-4">
+          <Input
+            label="First Name"
+            id="firstName"
+            placeholder="John"
+            {...form.register("firstName")}
+          />
+          <Input
+            label="Last Name"
+            id="lastName"
+            placeholder="Doe"
+            {...form.register("lastName")}
+          />
+        </div>
+        <div className="flex gap-4">
+          <Input
+            label="Password"
+            id="password"
+            type="password"
+            {...form.register("password")}
+          />
+          <Input
+            label="Confirm Password"
+            id="confirmPassword"
+            type="password"
+            {...form.register("confirmPassword")}
+          />
+        </div>
+        <button className="btn btn-primary mx-auto">Submit</button>
+      </Form>
     </>
   );
 }

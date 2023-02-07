@@ -1,51 +1,45 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-import React from 'react';
-import AuthLogin from "~/data/Auth/AuthLogin";
-import {InputFormTest} from "~/components/Form/InputForm";
-import {useSupabase} from "~/components/Supabase/SupabaseProvider";
-import {useForm} from "react-hook-form";
-import type {LoginCredentials} from "~/app/(auth)/login/email/page";
+import React from "react";
+import { useSupabase } from "~/components/Supabase/SupabaseProvider";
+import { useForm } from "react-hook-form";
+import { Input } from "~/components/Form/Input";
+import { Form } from "~/components/Form/Form";
+import { authSchema, AuthSchema } from "~/schema/Auth";
+import { zodResolver } from "@hookform/resolvers/zod";
 
-
-
-function AuthLoginForm() {
+export default function AuthLoginForm() {
   const { supabase } = useSupabase();
-  const { register, handleSubmit } = useForm<LoginCredentials>();
-  const onSubmit = async (item: LoginCredentials) => {
-    console.log(item);
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-unsafe-call
-    const { data, error } = await supabase.auth.signInWithPassword({
-      email: item.email,
-      password: item.password,
+  const form = useForm<AuthSchema>({
+    resolver: zodResolver(authSchema),
+  });
+
+  async function handleSubmit(data: AuthSchema) {
+    await supabase.auth.signInWithPassword({
+      email: data.email,
+      password: data.password,
     });
-  };
+  }
 
   return (
     <>
-      <form
-        onSubmit={handleSubmit(onSubmit)}
-        className={"mt-4 max-w-md flex flex-wrap"}
+      <Form
+        form={form}
+        onSubmit={handleSubmit}
+        className={"my-4 w-full max-w-md"}
       >
-        {AuthLogin.map((data, index) => (
-          <InputFormTest
-            key={index}
-            label={data.label}
-            placeholder={data.placeholder}
-            id={data.id}
-            type={data.type}
-            register={register(data.id)}
-            width={data.width}
-          />
-        ))}
-        <input
-          className={
-            "btn btn-primary"
-          }
-          type={"submit"}
+        <Input
+          label="Email"
+          id="email"
+          placeholder="email@example.com"
+          {...form.register("email")}
         />
-      </form>
+        <Input
+          label="Password"
+          id="password"
+          type="password"
+          {...form.register("password")}
+        />
+        <button className="btn btn-primary mx-auto">Submit</button>
+      </Form>
     </>
   );
 }
-
-export default AuthLoginForm;
