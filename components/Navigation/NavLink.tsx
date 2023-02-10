@@ -12,7 +12,7 @@ export function NavLink(props: PropsWithChildren<NavLinkProps>) {
   return (
     <Link
       href={props.href}
-      className={"group text-slate-400 transition-all duration-300 ease-in-out"}
+      className={"group text-purple-400 transition-all duration-300 ease-in-out"}
     >
       <span
         className={[

@@ -10,12 +10,11 @@ const nextConfig = {
     return config;
   },
   images: {
-    domains: [
-      "avatars.githubusercontent.com",
-      "media.licdn.com",
-      "unsplash.com",
-      "source.unsplash.com",
-      "arcetros.vercel.app"
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "**",
+      },
     ],
   },
   experimental: {

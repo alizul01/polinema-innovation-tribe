@@ -16,7 +16,7 @@ const ProfileSidebar: React.FC<Author> = (author) => {
         />
       </div>
       <div className={"flex flex-col gap-1"}>
-        <p className={"text-white text-base font-semibold"}>{author.name}</p>
+        <p className={"text-gray-200 text-base font-semibold"}>{author.name}</p>
         <p className={"text-gray-500 font-normal text-sm"}>
           @{author.username}
         </p>

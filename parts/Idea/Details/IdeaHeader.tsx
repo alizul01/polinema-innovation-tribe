@@ -24,7 +24,7 @@ const IdeaHeader: React.FC<Idea> = (props) => {
           />
         </div>
         <div>
-          <p className={"text-white text-md font-semibold"}>
+          <p className={"text-gray-200 text-md font-semibold"}>
             {props?.author?.name}
           </p>
           <p className={"text-gray-500 font-normal text-sm"}>

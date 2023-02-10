@@ -11,7 +11,7 @@ const AuthOption: React.FC<AuthOptionProps> = ({ ask }) => {
   const linkHref = ask === "Registered" ? "/login" : "/register";
 
   return (
-    <div className="text-center w-full font-semibold text-white">
+    <div className="text-center w-full font-semibold text-gray-200">
       <p>{text}</p>
       <Link href={linkHref} className="text-purple-500 hover:text-purple-600">
         {linkText}

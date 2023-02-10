@@ -1,14 +1,12 @@
 import type { UserNavigationType } from "~/types/Navigation/UserNavigationType";
-import { HiUserCircle as UserCircleIcon } from "react-icons/hi2";
-import { HiCog6Tooth as Gear } from "react-icons/hi2";
-import { HiLightBulb as LightBulb } from "react-icons/hi2";
-import { HiArrowLeftOnRectangle as ArrowLeft } from "react-icons/hi2";
+import { HiCog6Tooth as Gear, HiLightBulb as LightBulb, HiArrowLeftOnRectangle as ArrowLeft, HiUserCircle as UserCircleIcon} from "react-icons/hi2";
 
 const UserNavigation: UserNavigationType[] = [
   {
     name: "My Idea",
     url: "/user/idea",
     icon: <LightBulb />,
+    isForbidden: true,
   },
   {
     name: "My Profile",
@@ -19,6 +17,7 @@ const UserNavigation: UserNavigationType[] = [
     name: "Settings",
     url: "/user/setting",
     icon: <Gear />,
+    isForbidden: true,
   },
   {
     name: "Log Out",

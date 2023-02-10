@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800;900&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -16,20 +17,25 @@
   }
 }
 
-
 @layer base {
   .active {
-    @apply font-bold text-white;
+    @apply font-bold text-gray-200;
   }
 
   html,
   body,
   #root {
     @apply h-full w-full;
+    scroll-behavior: smooth;
   }
 
   body {
-    @apply bg-[#131A22];
+    @apply bg-[#0d1426];
+    font-family: "Plus Jakarta Sans", sans-serif;
+  }
+
+  section {
+    @apply p-6;
   }
 }
 
@@ -39,15 +45,15 @@
   }
 
   .btn {
-    @apply rounded-lg px-4 py-2 justify-center items-center w-fit cursor-pointer flex gap-2;
+    @apply rounded-lg px-6 py-3 justify-center items-center w-fit cursor-pointer flex gap-2 text-xs md:text-sm md:mx-0 font-bold focus:ring-2;
   }
 
   .btn-primary {
-    @apply hover:from-purple-600 hover:to-blue-600 bg-gradient-to-r from-purple-500 to-blue-500 text-white font-semibold hover:shadow-purple-700 hover:shadow-md transition-all ease-in-out duration-500 focus:ring-purple-900 focus:ring-4;
+    @apply bg-purple-600 text-purple-200 hover:bg-purple-700 focus:ring-purple-300;
   }
 
   .btn-secondary {
-    @apply hover:from-slate-600 hover:to-slate-700 bg-gradient-to-r from-slate-500 to-slate-600 text-white font-semibold hover:shadow-blue-700 hover:shadow-md transition-all ease-in-out duration-500 focus:ring-blue-900 focus:ring-4;
+    @apply hover:from-slate-600 hover:to-slate-700 bg-gradient-to-r from-slate-500 to-slate-600 text-gray-200 font-semibold hover:shadow-blue-700 hover:shadow-md transition-all ease-in-out duration-500 focus:ring-blue-900 focus:ring-4;
   }
 }
 
@@ -98,5 +104,5 @@
 }
 
 ::selection {
-  @apply bg-purple-600 text-white;
+  @apply bg-purple-600 text-gray-200;
 }

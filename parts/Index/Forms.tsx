@@ -13,7 +13,7 @@ const Forms: React.FC = () => {
           "rounded-lg md:w-[50%] p-8 h-full w-full bg-purple-700 bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-20 border border-purple-800"
         }
       >
-        <h1 className={"text-white text-4xl text-center font-bold mb-8"}>
+        <h1 className={"text-gray-200 text-4xl text-center font-bold mb-8"}>
           Give Us Your Feedback!
         </h1>
         <p className={"text-red-500 text-center mb-8"}>
@@ -25,7 +25,7 @@ const Forms: React.FC = () => {
             type="text"
             name="floating_text"
             id="floating_text"
-            className="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 appearance-none text-white border-gray-600 dark:focus:border-purple-500 focus:outline-none focus:ring-0 focus:border-purple-600 peer"
+            className="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 appearance-none text-gray-200 border-gray-600 dark:focus:border-purple-500 focus:outline-none focus:ring-0 focus:border-purple-600 peer"
             placeholder=" "
             required
           />
@@ -41,7 +41,7 @@ const Forms: React.FC = () => {
             type="text"
             name="floating_suggestion"
             id="floating_suggestion"
-            className="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 appearance-none text-white border-gray-600 dark:focus:border-purple-500 focus:outline-none focus:ring-0 focus:border-purple-600 peer"
+            className="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 appearance-none text-gray-200 border-gray-600 dark:focus:border-purple-500 focus:outline-none focus:ring-0 focus:border-purple-600 peer"
             placeholder=" "
             required
           />
@@ -54,7 +54,7 @@ const Forms: React.FC = () => {
         </div>
         <button
           type="submit"
-          className="text-white focus:ring-4 focus:outline-none font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center bg-purple-600 hover:bg-purple-700 focus:ring-purple-800"
+          className="text-gray-200 focus:ring-4 focus:outline-none font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center bg-purple-600 hover:bg-purple-700 focus:ring-purple-800"
         >
           Submit
         </button>

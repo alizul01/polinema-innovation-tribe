@@ -1,48 +1,60 @@
 import React from "react";
-import PolitribeLogo from "~/public/icon/ic_politribe-logo.svg";
-import { HiArrowRightCircle as ArrowRightCircleIcon } from "react-icons/hi2";
-import { HiQuestionMarkCircle as QuestionMarkCircleIcon } from "react-icons/hi2";
+import Image from "next/image";
+import Link from "next/link";
+import TrustedSection from "./TrustedSection";
 
 const Hero: React.FC = () => {
   return (
-    <section
-      className="w-full pt-1 md:pt-16 flex flex-col items-center justify-center relative"
-      id="hero"
-    >
-      <div className="gradient-01 -z-[99] absolute h-[40%] w-[40%] inset-0 opacity-100 md:opacity-40 rounded-full" />
-      <div className="z-10 md:max-w-4xl">
-        <div className="flex p-2 items-center justify-center">
-          <div className="relative">
-            <div className="rounded-full absolute -inset-0.5 bg-gradient-to-r from-purple-500 to-blue-500 blur opacity-75" />
-            <div className="p-3 rounded-full bg-gradient-to-r from-slate-800 to-gray-900 relative">
-              <PolitribeLogo className="w-8 h-8 cursor-pointer hover:animate-spin transition-all ease-in-out duration-500" />
+    <section className="max-w-7xl mx-auto pt-16 gap-6 md:gap-0 flex flex-col md:flex-row items-center justify-between">
+      <div className="flex items-start justify-between flex-col max-w-6xl gap-24  h-full">
+        <div className="flex items-start justify-between flex-col gap-8">
+          <span>
+            <h4 className="text-start md:text-start md:text-base text-sm text-purple-400 font-semibold capitalize pb-2">
+              Leading the way of Innovation
+            </h4>
+            <h1 className="text-4xl md:text-6xl text-gray-200 font-extrabold text-start md:text-start">
+              Unleash Your Creativity
+            </h1>
+          </span>
+          <h4 className="text-start md:text-start text-base md:text-xl font-normal text-slate-400 max-w-2xl">
+            <span className="md:inline block">
+              Let your{" "}
+              <span className="font-bold text-gray-200"> creativity </span> and{" "}
+              <span className="font-bold text-gray-200"> innovation </span> shine,
+            </span>{" "}
+            as we work together to bring new ideas to life.
+          </h4>
+
+          <div className="flex flex-row gap-4 justify-start w-full">
+            <Link
+              href="#step"
+              className="btn btn-primary"
+            >
+              <h1>Get Started</h1>
+            </Link>
+            <div className="flex flex-row items-center gap-2">
+              <div className="relative">
+                <div className="w-4 h-4 rounded-full bg-purple-600 animate-ping" />
+                <div className="w-4 h-4 rounded-full bg-purple-600 absolute top-0" />
+              </div>
+              <h1 className="text-xs md:text-sm text-purple-400 font-semibold">
+                Start Your Journey!
+              </h1>
             </div>
           </div>
         </div>
-        <h4 className="text-center text-sm md:text-lg text-purple-400 font-semibold capitalize pb-2">
-          Leading the way with innovative thinking
-        </h4>
-        <h1 className="text-5xl md:text-7xl text-white font-bold text-center -z-50">
-          <span>Unleash Your</span> Creativity With Politribe
-        </h1>
+        <div className="flex w-full items-start justify-start">
+          <TrustedSection />
+        </div>
       </div>
-      <div className="pt-12 max-w-4xl">
-        <h4 className="text-center text-lg md:text-xl font-normal text-slate-400">
-          <span>
-            Join us and let your creativity and innovation shine as we work
-            together to bring new ideas to life. With Politribe, the
-            possibilities are endless.
-          </span>
-        </h4>
-      </div>
-      <div className="pt-12 md:pt-12 flex justify-center items-center flex-col gap-4 md:flex-row md:space-x-12 text-lg w-full md:w-fit">
-        <button className="btn btn-primary w-64 py-2">
-          Get Started <ArrowRightCircleIcon color="white" fontSize="18" />
-        </button>
-        <button className="btn btn-secondary w-64 py-2">
-          <span className="text-slate-50 ">How it Works?</span>
-          <QuestionMarkCircleIcon color="white" fontSize="18" />
-        </button>
+      <div className="md:block hidden">
+        <Image
+          src="/svg/hero.svg"
+          width={520}
+          height={520}
+          alt="heroimg"
+          className="float-animation"
+        />
       </div>
     </section>
   );
