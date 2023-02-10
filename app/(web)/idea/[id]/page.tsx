@@ -10,7 +10,7 @@ const Page: React.FC<ideaSlug> = ({ params }) => {
   return (
     <div
       className={
-        "w-full justify-center items-center xl:px-56 text-white flex flex-col lg:flex-row"
+        "w-full justify-center items-center xl:px-56 text-gray-200 flex flex-col lg:flex-row"
       }
     >
       <Content key={props.id} {...props} />

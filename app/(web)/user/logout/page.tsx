@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect } from "react";
 import { useSupabase } from "~/components/Supabase/SupabaseProvider";
-import { Simulate } from "react-dom/test-utils";
 import { useRouter } from "next/navigation";
 const ProfilePage: React.FC = () => {
   const { supabase } = useSupabase();
@@ -9,10 +8,11 @@ const ProfilePage: React.FC = () => {
 
   async function signout() {
     const { error } = await supabase.auth.signOut();
+    if (error) console.log("error", error);
   }
 
   useEffect(() => {
-    signout().then(() => router.push("/"));
+    signout().then(() => router.push("/")).catch(() => console.log("error"));
   }, []);
 
   return (
@@ -37,7 +37,7 @@ const ProfilePage: React.FC = () => {
             fill="currentFill"
           />
         </svg>
-        <span className="sr-only text-white">Logging Out...</span>
+        <span className="sr-only text-gray-200">Logging Out...</span>
       </div>
     </div>
   );

@@ -22,7 +22,7 @@ const AuthGoogle: React.FC<AuthFormType> = ({ name }) => {
     <div className={"w-full space-y-3"}>
       <button
         className={
-          "flex w-full items-center justify-center space-x-2 text-white bg-slate-800 hover:bg-slate-700 hover:scale-95 transition-all ease-in-out duration-500 focus:ring-3 focus:ring-blue-700 p-2.5 rounded-md"
+          "flex w-full items-center justify-center space-x-2 text-gray-200 bg-slate-800 hover:bg-slate-700 hover:scale-95 transition-all ease-in-out duration-500 focus:ring-3 focus:ring-blue-700 p-2.5 rounded-lg"
         }
         onClick={handleGoogleLogin}
       >
@@ -31,7 +31,7 @@ const AuthGoogle: React.FC<AuthFormType> = ({ name }) => {
       </button>
       <Link
         href={name == "Register" ? "/register/email" : "/login/email"}
-        className="flex w-full items-center justify-center space-x-2 text-white bg-slate-800 hover:bg-slate-700 hover:scale-95 transition-all ease-in-out duration-500 focus:ring-3 focus:ring-blue-700 p-2.5 rounded-md"
+        className="flex w-full items-center justify-center space-x-2 text-gray-200 bg-slate-800 hover:bg-slate-700 hover:scale-95 transition-all ease-in-out duration-500 focus:ring-3 focus:ring-blue-700 p-2.5 rounded-lg"
       >
         <UserIcon />
         <span className="text-sm font-normal">{name} with Email</span>

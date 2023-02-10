@@ -6,7 +6,7 @@ function ProTips() {
   return (
     <div
       className={
-        "p-2 bg-slate-800 hover:ring-purple-600 transition-all ease-in-out duration-500 rounded-md flex flex-col sticky top-16 gap-6 md:w-[35%] h-full hover:ring-2"
+        "p-2 bg-slate-800 hover:ring-purple-600 transition-all ease-in-out duration-500 rounded-lg flex flex-col sticky top-16 gap-6 md:w-[35%] h-full hover:ring-2"
       }
     >
       <div>
@@ -16,7 +16,7 @@ function ProTips() {
       </div>
       <div id={"mainContent"} className={"flex flex-col gap-3 "}>
         {TipsData.map((data) => (
-          <TipsButton key={data.name} name={data.name} />
+          <TipsButton key={data.name} name={data.name} description={data.description} />
         ))}
       </div>
     </div>

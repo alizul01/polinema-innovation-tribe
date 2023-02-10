@@ -91,7 +91,7 @@ export function IdeaCard(props: IdeaCardProps) {
       <Link
         href={`/idea/${props.id}`}
         className={
-          "p-5 border border-slate-700 bg-slate-800/40 rounded-md flex gap-3 cursor-pointer hover:ring-2 hover:ring-purple-600 hover:scale-105 transition-all duration-500 ease-in-out flex-col"
+          "p-5 border border-slate-700 bg-slate-800/40 rounded-lg flex gap-3 cursor-pointer hover:ring-2 hover:ring-purple-600 hover:scale-105 transition-all duration-500 ease-in-out flex-col"
         }
       >
         <div>
@@ -106,7 +106,7 @@ export function IdeaCard(props: IdeaCardProps) {
               />
             </div>
             <div>
-              <p className={"text-white text-md font-semibold"}>
+              <p className={"text-gray-200 text-md font-semibold"}>
                 {props.author.name}
               </p>
               <p className={"text-gray-500 font-normal text-sm"}>
@@ -116,7 +116,7 @@ export function IdeaCard(props: IdeaCardProps) {
           </div>
         </div>
         <div className={"flex flex-col gap-2 flex-1"}>
-          <h1 className={"text-white font-bold text-lg "}>{props.title}</h1>
+          <h1 className={"text-gray-200 font-bold text-lg "}>{props.title}</h1>
           <p className={"line-clamp-2 text-slate-400 text-base w-full"}>
             {props.description}
           </p>

@@ -34,7 +34,7 @@ const FormHeader: React.FC<FormHeaderTypes> = ({title, backTo}) => {
         <h4 className={"text-blue-300 font-regular text-md"}>
           {title}
         </h4>
-        <h1 className={"text-white text-xl font-bold"}>
+        <h1 className={"text-gray-200 text-xl font-bold"}>
           Polinema Innovation Tribe
         </h1>
       </div>

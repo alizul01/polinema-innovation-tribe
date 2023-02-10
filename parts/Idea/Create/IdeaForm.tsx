@@ -1,7 +1,6 @@
 import React from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
-  HiInboxStack as Box,
   HiLightBulb as LightBulb,
   HiEnvelope as Envelope,
   HiPhone as Phone,
@@ -34,10 +33,7 @@ function IdeaForm() {
 
   return (
     <div className="flex flex-col md:flex-row gap-2">
-      <div className="w-full p-3 backdrop-blur-lg md:p-8 bg-gray-800 bg-opacity-70 rounded-md">
-        <div className="flex flex-row items-center justify-center gap-4 animate-bounce">
-          <Box fontSize={24} /> <h1 className="text-lg font-bold">Sandbox</h1>
-        </div>
+      <div className="w-full p-3">
         <Form form={form} onSubmit={onSubmit} className="my-4">
           <Input
             label="Title"
@@ -72,6 +68,7 @@ function IdeaForm() {
             id="Deadline"
             placeholder="Deadline..."
             icon={<LockClosed />}
+            type="date"
             {...form.register("deadline")}
           />
           <Input
@@ -88,7 +85,6 @@ function IdeaForm() {
             icon={<Envelope />}
             {...form.register("email")}
           />
-          <TextAreaInput label="" {...form.register("description")} />
           <button className="btn btn-primary">Submit</button>
         </Form>
       </div>

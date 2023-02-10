@@ -17,7 +17,7 @@ export const TextAreaInput = forwardRef<
       <textarea
         {...props}
         ref={ref}
-        className={`border text-sm rounded-md block w-full bg-transparent border-slate-700 hover:border-purple-500 placeholder-slate-300 placeholder-font-medium text-white focus:ring-purple-500 py-3 px-4 focus:border-purple-500 ${
+        className={`text-sm border border-slate-700 rounded-lg block w-full hover:border-purple-500 placeholder-slate-400 text-gray-200 focus:ring-purple-500 py-3 px-4 focus:border-purple-500 bg-slate-800 ${
           props.icon !== undefined && "pl-10"
         }`}
         autoComplete="false"

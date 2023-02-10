@@ -7,7 +7,7 @@ export type HeaderType = {
 
 const Header: React.FC<HeaderType> = ({ slogan, title }) => {
   return (
-    <div className={"text-center font-bold flex flex-col gap-1 "}>
+    <div className={"text-start font-bold flex flex-col gap-1 "}>
       <span className={"text-3xl md:text-4xl"}>{title}</span>
       <span className={"text-purple-600"}>{slogan}</span>
     </div>

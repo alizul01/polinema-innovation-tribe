@@ -1,36 +1,21 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+"use client";
 import React from "react";
 import Image from "next/image";
-
-type Profile = {
-  information: {
-    email: string;
-    phone: string;
-    aboutme: string;
-  };
-  socialMedia?: {
-    instagram?: string;
-    linkedin?: string;
-    github?: string;
-  };
-};
-
-const informationHeader = ["About Me", "Email", "Phone"];
-const infoForType = informationHeader.map((data) =>
-  data.split(" ").join("").toLowerCase()
-);
-const mySkills = ["UI UX Design", "Front-end Web", "Video Editing"];
-
-const myProfile: any = {
-  aboutme: "Hai namaku adalah abcd! Salam kenal :)",
-  email: "alizulfikar032@gmail.com",
-  phone: "+628123456789",
-};
+import { useSupabase } from "~/components/Supabase/SupabaseProvider";
+import { useRouter } from "next/navigation";
 
 const ProfilePage: React.FC = () => {
+  const router = useRouter();
+  const { session } = useSupabase();
+  if (session === null) {
+    router.push("/login");
+  }
   return (
     <div
       className={
-        "w-full md:items-center justify-center md:px-56 gap-12 text-white flex flex-col"
+        "w-full md:items-center justify-center md:px-56 gap-12 text-gray-200 flex flex-col"
       }
     >
       <div className={"flex gap-4 flex-col lg:max-w-[92rem] w-full"}>
@@ -45,14 +30,18 @@ const ProfilePage: React.FC = () => {
                 "bg-gradient-to-tr from-blue-400 to-fuchsia-600 w-fit rounded-full p-[0.15rem]"
               }
             >
-              <img
+              <Image
                 className={"w-16 rounded-full"}
-                src={"https://i.pravatar.cc/300"}
+                src={session?.user.user_metadata.avatar_url}
+                alt={"profile"}
+                width={100}
+                height={100}
               />
             </div>
             <div className={"text-start"}>
-              <p className={"font-bold text-base"}>Ali Zulfikar</p>
-              <p className={"text-gray-500 font-regular text-sm"}>@alizul01</p>
+              <p className={"font-bold text-base"}>
+                {session?.user.user_metadata.full_name}
+              </p>
             </div>
           </div>
           <div className={"p-2 flex gap-4 items-center"}>
@@ -90,59 +79,23 @@ const ProfilePage: React.FC = () => {
           <div className={"flex flex-col gap-4 md:flex-row"}>
             <div
               id={"Information"}
-              className={"bg-slate-800 p-5 rounded-md w-full md:w-[30%]"}
+              className={"bg-slate-800 p-5 rounded-lg w-full md:w-[30%]"}
             >
               <h1 className={"font-bold py-2 text-xl"}>Information</h1>
               <section className={"py-2 flex flex-col gap-4"}>
-                {informationHeader.map((data, index) => (
-                  <div id={data}>
-                    <h4 className={"text-gray-500"}>{data}</h4>
-                    <p>{myProfile[data.split(" ").join("").toLowerCase()]}</p>
-                  </div>
-                ))}
+                <h4 className={"text-gray-500"}>Email</h4>
+                <p>{session?.user.user_metadata.email}</p>
               </section>
             </div>
             <div
               id={"My Idea"}
-              className={"bg-slate-800 p-5 rounded-md w-full md:w-full"}
+              className={"bg-slate-800 p-5 rounded-lg w-full md:w-full"}
             >
               <div className="border-b border-gray-700">
                 <h1 className={"font-bold py-2"}>My Idea</h1>
               </div>
               <div className={"py-2"}>
                 <p>There is no Idea Available</p>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section className={"flex flex-col gap-2"}>
-          <div className={"flex flex-col gap-4 md:flex-row"}>
-            <div
-              id={"Skills"}
-              className={"bg-slate-800 p-5 rounded-md w-full md:w-[40%]"}
-            >
-              <h1 className={"font-bold py-2 text-xl"}>My Skills</h1>
-              <section className={"py-2 flex flex-wrap gap-2 md:gap-4"}>
-                {mySkills.map((data) => (
-                  <div
-                    className={
-                      "bg-violet-600 w-fit p-2 rounded-lg font-semibold"
-                    }
-                  >
-                    {data}
-                  </div>
-                ))}
-              </section>
-            </div>
-            <div
-              id={"My Idea"}
-              className={"bg-slate-800 p-5 rounded-md w-full md:w-full"}
-            >
-              <div className="border-b border-gray-700">
-                <h1 className={"font-bold py-2"}>Experience</h1>
-              </div>
-              <div className={"py-2"}>
-                <p>There is no Past Experience Available</p>
               </div>
             </div>
           </div>

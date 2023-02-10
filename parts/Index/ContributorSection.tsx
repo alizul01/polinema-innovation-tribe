@@ -32,7 +32,7 @@ const ContributorSection: React.FC<ContributorSectionProps> = ({
               target="_SEJ"
               rel="noopener"
             >
-              <div className={"text-white flex gap-3 items-center"}>
+              <div className={"text-gray-200 flex gap-3 items-center"}>
                 <div className={"bg-slate-300 w-fit p-1 rounded-full"}>
                   <Image
                     width={32}

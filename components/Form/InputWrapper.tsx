@@ -10,7 +10,7 @@ export function InputWrapper(props: PropsWithChildren<InputWrapperProps>) {
     <div className="w-full">
       <label
         htmlFor={props.id}
-        className="block mb-2 text-sm font-medium text-white"
+        className="block mb-2 text-sm font-medium text-gray-200"
       >
         {props.label}
       </label>

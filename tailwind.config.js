@@ -6,11 +6,16 @@ module.exports = {
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./parts/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
+    "./types/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
       colors: {
         elblack: "#131A22",
+        'surface' : {
+          '100': "#1b1439",
+          '200' : "#231b4b",
+        }
       },
     },
   },
