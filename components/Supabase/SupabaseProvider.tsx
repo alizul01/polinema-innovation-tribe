@@ -1,3 +1,5 @@
+"use client";
+
 import type { Session } from "@supabase/auth-helpers-nextjs";
 import { createContext, useContext, useState } from "react";
 import type { TypedSupabaseClient } from "~/types/Supabase/TypedSupabaseClient";
