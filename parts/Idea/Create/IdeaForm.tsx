@@ -47,7 +47,7 @@ function IdeaForm() {
             id="problem"
             placeholder="What kind of Problem?"
             icon={<HiShieldExclamation />}
-            {...form.register("title")}
+            {...form.register("problem")}
           />
           <Input
             label="Solution"
