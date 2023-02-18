@@ -1,3 +1,5 @@
+"use client";
+
 import { useSupabase } from "~/components/Supabase/SupabaseProvider";
 import { useForm } from "react-hook-form";
 import { Form } from "~/components/Form/Form";

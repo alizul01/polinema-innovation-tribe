@@ -8,7 +8,7 @@ import Loading from "~/app/(auth)/loading";
 export default function RootLayout(props: PropsWithChildren<{}>) {
   return (
     <div className="flex justify-between flex-col h-full">
-      <div className={"z-20"}>
+      <div className="z-20">
         <Navbar />
       </div>
       <div className="flex-1">
