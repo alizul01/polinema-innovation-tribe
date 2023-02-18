@@ -46,7 +46,7 @@ function IdeaForm() {
             id="problem"
             placeholder="What kind of Problem?"
             icon={<ShieldIcon />}
-            {...form.register("title")}
+            {...form.register("problem")}
           />
           <Input
             label="Solution"
