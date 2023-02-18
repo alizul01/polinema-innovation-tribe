@@ -7,7 +7,7 @@ export async function createIdea(
 ) {
   const result = await client.from("idea_boxes").insert([
     {
-      id: crypto.randomUUID(),
+      id: crypto.randomUUID().toString(),
       title: values.title,
       problem: values.problem,
       solution: values.solution,

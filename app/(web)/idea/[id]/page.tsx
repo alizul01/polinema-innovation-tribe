@@ -1,22 +1,20 @@
-import React from "react";
 import { IDEAS } from "~/data/Idea/Index/ideas";
-import Content from "~/parts/Idea/Details/IdeaContent";
-import type { ideaSlug } from "~/types/Idea/Details/IdeaSlug";
-import type { Idea } from "~/types/Idea/Index/Idea";
-import Sidebar from "~/parts/Idea/Details/IdeaSidebar";
+import { IdeaContent, IdeaSidebar } from "~/parts/Idea/Details";
 
-const Page: React.FC<ideaSlug> = ({ params }) => {
-  const props: Idea = IDEAS.filter((value) => value.id == params.id)[0];
-  return (
-    <div
-      className={
-        "w-full justify-center items-center xl:px-56 text-gray-200 flex flex-col lg:flex-row"
-      }
-    >
-      <Content key={props.id} {...props} />
-      <Sidebar {...props} />
-    </div>
-  );
+type IdeaPageProps = {
+  params: {
+    id: number;
+  };
 };
 
-export default Page;
+export default function IdeaPage({ params }: IdeaPageProps) {
+  const props = IDEAS.find((value) => value.id == params.id);
+  if (props === undefined) return null;
+
+  return (
+    <div className="w-full justify-center items-center xl:px-56 text-gray-200 flex flex-col lg:flex-row">
+      <IdeaContent key={props.id} {...props} />
+      <IdeaSidebar {...props} />
+    </div>
+  );
+}

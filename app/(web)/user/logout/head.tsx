@@ -1,6 +1,4 @@
-// import next script
-import Script from "next/script";
-import Seo from "~/components/Seo";
+import { Seo } from "~/components/Seo";
 
 type SeoDataManager = {
   title: string;
@@ -9,10 +7,7 @@ type SeoDataManager = {
 const seoData: SeoDataManager = {
   title: "Logging Out...",
 };
+
 export default function Head() {
-  return (
-    <>
-      <Seo seoData={seoData} />
-    </>
-  );
+  return <Seo seoData={seoData} />;
 }

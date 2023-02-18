@@ -1,6 +1,4 @@
-import React from "react";
-
-const Footer: React.FC = () => {
+export function Footer() {
   return (
     <div>
       <footer className="p-4 bg-slate-800 justify-center flex flex-col md:flex-row items-center md:justify-between md:p-6">
@@ -39,6 +37,4 @@ const Footer: React.FC = () => {
       </footer>
     </div>
   );
-};
-
-export default Footer;
+}

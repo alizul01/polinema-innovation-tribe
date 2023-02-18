@@ -1,6 +1,7 @@
 {
   "extends": ["next/core-web-vitals", "kentcdodds"],
   "rules": {
-    "no-negated-condition": "off"
+    "no-negated-condition": "off",
+    "import/consistent-type-specifier-style": "off"
   }
 }

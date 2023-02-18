@@ -1,9 +1,5 @@
-import Seo from "~/components/Seo";
+import { Seo } from "~/components/Seo";
 
 export default function Head() {
-  return (
-    <>
-      <Seo seoData={{ title: "Ideas" }} />
-    </>
-  );
+  return <Seo seoData={{ title: "Ideas" }} />;
 }

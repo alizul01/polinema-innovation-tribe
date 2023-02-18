@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 "use client";
 import Link from "next/link";
-import React, { Fragment, useReducer } from "react";
+import { Fragment, useReducer } from "react";
 import PolitribeLogo from "~/public/icon/ic_politribe-logo.svg";
 import { useSupabase } from "~/components/Supabase/SupabaseProvider";
 import { HiOutlineMenuAlt3, HiUser as UserIcon } from "react-icons/hi";
@@ -11,23 +11,17 @@ import { IoClose } from "react-icons/io5";
 import Image from "next/image";
 import { NavLink } from "./NavLink";
 
-export type NavLinkTypes = {
+export type NavLinkMenuProps = {
   name: string;
   url: string;
 };
 
-const Links: NavLinkTypes[] = [
-  {
-    name: "Competition",
-    url: "/competition",
-  },
-  {
-    name: "Sandbox",
-    url: "/idea",
-  },
+const LINKS: NavLinkMenuProps[] = [
+  { name: "Competition", url: "/competition" },
+  { name: "Sandbox", url: "/idea" },
 ];
 
-export const NavLinkMenu: React.FC<NavLinkTypes> = ({ name, url }) => {
+export function NavLinkMenu({ name, url }: NavLinkMenuProps) {
   return (
     <div>
       <NavLink href={url} activeClass="text-purple-500">
@@ -37,9 +31,9 @@ export const NavLinkMenu: React.FC<NavLinkTypes> = ({ name, url }) => {
       </NavLink>
     </div>
   );
-};
+}
 
-export const AuthMenu: React.FC = () => {
+export function AuthMenu() {
   const { session } = useSupabase();
   return (
     <Menu as={"div"} className={"relative text-gray-200 z-50"}>
@@ -105,9 +99,9 @@ export const AuthMenu: React.FC = () => {
       </Transition>
     </Menu>
   );
-};
+}
 
-export const AuthButton: React.FC = () => {
+export function AuthButton() {
   return (
     <div className="flex gap-3 flex-col md:flex-row">
       <Link
@@ -124,7 +118,7 @@ export const AuthButton: React.FC = () => {
       </Link>
     </div>
   );
-};
+}
 
 export function Navbar() {
   const { session } = useSupabase();
@@ -162,7 +156,7 @@ export function Navbar() {
               }`}
             >
               <div className="items-center justify-center space-y-4 md:flex md:space-x-6 md:space-y-0">
-                {Links.map((link, index) => (
+                {LINKS.map((link, index) => (
                   <NavLinkMenu key={index} name={link.name} url={link.url} />
                 ))}
               </div>

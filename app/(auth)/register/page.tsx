@@ -1,13 +1,9 @@
-/* eslint-disable react/display-name */
-import React from "react";
-import AuthForm from "~/parts/Authentication/AuthForm";
+import { AuthForm } from "~/parts/Authentication";
 
-const RegisterPage: React.FC = React.memo(() => {
+export default function RegisterPage() {
   return (
-    <section className={"h-screen flex justify-center items-center"}>
-      <AuthForm name={"Register"} />
+    <section className="h-screen flex justify-center items-center">
+      <AuthForm name="Register" />
     </section>
   );
-});
-
-export default RegisterPage;
+}

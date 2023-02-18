@@ -1,4 +1,4 @@
-import Seo from "~/components/Seo";
+import { Seo } from "~/components/Seo";
 
 type SeoDataManager = {
   title: string;
@@ -9,9 +9,5 @@ const seoData: SeoDataManager = {
 };
 
 export default function Head() {
-  return (
-    <>
-      <Seo seoData={seoData} />
-    </>
-  );
+  return <Seo seoData={seoData} />;
 }

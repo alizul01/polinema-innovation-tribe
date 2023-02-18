@@ -1,72 +1,51 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 "use client";
-import React from "react";
+
 import Image from "next/image";
 import { useSupabase } from "~/components/Supabase/SupabaseProvider";
 import { useRouter } from "next/navigation";
 
-const ProfilePage: React.FC = () => {
+export default function ProfilePage() {
   const router = useRouter();
   const { session } = useSupabase();
   if (session === null) {
     router.push("/login");
   }
+
   return (
-    <div
-      className={
-        "w-full md:items-center justify-center md:px-56 gap-12 text-gray-200 flex flex-col"
-      }
-    >
-      <div className={"flex gap-4 flex-col lg:max-w-[92rem] w-full"}>
-        <div
-          className={
-            "flex flex-col md:items-center md:flex-row md:justify-between gap-2"
-          }
-        >
-          <div id={"user-profile"} className={"items-center flex gap-4"}>
-            <div
-              className={
-                "bg-gradient-to-tr from-blue-400 to-fuchsia-600 w-fit rounded-full p-[0.15rem]"
-              }
-            >
+    <div className="w-full md:items-center justify-center md:px-56 gap-12 text-gray-200 flex flex-col">
+      <div className="flex gap-4 flex-col lg:max-w-[92rem] w-full">
+        <div className="flex flex-col md:items-center md:flex-row md:justify-between gap-2">
+          <div id="user-profile" className="items-center flex gap-4">
+            <div className="bg-gradient-to-tr from-blue-400 to-fuchsia-600 w-fit rounded-full p-[0.15rem]">
               <Image
-                className={"w-16 rounded-full"}
+                className="w-16 rounded-full"
                 src={session?.user.user_metadata.avatar_url}
-                alt={"profile"}
+                alt="profile"
                 width={100}
                 height={100}
               />
             </div>
-            <div className={"text-start"}>
-              <p className={"font-bold text-base"}>
+            <div className="text-start">
+              <p className="font-bold text-base">
                 {session?.user.user_metadata.full_name}
               </p>
             </div>
           </div>
-          <div className={"p-2 flex gap-4 items-center"}>
-            <span
-              className={
-                "fill-current text-slate-500 hover:text-slate-300 cursor-pointer"
-              }
-            >
+          <div className="p-2 flex gap-4 items-center">
+            <span className="fill-current text-slate-500 hover:text-slate-300 cursor-pointer">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className={"w-8"}
+                className="w-8"
                 viewBox="0 0 30 30"
               >
                 {" "}
                 <path d="M 9.9980469 3 C 6.1390469 3 3 6.1419531 3 10.001953 L 3 20.001953 C 3 23.860953 6.1419531 27 10.001953 27 L 20.001953 27 C 23.860953 27 27 23.858047 27 19.998047 L 27 9.9980469 C 27 6.1390469 23.858047 3 19.998047 3 L 9.9980469 3 z M 22 7 C 22.552 7 23 7.448 23 8 C 23 8.552 22.552 9 22 9 C 21.448 9 21 8.552 21 8 C 21 7.448 21.448 7 22 7 z M 15 9 C 18.309 9 21 11.691 21 15 C 21 18.309 18.309 21 15 21 C 11.691 21 9 18.309 9 15 C 9 11.691 11.691 9 15 9 z M 15 11 A 4 4 0 0 0 11 15 A 4 4 0 0 0 15 19 A 4 4 0 0 0 19 15 A 4 4 0 0 0 15 11 z" />
               </svg>
             </span>
-            <span
-              className={
-                "fill-current text-slate-500 hover:text-slate-300 cursor-pointer"
-              }
-            >
+            <span className="fill-current text-slate-500 hover:text-slate-300 cursor-pointer">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className={"w-9"}
+                className="w-9"
                 viewBox="0 0 30 30"
               >
                 {" "}
@@ -75,26 +54,26 @@ const ProfilePage: React.FC = () => {
             </span>
           </div>
         </div>
-        <section className={"flex flex-col gap-2"}>
-          <div className={"flex flex-col gap-4 md:flex-row"}>
+        <section className="flex flex-col gap-2">
+          <div className="flex flex-col gap-4 md:flex-row">
             <div
-              id={"Information"}
-              className={"bg-slate-800 p-5 rounded-lg w-full md:w-[30%]"}
+              id="Information"
+              className="bg-slate-800 p-5 rounded-lg w-full md:w-[30%]"
             >
-              <h1 className={"font-bold py-2 text-xl"}>Information</h1>
-              <section className={"py-2 flex flex-col gap-4"}>
-                <h4 className={"text-gray-500"}>Email</h4>
+              <h1 className="font-bold py-2 text-xl">Information</h1>
+              <section className="py-2 flex flex-col gap-4">
+                <h4 className="text-gray-500">Email</h4>
                 <p>{session?.user.user_metadata.email}</p>
               </section>
             </div>
             <div
-              id={"My Idea"}
-              className={"bg-slate-800 p-5 rounded-lg w-full md:w-full"}
+              id="My Idea"
+              className="bg-slate-800 p-5 rounded-lg w-full md:w-full"
             >
               <div className="border-b border-gray-700">
-                <h1 className={"font-bold py-2"}>My Idea</h1>
+                <h1 className="font-bold py-2">My Idea</h1>
               </div>
-              <div className={"py-2"}>
+              <div className="py-2">
                 <p>There is no Idea Available</p>
               </div>
             </div>
@@ -103,6 +82,4 @@ const ProfilePage: React.FC = () => {
       </div>
     </div>
   );
-};
-
-export default ProfilePage;
+}
