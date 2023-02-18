@@ -1,7 +1,7 @@
 import { TermsSection, AuthRegisterForm } from "~/parts/Authentication";
 import { AuthOption, FormHeader } from "~/components/Form";
 
-export default function RegisterPage() {
+export default function EmailRegisterPage() {
   return (
     <div className="w-full h-fit lg:h-screen py-4 px-2 flex flex-col gap-4 justify-center items-center">
       <FormHeader title="Welcome to" backTo="/register" />

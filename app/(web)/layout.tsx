@@ -1,4 +1,3 @@
-"use client";
 import type { PropsWithChildren } from "react";
 import { Suspense } from "react";
 import { Footer } from "~/components/Footer";

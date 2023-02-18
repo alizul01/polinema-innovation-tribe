@@ -1,4 +1,3 @@
-import JtiLogo from "~/public/trustedby/jti_polinema.png";
 import Image from "next/image";
 
 export function TrustedSection() {
@@ -10,7 +9,7 @@ export function TrustedSection() {
         </h4>
         <div className="flex p-2">
           <Image
-            src={JtiLogo}
+            src="/trusted-by/jti_polinema.png"
             alt="Logo JTI"
             title="JTI Polinema"
             width={28}

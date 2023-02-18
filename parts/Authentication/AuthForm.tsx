@@ -1,5 +1,3 @@
-"use client";
-
 import { TermsSection, GoogleAuth } from "~/parts/Authentication";
 import { AuthOption, FormHeader } from "~/components/Form";
 

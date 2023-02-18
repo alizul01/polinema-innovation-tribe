@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { useSupabase } from "~/components/Supabase/SupabaseProvider";
 import { useRouter } from "next/navigation";
 
-export default function ProfilePage() {
+export default function LogoutPage() {
   const { supabase } = useSupabase();
   const router = useRouter();
 

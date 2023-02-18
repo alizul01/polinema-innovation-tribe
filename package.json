@@ -44,6 +44,7 @@
     "@types/tinycolor2": "^1.4.3",
     "autoprefixer": "^10.4.13",
     "csstype": "^3.1.1",
+    "encoding": "^0.1.13",
     "eslint-config-kentcdodds": "^20.5.0",
     "postcss": "^8.4.21",
     "prettier": "^2.8.4",

@@ -1,27 +1,11 @@
-"use client";
-import { Header } from "~/parts/Idea/Index/Header";
-import { SearchInput } from "~/parts/Idea/Index/SearchInput";
-import { TagList } from "~/parts/Idea/Index/TagList";
-import { TAGS } from "~/data/Idea/Index/tags";
-import { IdeasList } from "~/parts/Idea/Index/IdeasList";
-import { IDEAS } from "~/data/Idea/Index/ideas";
-import { selectIdea } from "~/services/idea/select-idea";
-import { useSupabase } from "~/components/Supabase/SupabaseProvider";
 import Link from "next/link";
+import { Header, SearchInput, TagList, IdeasList } from "~/parts/Idea/Index";
+import { TAGS, IDEAS } from "~/data/Idea/Index";
+import { useSupabase } from "~/components/Supabase";
 
-export default function IdeaPage() {
-  const { supabase, session } = useSupabase();
-  const onMount = async () => {
-    const { data, error } = await selectIdea(supabase);
-    console.log({ data, error });
-  };
-  onMount()
-    .then(() => {
-      console.log("done");
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+export default function IdeaHomePage() {
+  const { session } = useSupabase();
+
   return (
     <section className="w-full h-full pt-1 md:pt-8 relative">
       <Header />
