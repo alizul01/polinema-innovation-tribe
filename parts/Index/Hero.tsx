@@ -1,11 +1,10 @@
-import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import TrustedSection from "./TrustedSection";
+import { TrustedSection } from "./TrustedSection";
 
-const Hero: React.FC = () => {
+export function Hero() {
   return (
-    <section className="max-w-7xl mx-auto pt-16 gap-6 md:gap-0 flex flex-col md:flex-row items-center justify-between">
+    <section className="pt-16 gap-6 md:gap-0 flex flex-col md:flex-row items-center justify-between">
       <div className="flex items-start justify-between flex-col max-w-6xl gap-24  h-full">
         <div className="flex items-start justify-between flex-col gap-8">
           <span>
@@ -20,16 +19,14 @@ const Hero: React.FC = () => {
             <span className="md:inline block">
               Let your{" "}
               <span className="font-bold text-gray-200"> creativity </span> and{" "}
-              <span className="font-bold text-gray-200"> innovation </span> shine,
+              <span className="font-bold text-gray-200"> innovation </span>{" "}
+              shine,
             </span>{" "}
             as we work together to bring new ideas to life.
           </h4>
 
           <div className="flex flex-row gap-4 justify-start w-full">
-            <Link
-              href="#step"
-              className="btn btn-primary"
-            >
+            <Link href="#step" className="btn btn-primary">
               <h1>Get Started</h1>
             </Link>
             <div className="flex flex-row items-center gap-2">
@@ -58,6 +55,4 @@ const Hero: React.FC = () => {
       </div>
     </section>
   );
-};
-
-export default Hero;
+}

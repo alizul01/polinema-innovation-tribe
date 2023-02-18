@@ -1,8 +1,10 @@
 "use client";
-import React, { useEffect } from "react";
+
+import { useEffect } from "react";
 import { useSupabase } from "~/components/Supabase/SupabaseProvider";
 import { useRouter } from "next/navigation";
-const ProfilePage: React.FC = () => {
+
+export default function ProfilePage() {
   const { supabase } = useSupabase();
   const router = useRouter();
 
@@ -12,7 +14,10 @@ const ProfilePage: React.FC = () => {
   }
 
   useEffect(() => {
-    signout().then(() => router.push("/")).catch(() => console.log("error"));
+    signout()
+      .then(() => router.push("/"))
+      .catch(() => console.log("error"));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -41,6 +46,4 @@ const ProfilePage: React.FC = () => {
       </div>
     </div>
   );
-};
-
-export default ProfilePage;
+}

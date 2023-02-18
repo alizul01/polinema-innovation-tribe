@@ -1,5 +1,3 @@
-"use client";
-
 import type { Session } from "@supabase/auth-helpers-nextjs";
 import { createContext, useContext, useState } from "react";
 import type { TypedSupabaseClient } from "~/types/Supabase/TypedSupabaseClient";
@@ -15,7 +13,7 @@ type SupabaseContext = {
 // @ts-expect-error - no default value
 const Context = createContext<SupabaseContext>();
 
-export default function SupabaseProvider({
+export function SupabaseProvider({
   children,
   session,
 }: {

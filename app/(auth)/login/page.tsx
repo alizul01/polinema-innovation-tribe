@@ -1,7 +1,4 @@
-"use client";
-
-import AuthForm from "~/parts/Authentication/AuthForm";
-import React from "react";
+import { AuthForm } from "~/parts/Authentication";
 
 export default function LoginPage() {
   return (

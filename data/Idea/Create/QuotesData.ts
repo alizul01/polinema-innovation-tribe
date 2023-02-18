@@ -1,6 +1,6 @@
-import type { QuotesType } from "~/types/Idea/Create/QuotesType";
+import type { BlockQuoteProps } from "~/parts/Idea/Create/BlockQuote";
 
-export const QuotesData: QuotesType[] = [
+export const QuotesData: BlockQuoteProps[] = [
   {
     name: "The best way to predict your future is to create it.",
     cite: "Abraham Lincoln",

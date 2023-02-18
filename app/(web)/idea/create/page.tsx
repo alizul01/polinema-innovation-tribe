@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import IdeaForm from "~/parts/Idea/Create/IdeaForm";
 
 export default function CreateIdeaPage() {

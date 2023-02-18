@@ -1,6 +1,4 @@
-"use client";
 import Image from "next/image";
-import React from "react";
 
 type Contributor = {
   name: string;
@@ -13,18 +11,12 @@ type ContributorSectionProps = {
   contributors: Contributor[];
 };
 
-const ContributorSection: React.FC<ContributorSectionProps> = ({
-  contributors,
-}) => {
+export function ContributorSection({ contributors }: ContributorSectionProps) {
   return (
-    <section className={"py-px flex flex-col justify-center items-center"}>
-      <div
-        className={
-          "flex justify-center items-center gap-4 flex-col md:flex-col"
-        }
-      >
-        <h1 className={"text-slate-500 text-center font-semibold"}>Build by</h1>
-        <div className={"flex-row gap-6 flex flex-wrap justify-center"}>
+    <section className="py-px flex flex-col justify-center items-center">
+      <div className="flex justify-center items-center gap-4 flex-col md:flex-col">
+        <h1 className="text-slate-500 text-center font-semibold">Build by</h1>
+        <div className="flex-row gap-6 flex flex-wrap justify-center">
           {contributors.map((contributor) => (
             <a
               key={contributor.name}
@@ -32,8 +24,8 @@ const ContributorSection: React.FC<ContributorSectionProps> = ({
               target="_SEJ"
               rel="noopener"
             >
-              <div className={"text-gray-200 flex gap-3 items-center"}>
-                <div className={"bg-slate-300 w-fit p-1 rounded-full"}>
+              <div className="text-gray-200 flex gap-3 items-center">
+                <div className="bg-slate-300 w-fit p-1 rounded-full">
                   <Image
                     width={32}
                     height={32}
@@ -43,8 +35,8 @@ const ContributorSection: React.FC<ContributorSectionProps> = ({
                   />
                 </div>
                 <div>
-                  <h4 className={"font-bold text-md"}>{contributor.name}</h4>
-                  <p className={"text-xs italic"}>{contributor.jobDesc}</p>
+                  <h4 className="font-bold text-md">{contributor.name}</h4>
+                  <p className="text-xs italic">{contributor.jobDesc}</p>
                 </div>
               </div>
             </a>
@@ -52,12 +44,10 @@ const ContributorSection: React.FC<ContributorSectionProps> = ({
         </div>
       </div>
       <div>
-        <a className={"font-regular text-xs text-slate-500"}>
+        <a className="font-regular text-xs text-slate-500">
           and other creative people...{" "}
         </a>
       </div>
     </section>
   );
-};
-
-export default ContributorSection;
+}

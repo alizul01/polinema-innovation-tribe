@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-import React from "react";
 import { useSupabase } from "~/components/Supabase/SupabaseProvider";
 import { useForm } from "react-hook-form";
 import { Form } from "~/components/Form/Form";
@@ -7,7 +5,7 @@ import { registrationSchema, RegistrationSchema } from "~/schema/Registration";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Input } from "~/components/Form/Input";
 
-function AuthRegisterForm() {
+export function AuthRegisterForm() {
   const { supabase } = useSupabase();
   const form = useForm<RegistrationSchema>({
     resolver: zodResolver(registrationSchema),
@@ -25,7 +23,7 @@ function AuthRegisterForm() {
       <Form
         form={form}
         onSubmit={handleSubmit}
-        className={"my-4 w-full max-w-md"}
+        className="my-4 w-full max-w-md"
       >
         <Input
           label="Email"
@@ -66,5 +64,3 @@ function AuthRegisterForm() {
     </>
   );
 }
-
-export default AuthRegisterForm;

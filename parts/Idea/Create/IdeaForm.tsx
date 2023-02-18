@@ -1,22 +1,21 @@
-import React from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
-  HiLightBulb as LightBulb,
-  HiEnvelope as Envelope,
-  HiPhone as Phone,
-  HiLockClosed as LockClosed,
-  HiBeaker,
-  HiShieldExclamation,
+  HiLightBulb as LightBulbIcon,
+  HiEnvelope as EnvelopeIcon,
+  HiPhone as PhoneIcon,
+  HiLockClosed as LockClosedIcon,
+  HiBeaker as BeakerIcon,
+  HiShieldExclamation as ShieldIcon,
 } from "react-icons/hi2";
 import { SubmitHandler, useForm } from "react-hook-form";
-import ProTips from "~/parts/Idea/Create/ProTips";
+import { ProTips } from "~/parts/Idea/Create/ProTips";
 import { useSupabase } from "~/components/Supabase/SupabaseProvider";
 import type { definitions } from "~/generated-types";
 import { createIdea } from "~/services/idea/create-idea";
 import { Input } from "~/components/Form/Input";
 import { TextAreaInput } from "~/components/Form/TextAreaInput";
 import { type IdeaSchema, ideaSchema } from "~/schema/Idea";
-import { Form } from "~/components/Form/Form";
+import { Form } from "~/components/Form";
 
 export type IdeaBox = definitions["idea_boxes"];
 
@@ -39,35 +38,35 @@ function IdeaForm() {
             label="Title"
             id="title"
             placeholder="Idea Title"
-            icon={<LightBulb />}
+            icon={<LightBulbIcon />}
             {...form.register("title")}
           />
           <Input
             label="Problem"
             id="problem"
             placeholder="What kind of Problem?"
-            icon={<HiShieldExclamation />}
+            icon={<ShieldIcon />}
             {...form.register("title")}
           />
           <Input
             label="Solution"
             id="solution"
             placeholder="How do you solve it?"
-            icon={<HiBeaker />}
+            icon={<BeakerIcon />}
             {...form.register("solution")}
           />
           <TextAreaInput
             label="Description"
             id="description"
             placeholder="What is it?"
-            icon={<HiBeaker />}
+            icon={<BeakerIcon />}
             {...form.register("description")}
           />
           <Input
             label="Deadline"
             id="Deadline"
             placeholder="Deadline..."
-            icon={<LockClosed />}
+            icon={<LockClosedIcon />}
             type="date"
             {...form.register("deadline")}
           />
@@ -75,14 +74,14 @@ function IdeaForm() {
             label="Whatsapp"
             id="whatsapp"
             placeholder="+628123456789"
-            icon={<Phone />}
+            icon={<PhoneIcon />}
             {...form.register("whatsapp")}
           />
           <Input
             label="Email"
             id="email"
             placeholder="example@gmail.com"
-            icon={<Envelope />}
+            icon={<EnvelopeIcon />}
             {...form.register("email")}
           />
           <button className="btn btn-primary">Submit</button>

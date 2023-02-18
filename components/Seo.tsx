@@ -1,4 +1,3 @@
-import React from "react";
 import Script from "next/script";
 
 type SeoDataManager = {
@@ -9,7 +8,7 @@ type SeoProps = {
   seoData: SeoDataManager;
 };
 
-const Seo: React.FC<SeoProps> = ({ seoData }) => {
+export function Seo({ seoData }: SeoProps) {
   return (
     <>
       <meta charSet="UTF-8" />
@@ -60,6 +59,4 @@ const Seo: React.FC<SeoProps> = ({ seoData }) => {
       />
     </>
   );
-};
-
-export default Seo;
+}

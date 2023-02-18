@@ -1,14 +1,13 @@
-"use client";
-import React from "react";
-import { STEP_LIST } from "../../../types/Index/StepListType";
-import StepItem from "./StepItem";
+import { STEP_LIST } from "./StepData";
+import { StepItem } from "./StepItem";
 
-const Step = () => {
+export function StepsSection() {
   return (
     <section
-      className="flex flex-col gap-4 mt-8 border-y border-y-slate-800 w-full bg-[#100c22] cursor-default"
+      className="relative flex flex-col gap-4 mt-8 border-y border-y-slate-800 w-full cursor-default"
       id="step"
     >
+      <div className="absolute -left-[9999px] -right-[9999px] top-0 bottom-0 bg-[#100c22] -z-10" />
       <div className="mx-auto max-w-7xl w-[90%]">
         <span>
           <h4 className="text-center md:text-start text-sm md:text-base text-purple-400 font-semibold capitalize pb-2">
@@ -20,17 +19,10 @@ const Step = () => {
         </span>
         <div className="pt-16 flex flex-col gap-6">
           {STEP_LIST.map((step, index) => (
-            <StepItem
-              key={index}
-              color={step.color}
-              title={step.title}
-              step={step.step}
-            />
+            <StepItem key={index} {...step} />
           ))}
         </div>
       </div>
     </section>
   );
-};
-
-export default Step;
+}

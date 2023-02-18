@@ -1,11 +1,10 @@
-import React from "react";
 import Link from "next/link";
 
-type buttonPropsData = {
+type ButtonPropsData = {
   screen: "sm" | "md" | "lg";
 };
 
-const ButtonAuth: React.FC<buttonPropsData> = ({ screen }) => {
+export function ButtonAuth({ screen }: ButtonPropsData) {
   return (
     <div
       className={[
@@ -34,6 +33,4 @@ const ButtonAuth: React.FC<buttonPropsData> = ({ screen }) => {
       </Link>
     </div>
   );
-};
-
-export default ButtonAuth;
+}

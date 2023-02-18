@@ -1,13 +1,10 @@
-import React from "react";
 import type { Idea } from "~/types/Idea/Index/Idea";
-import ProfileSidebar from "~/components/ProfileSidebar";
+import { ProfileSidebar } from "~/components/ProfileSidebar";
 
-const Sidebar: React.FC<Idea> = (props) => {
+export function IdeaSidebar(props: Idea) {
   return (
-    <div className={"sidebar"}>
+    <div className="sidebar">
       <ProfileSidebar {...props.author} />
     </div>
   );
-};
-
-export default Sidebar;
+}

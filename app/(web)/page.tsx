@@ -1,18 +1,19 @@
-import React from "react";
-import Hero from "~/parts/Index/Hero";
-import ContributorSection from "~/parts/Index/ContributorSection";
-import BenefitSection from "~/parts/Index/BenefitSection";
-import Step from "~/parts/Index/StepByStepSection/Step";
-import Forms from "~/parts/Index/Forms";
+import {
+  Hero,
+  ContributorSection,
+  BenefitSection,
+  StepsSection,
+  ContactForm,
+} from "~/parts/Index";
 import { contributors } from "~/data/contributor/contributors";
 
 export default function HomePage() {
   return (
-    <div>
+    <div className="max-w-7xl mx-auto">
       <Hero />
       <BenefitSection />
-      <Step />
-      <Forms />
+      <StepsSection />
+      <ContactForm />
       <ContributorSection contributors={contributors} />
     </div>
   );

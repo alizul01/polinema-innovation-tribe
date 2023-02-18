@@ -1,4 +1,3 @@
-import React from "react";
 import { useSupabase } from "~/components/Supabase/SupabaseProvider";
 import { useForm } from "react-hook-form";
 import { Input } from "~/components/Form/Input";
@@ -6,7 +5,7 @@ import { Form } from "~/components/Form/Form";
 import { authSchema, AuthSchema } from "~/schema/Auth";
 import { zodResolver } from "@hookform/resolvers/zod";
 
-export default function AuthLoginForm() {
+export function AuthLoginForm() {
   const { supabase } = useSupabase();
   const form = useForm<AuthSchema>({
     resolver: zodResolver(authSchema),

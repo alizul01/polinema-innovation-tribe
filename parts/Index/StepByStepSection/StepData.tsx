@@ -1,30 +1,15 @@
-import type { ReactElement } from "react";
-import { FaBrain, FaLightbulb, FaTrophy } from "react-icons/fa";
-import { HiDocumentText } from "react-icons/hi";
-import { CgIfDesign } from "react-icons/cg";
-import { TiGroup } from "react-icons/ti";
-import { MdCreate } from "react-icons/md";
+import { CgIfDesign as IfIcon } from "react-icons/cg";
+import {
+  FaLightbulb as LightBulbIcon,
+  FaBrain as BrainIcon,
+  FaTrophy as TrophyIcon,
+} from "react-icons/fa";
+import { TiGroup as GroupIcon } from "react-icons/ti";
+import { HiDocumentText as DocumentTextIcon } from "react-icons/hi";
+import { MdCreate as CreateIcon } from "react-icons/md";
+import type { StepItemProps } from "./StepItem";
 
-export type StepColor = {
-  bg: string;
-  text: string;
-};
-
-export type StepData = {
-  title: string;
-  description: string;
-  link: string;
-  linkText: string;
-  icon: ReactElement;
-};
-
-export type StepListType = {
-  title: string;
-  color: StepColor;
-  step: StepData[];
-};
-
-export const STEP_LIST: StepListType[] = [
+export const STEP_LIST: StepItemProps[] = [
   {
     title: "Create Idea",
     color: {
@@ -36,25 +21,31 @@ export const STEP_LIST: StepListType[] = [
         title: "Research Problems",
         description:
           "Lakukan penelitian terhadap masalah yang ada, kami sangat menyarankan untuk memulai dengan permasalahan SDGs.",
-        link: "https://www.globalgoals.org/",
-        linkText: "Learn About SDGs",
-        icon: <FaLightbulb />,
+        link: {
+          href: "https://www.globalgoals.org/",
+          text: "Learn About SDGs",
+        },
+        icon: <LightBulbIcon />,
       },
       {
         title: "Brainstorm Ideas",
         description:
           "Buat ide-ide yang mungkin bisa menjadi solusi dari masalah yang ada, ide-ide ini bisa berupa produk, layanan, atau aplikasi.",
-        link: "https://www.youtube.com/watch?v=bEusrD8g-dM",
-        linkText: "Learn About Brainstorming",
-        icon: <FaBrain />,
+        link: {
+          href: "https://www.youtube.com/watch?v=bEusrD8g-dM",
+          text: "Learn About Brainstorming",
+        },
+        icon: <BrainIcon />,
       },
       {
         title: "Create Proposal",
         description:
           "Buat proposal yang menjelaskan ide-ide yang telah dibuat, proposal ini akan menjadi dasar untuk membuat inovasimu",
-        link: "https://www.youtube.com/watch?v=k2jfC2TC3Dk",
-        linkText: "Learn About Proposal",
-        icon: <HiDocumentText />,
+        link: {
+          href: "https://www.youtube.com/watch?v=k2jfC2TC3Dk",
+          text: "Learn About Proposal",
+        },
+        icon: <DocumentTextIcon />,
       },
     ],
   },
@@ -69,9 +60,11 @@ export const STEP_LIST: StepListType[] = [
         title: "Learn About Design Thinking",
         description:
           "Pelajari tentang Design Thinking, sebuah metode yang dapat membantu kamu dalam membangun inovasi.",
-        link: "https://www.youtube.com/watch?v=2z42_jnFxn8",
-        linkText: "Learn About Design Thinking",
-        icon: <CgIfDesign />,
+        link: {
+          href: "https://www.youtube.com/watch?v=2z42_jnFxn8",
+          text: "Learn About Design Thinking",
+        },
+        icon: <IfIcon />,
       },
     ],
   },
@@ -86,17 +79,21 @@ export const STEP_LIST: StepListType[] = [
         title: "Upload Your Idea",
         description:
           "Upload ide-ide yang telah kamu buat, dan dapatkan feedback dari orang-orang yang berpengalaman.",
-        link: "/ideas/create",
-        linkText: "Upload Your Idea",
-        icon: <MdCreate />,
+        link: {
+          href: "/ideas/create",
+          text: "Upload Your Idea",
+        },
+        icon: <CreateIcon />,
       },
       {
         title: "Find Teammates",
         description:
           "Temukan teman-teman yang memiliki kemampuan yang sama dengan kamu, dan dapat membantu kamu dalam membangun inovasimu.",
-        link: "/ideas",
-        linkText: "Find Teammates",
-        icon: <TiGroup />,
+        link: {
+          href: "/ideas",
+          text: "Find Teammates",
+        },
+        icon: <GroupIcon />,
       },
     ],
   },
@@ -109,18 +106,24 @@ export const STEP_LIST: StepListType[] = [
     step: [
       {
         title: "Learn About Competitions",
-        description: "Persiapkan dan pelajari buku panduan kompetisi yang diberikan oleh pihak penyelenggara.",
-        link: "#",
-        linkText: "Coming soon!",
-        icon: <CgIfDesign />,
+        description:
+          "Persiapkan dan pelajari buku panduan kompetisi yang diberikan oleh pihak penyelenggara.",
+        link: {
+          href: "#",
+          text: "Coming soon!",
+        },
+        icon: <IfIcon />,
       },
       {
         title: "Search Competitions",
-        description: "Temukan kompetisi yang sesuai dengan inovasimu, dan daftarkan dirimu sekarang juga!",
-        link: "/competitions",
-        linkText: "Search Competitions",
-        icon: <FaTrophy />,
-      }
-    ]
-  }
+        description:
+          "Temukan kompetisi yang sesuai dengan inovasimu, dan daftarkan dirimu sekarang juga!",
+        link: {
+          href: "/competitions",
+          text: "Search Competitions",
+        },
+        icon: <TrophyIcon />,
+      },
+    ],
+  },
 ];

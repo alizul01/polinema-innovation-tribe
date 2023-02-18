@@ -1,12 +1,16 @@
-import React, {MouseEvent} from 'react';
+import type { MouseEvent } from "react";
 import GoogleIcon from "~/public/icon/ic_google-icon.svg";
 import Link from "next/link";
-import {HiUser as UserIcon} from "react-icons/hi2";
-import {useSupabase} from "~/components/Supabase/SupabaseProvider";
-import type {AuthFormType} from "~/types/Authentication/AuthFormType";
+import { HiUser as UserIcon } from "react-icons/hi2";
+import { useSupabase } from "~/components/Supabase/SupabaseProvider";
 
-const AuthGoogle: React.FC<AuthFormType> = ({ name }) => {
+type GoogleAuthProps = {
+  name: "Register" | "Login";
+};
+
+export function GoogleAuth({ name }: GoogleAuthProps) {
   const { supabase } = useSupabase();
+
   async function handleGoogleLogin(e: MouseEvent<HTMLButtonElement>) {
     e.preventDefault();
 
@@ -18,16 +22,15 @@ const AuthGoogle: React.FC<AuthFormType> = ({ name }) => {
       console.log({ error });
     }
   }
+
   return (
-    <div className={"w-full space-y-3"}>
+    <div className="w-full space-y-3">
       <button
-        className={
-          "flex w-full items-center justify-center space-x-2 text-gray-200 bg-slate-800 hover:bg-slate-700 hover:scale-95 transition-all ease-in-out duration-500 focus:ring-3 focus:ring-blue-700 p-2.5 rounded-lg"
-        }
+        className="flex w-full items-center justify-center space-x-2 text-gray-200 bg-slate-800 hover:bg-slate-700 hover:scale-95 transition-all ease-in-out duration-500 focus:ring-3 focus:ring-blue-700 p-2.5 rounded-lg"
         onClick={handleGoogleLogin}
       >
         <GoogleIcon />
-        <a className={"text-sm font-normal"}>{name} with Google</a>
+        <a className="text-sm font-normal">{name} with Google</a>
       </button>
       <Link
         href={name == "Register" ? "/register/email" : "/login/email"}
@@ -39,5 +42,3 @@ const AuthGoogle: React.FC<AuthFormType> = ({ name }) => {
     </div>
   );
 }
-
-export default AuthGoogle;

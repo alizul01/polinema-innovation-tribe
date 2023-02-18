@@ -1,12 +1,12 @@
-import React from 'react';
 import Link from "next/link";
 
-export type AuthOptionProps = {
-  ask: "Not Yet" | "Registered"
-}
+type AuthOptionProps = {
+  ask: "Not Yet" | "Registered";
+};
 
-const AuthOption: React.FC<AuthOptionProps> = ({ ask }) => {
-  const text = ask === "Registered" ? "Already Registered?" : "Don't have Account Yet?";
+export function AuthOption({ ask }: AuthOptionProps) {
+  const text =
+    ask === "Registered" ? "Already Registered?" : "Don't have Account Yet?";
   const linkText = ask === "Registered" ? "Login" : "Register Now!";
   const linkHref = ask === "Registered" ? "/login" : "/register";
 
@@ -19,5 +19,3 @@ const AuthOption: React.FC<AuthOptionProps> = ({ ask }) => {
     </div>
   );
 }
-
-export default AuthOption;
