@@ -15,7 +15,7 @@ type SupabaseContext = {
 // @ts-expect-error - no default value
 const Context = createContext<SupabaseContext>();
 
-export function SupabaseProvider({
+export default function SupabaseProvider({
   children,
   session,
 }: {

@@ -1,5 +1,6 @@
 import type { PropsWithChildren } from "react";
-import { SupabaseProvider, SupabaseListener } from "~/components/Supabase";
+import SupabaseProvider from "~/components/Supabase/SupabaseProvider";
+import SupabaseListener from "~/components/Supabase/SupabaseListener";
 import { createServerClient } from "~/utils/supabase-server";
 import { ReactQueryProvider } from "~/components/ReactQueryProvider";
 import { ToasterWrapper } from "~/components/ToastProvider";

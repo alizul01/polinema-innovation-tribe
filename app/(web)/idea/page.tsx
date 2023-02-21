@@ -1,5 +1,8 @@
 import Link from "next/link";
-import { Header, SearchInput, TagList, IdeasList } from "~/parts/Idea/Index";
+import Header from "~/parts/Idea/Index/Header";
+import SearchInput from "~/parts/Idea/Index/SearchInput";
+import TagList from "~/parts/Idea/Index/TagList";
+import IdeasList from "~/parts/Idea/Index/IdeasList";
 import { TAGS, IDEAS } from "~/data/Idea/Index";
 import { useSupabase } from "~/components/Supabase";
 

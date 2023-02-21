@@ -7,7 +7,7 @@ import { Form } from "~/components/Form/Form";
 import { authSchema, AuthSchema } from "~/schema/Auth";
 import { zodResolver } from "@hookform/resolvers/zod";
 
-export function AuthLoginForm() {
+export default function AuthLoginForm() {
   const { supabase } = useSupabase();
   const form = useForm<AuthSchema>({
     resolver: zodResolver(authSchema),

@@ -4,7 +4,7 @@ import type { StepItemData } from "./Step.types";
 
 export type StepItemProps = StepItemData;
 
-export function StepItem(props: StepItemProps) {
+export default function StepItem(props: StepItemProps) {
   return (
     <div className="flex flex-col gap-4 border-y border-y-slate-800 rounded-lg py-5 hover:bg-surface-100 px-2">
       <div className={`px-4 py-1 w-fit rounded-lg ${props.color.bg}`}>

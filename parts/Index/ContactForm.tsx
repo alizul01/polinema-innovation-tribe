@@ -8,7 +8,7 @@ import {
   useSendSuggestion,
 } from "~/services/contact/send-suggestion";
 
-export function ContactForm() {
+export default function ContactForm() {
   const { mutate: sendSuggestion } = useSendSuggestion();
   const form = useForm<ContactDetailSchema>({
     resolver: zodResolver(contactDetailSchema),

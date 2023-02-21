@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export function TrustedSection() {
+export default function TrustedSection() {
   return (
     <div className="flex flex-col justify-start items-start">
       <div className="flex justify-start items-start gap-4 flex-col md:flex-col">

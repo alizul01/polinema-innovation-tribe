@@ -6,7 +6,7 @@ type TagItemProps = Tag & {
   onClick: (slug: Tag) => void;
 };
 
-export function TagItem({ isActive, onClick, ...props }: TagItemProps) {
+export default function TagItem({ isActive, onClick, ...props }: TagItemProps) {
   return (
     <div
       className={`rounded-full px-2 md:px-3 py-1 hover:scale-95 transition-all duration-500 ease-in-out border font-medium text-sm cursor-pointer ${

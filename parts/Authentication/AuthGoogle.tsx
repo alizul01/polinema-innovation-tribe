@@ -8,7 +8,7 @@ type GoogleAuthProps = {
   name: "Register" | "Login";
 };
 
-export function GoogleAuth({ name }: GoogleAuthProps) {
+export default function GoogleAuth({ name }: GoogleAuthProps) {
   const { supabase } = useSupabase();
 
   async function handleGoogleLogin(e: MouseEvent<HTMLButtonElement>) {

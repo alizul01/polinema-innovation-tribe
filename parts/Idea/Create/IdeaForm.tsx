@@ -10,7 +10,7 @@ import {
   HiShieldExclamation as ShieldIcon,
 } from "react-icons/hi2";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { ProTips } from "~/parts/Idea/Create/ProTips";
+import ProTips from "~/parts/Idea/Create/ProTips";
 import { useSupabase } from "~/components/Supabase/SupabaseProvider";
 import type { definitions } from "~/generated-types";
 import { createIdea } from "~/services/idea/create-idea";

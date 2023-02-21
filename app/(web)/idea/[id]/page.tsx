@@ -1,5 +1,6 @@
 import { IDEAS } from "~/data/Idea/Index/ideas";
-import { IdeaContent, IdeaSidebar } from "~/parts/Idea/Details";
+import IdeaSidebar from "~/parts/Idea/Details/IdeaSidebar";
+import IdeaContent from "~/parts/Idea/Details/IdeaContent";
 
 type IdeaPageProps = {
   params: {

@@ -1,11 +1,12 @@
-import { TermsSection, GoogleAuth } from "~/parts/Authentication";
+import TermsSection from "~/parts/Authentication/TermsSection";
+import GoogleAuth from "~/parts/Authentication/AuthGoogle";
 import { AuthOption, FormHeader } from "~/components/Form";
 
 type AuthFormProps = {
   name: "Register" | "Login";
 };
 
-export function AuthForm({ name }: AuthFormProps) {
+export default function AuthForm({ name }: AuthFormProps) {
   const authOption = name == "Register" ? "Registered" : "Not Yet";
 
   return (

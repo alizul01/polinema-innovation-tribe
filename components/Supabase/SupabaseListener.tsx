@@ -12,7 +12,9 @@ type SupabaseListenerProps = {
 // this method avoids the need to pass a session down to child components
 // in order to re-render when the user's session changes
 // #elegant!
-export function SupabaseListener({ serverAccessToken }: SupabaseListenerProps) {
+export default function SupabaseListener({
+  serverAccessToken,
+}: SupabaseListenerProps) {
   const { supabase } = useSupabase();
   const router = useRouter();
 

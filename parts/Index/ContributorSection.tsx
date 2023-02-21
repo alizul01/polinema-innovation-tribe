@@ -11,7 +11,7 @@ type ContributorSectionProps = {
   contributors: Contributor[];
 };
 
-export function ContributorSection({ contributors }: ContributorSectionProps) {
+export default function ContributorSection({ contributors }: ContributorSectionProps) {
   return (
     <section className="py-px flex flex-col justify-center items-center">
       <div className="flex justify-center items-center gap-4 flex-col md:flex-col">

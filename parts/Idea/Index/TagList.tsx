@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import type { Tag } from "../../../types/Idea/Index/Tag";
-import { TagItem } from "./TagItem";
+import TagItem from "./TagItem";
 
 const LIMIT = 8;
 
@@ -10,7 +10,7 @@ type TagListProps = {
   tags: Tag[];
 };
 
-export function TagList(props: TagListProps) {
+export default function TagList(props: TagListProps) {
   const [shouldShowMore, setShouldShowMore] = useState(false);
   const [selectedTags, setSelectedTags] = useState<Tag[]>([]);
 

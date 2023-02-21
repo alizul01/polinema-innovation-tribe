@@ -1,7 +1,7 @@
 import { STEP_LIST } from "./StepData";
-import { StepItem } from "./StepItem";
+import StepItem from "./StepItem";
 
-export function StepsSection() {
+export default function StepsSection() {
   return (
     <section
       className="relative flex flex-col gap-4 mt-8 border-y border-y-slate-800 w-full cursor-default"
