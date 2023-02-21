@@ -4,10 +4,9 @@ import StepItem from "./StepItem";
 export default function StepsSection() {
   return (
     <section
-      className="relative flex flex-col gap-4 mt-8 border-y border-y-slate-800 w-full cursor-default"
+      className="relative flex flex-col gap-4 mt-8 border-y border-y-slate-800 bg-[#100c22] w-full cursor-default"
       id="step"
     >
-      <div className="absolute -left-[9999px] -right-[9999px] top-0 bottom-0 bg-[#100c22] -z-10" />
       <div className="mx-auto max-w-7xl w-[90%]">
         <span>
           <h4 className="text-center md:text-start text-sm md:text-base text-purple-400 font-semibold capitalize pb-2">

@@ -26,7 +26,7 @@ const BENEFITS: CardDetail[] = [
 export default function BenefitSection() {
   return (
     <section
-      className="w-full py-6 gap-3 flex flex-col items-center"
+      className="w-full py-6 gap-3 flex flex-col items-center max-w-7xl mx-auto"
       id="benefit"
     >
       <div className="gradient-02 -z-40 absolute h-[30%] w-[30%] right-0 md:opacity-30 rounded-full" />

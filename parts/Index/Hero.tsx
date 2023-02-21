@@ -4,8 +4,8 @@ import TrustedSection from "./TrustedSection";
 
 export default function Hero() {
   return (
-    <section className="pt-16 gap-6 md:gap-0 flex flex-col md:flex-row items-center justify-between">
-      <div className="flex items-start justify-between flex-col max-w-6xl gap-24  h-full">
+    <section className="pt-16 gap-6 md:gap-0 flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto">
+      <div className="flex items-start justify-between flex-col max-w-6xl gap-24 h-full">
         <div className="flex items-start justify-between flex-col gap-8">
           <span>
             <h4 className="text-start md:text-start md:text-base text-sm text-purple-400 font-semibold capitalize pb-2">

@@ -13,7 +13,7 @@ type ContributorSectionProps = {
 
 export default function ContributorSection({ contributors }: ContributorSectionProps) {
   return (
-    <section className="py-px flex flex-col justify-center items-center">
+    <section className="py-10 flex flex-col justify-center items-center">
       <div className="flex justify-center items-center gap-4 flex-col md:flex-col">
         <h1 className="text-slate-500 text-center font-semibold">Build by</h1>
         <div className="flex-row gap-6 flex flex-wrap justify-center">
