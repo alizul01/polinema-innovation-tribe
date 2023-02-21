@@ -4,7 +4,7 @@ type TermsSectionProps = {
   title: string;
 };
 
-export function TermsSection({ title }: TermsSectionProps) {
+export default function TermsSection({ title }: TermsSectionProps) {
   return (
     <div className="max-w-xl">
       <p className="text-gray-500 text-sm text-center">

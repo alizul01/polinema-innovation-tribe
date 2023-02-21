@@ -6,9 +6,9 @@ import {
   MdOutlineReportProblem as OutlineReportProblemIcon,
 } from "react-icons/md";
 import Link from "next/link";
-import { IdeaHeader } from "./IdeaHeader";
+import IdeaHeader from "./IdeaHeader";
 
-export function IdeaContent(props: Idea) {
+export default function IdeaContent(props: Idea) {
   return (
     <div className="max-w-4xl p-1 lg:sticky lg:top-0 w-[100%] lg:w-[80%]">
       <div className="rounded-lg p-4 flex flex-col gap-6">

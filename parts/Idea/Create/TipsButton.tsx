@@ -2,7 +2,7 @@ import { useState } from "react";
 import type { TipsType } from "~/types/Idea/Create/TipsType";
 import { AiFillInfoCircle } from "react-icons/ai";
 
-export function TipsButton({ name, description }: TipsType) {
+export default function TipsButton({ name, description }: TipsType) {
   const [checked, setChecked] = useState(false);
   const handleSubmit = () => {
     setChecked(!checked);

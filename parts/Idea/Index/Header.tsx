@@ -1,4 +1,4 @@
-export function Header() {
+export default function Header() {
   return (
     <header className="max-w-screen-sm mx-auto">
       <h1 className="text-gray-200 text-2xl md:text-3xl font-bold text-center">

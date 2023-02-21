@@ -8,7 +8,7 @@ import {
   useSendSuggestion,
 } from "~/services/contact/send-suggestion";
 
-export function ContactForm() {
+export default function ContactForm() {
   const { mutate: sendSuggestion } = useSendSuggestion();
   const form = useForm<ContactDetailSchema>({
     resolver: zodResolver(contactDetailSchema),
@@ -21,7 +21,7 @@ export function ContactForm() {
   });
 
   return (
-    <section className="w-full py-2 md:py-16 flex flex-col items-center justify-center relative gap-2">
+    <section className="w-full py-2 md:py-16 flex flex-col items-center justify-center relative gap-2 max-w-7xl mx-auto">
       <div className="gradient-01 -z-[99] absolute h-[30%] w-[30%] bottom-0 left-0 opacity-100 md:opacity-20 rounded-full" />
       <form
         className="rounded-lg md:w-[50%] p-8 h-full w-full bg-purple-700 bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-20 border border-purple-800"

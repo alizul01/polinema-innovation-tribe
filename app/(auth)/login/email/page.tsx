@@ -1,4 +1,5 @@
-import { TermsSection, AuthLoginForm } from "~/parts/Authentication";
+import TermsSection from "~/parts/Authentication/TermsSection";
+import AuthLoginForm from "~/parts/Authentication/AuthLoginForm";
 import { FormHeader, AuthOption } from "~/components/Form";
 
 export default function EmailLoginPage() {

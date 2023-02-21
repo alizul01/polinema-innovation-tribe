@@ -1,14 +1,14 @@
 "use client"
 import {useSupabase} from "~/components/Supabase/SupabaseProvider";
 import Link from "next/link";
-import { IdeaCard, IdeaCardProps } from "./IdeaCard";
 import { FaPlus } from "react-icons/fa";
+import { IdeaCard, IdeaCardProps } from "./IdeaCard";
 
 type IdeasListProps = {
   ideas: IdeaCardProps[];
 };
 
-export function IdeasList(props: IdeasListProps) {
+export default function IdeasList(props: IdeasListProps) {
   const { session } = useSupabase();
   return (
     <div className="flex flex-col gap-6 max-w-screen-md mx-auto mt-8">

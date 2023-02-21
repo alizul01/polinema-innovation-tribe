@@ -4,7 +4,7 @@ import { HiCalendar } from "react-icons/hi";
 import { formatDistanceToNow } from "date-fns";
 import type { Idea } from "~/types/Idea/Index/Idea";
 
-export function IdeaHeader(props: Idea) {
+export default function IdeaHeader(props: Idea) {
   return (
     <div className="flex flex-row justify-between items-start">
       <Link

@@ -3,7 +3,7 @@ export type BlockQuoteProps = {
   cite: string;
 };
 
-export function BlockQuote({ cite, name }: BlockQuoteProps) {
+export default function BlockQuote({ cite, name }: BlockQuoteProps) {
   return (
     <div>
       <blockquote className="p-4 my-4 border-l-4 border-gray-500 bg-gray-800">
