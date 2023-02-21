@@ -1,3 +1,4 @@
+"use client"
 import AuthForm from "~/parts/Authentication/AuthForm";
 
 export default function RegisterPage() {

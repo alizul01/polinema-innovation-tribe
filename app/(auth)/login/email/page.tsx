@@ -1,3 +1,4 @@
+"use client"
 import TermsSection from "~/parts/Authentication/TermsSection";
 import AuthLoginForm from "~/parts/Authentication/AuthLoginForm";
 import { FormHeader, AuthOption } from "~/components/Form";

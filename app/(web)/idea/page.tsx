@@ -1,3 +1,4 @@
+"use client"
 import Link from "next/link";
 import Header from "~/parts/Idea/Index/Header";
 import SearchInput from "~/parts/Idea/Index/SearchInput";
