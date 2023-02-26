@@ -38,6 +38,7 @@ export function useUserRegistration() {
               }
               return err.message;
             }
+
             return `Failed to register. Reason: ${err.message}`;
           },
           success: "Successfully registered!",

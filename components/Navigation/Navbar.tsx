@@ -9,6 +9,7 @@ import { Menu, Transition } from "@headlessui/react";
 import UserNavigation from "~/data/Navigation/UserNavigation";
 import { IoClose } from "react-icons/io5";
 import Image from "next/image";
+import { useAuth } from "~/services/user/auth";
 import { NavLink } from "./NavLink";
 
 export type NavLinkMenuProps = {
@@ -34,7 +35,7 @@ export function NavLinkMenu({ name, url }: NavLinkMenuProps) {
 }
 
 export function AuthMenu() {
-  const { session } = useSupabase();
+  const user = useAuth();
   return (
     <Menu as={"div"} className={"relative text-gray-200 z-50"}>
       <Menu.Button
@@ -42,11 +43,11 @@ export function AuthMenu() {
           "w-10 h-10 flex justify-center items-center border-2 border-slate-600 rounded-full cursor-pointer"
         }
       >
-        {session?.user.app_metadata.provider === "google" ? (
+        {user?.app_metadata.provider === "google" ? (
           <Image
             className={"w-10 h-10 rounded-full"}
-            src={session.user.user_metadata.picture}
-            alt={session.user.user_metadata.full_name}
+            src={user.user_metadata.picture}
+            alt={user.user_metadata.full_name}
             width={40}
             height={40}
           />
@@ -71,7 +72,7 @@ export function AuthMenu() {
               "bg-slate-800 p-2 rounded-lg flex items-center justify-start gap-2",
             ].join(" ")}
           >
-            Halo, {session?.user.user_metadata.full_name}
+            Halo, {user?.user_metadata.username}
           </Menu.Item>
           {UserNavigation.map((item) => (
             <Menu.Item key={item.url} as={Fragment}>
