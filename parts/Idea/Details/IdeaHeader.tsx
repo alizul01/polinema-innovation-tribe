@@ -31,7 +31,7 @@ export default function IdeaHeader(props: Idea) {
       </Link>
       <span className="text-slate-400 flex items-center gap-1 text-sm">
         <HiCalendar />
-        {formatDistanceToNow(props.createdAt, { addSuffix: true })}
+        {formatDistanceToNow(props.updatedAt, { addSuffix: true })}
       </span>
     </div>
   );

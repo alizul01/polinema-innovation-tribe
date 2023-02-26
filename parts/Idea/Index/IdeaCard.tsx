@@ -131,7 +131,7 @@ export function IdeaCard(props: IdeaCardProps) {
             >
               <span className="text-slate-400 flex items-center gap-1 text-sm">
                 <CalendarIcon />
-                {formatDistanceToNow(props.createdAt, { addSuffix: true })}
+                {formatDistanceToNow(props.updatedAt, { addSuffix: true })}
               </span>
               <div className="text-slate-400 flex items-center gap-2">
                 <CommentIcon />
