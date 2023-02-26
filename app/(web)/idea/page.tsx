@@ -16,8 +16,8 @@ export default function IdeaHomePage() {
       {session !== null ? (
         <>
           <SearchInput />
-          <TagList tags={TAGS} />
-          <IdeasList ideas={IDEAS} />
+            <TagList tags={TAGS} />
+            <IdeasList ideas={IDEAS} />
         </>
       ) : (
         <div className="flex flex-col items-center justify-center pt-24">
