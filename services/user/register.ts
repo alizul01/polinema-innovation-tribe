@@ -30,14 +30,13 @@ export function useUserRegistration() {
           error: (err: Error) => {
             // supabase errors
             if (err.name === "AuthApiError") {
-              if (err.message.includes("duplicate key value")) {
-                if (err.message.includes("email")) {
-                  return "User with the same email already exists!";
-                }
-                if (err.message.includes("name")) {
-                  return "User with the same name already exists!";
-                }
+              if (
+                err.message.includes("duplicate key value") &&
+                err.message.includes("username")
+              ) {
+                return "User with the same username already exists!";
               }
+              return err.message;
             }
             return `Failed to register. Reason: ${err.message}`;
           },
