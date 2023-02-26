@@ -1,22 +1,25 @@
 "use client";
 
-import { useSupabase } from "~/components/Supabase/SupabaseProvider";
 import { useForm } from "react-hook-form";
 import { Form } from "~/components/Form/Form";
 import { registrationSchema, RegistrationSchema } from "~/schema/Registration";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Input } from "~/components/Form/Input";
+import { useUserRegistration } from "~/services/user";
+import { useRouter } from "next/navigation";
 
 export default function AuthRegisterForm() {
-  const { supabase } = useSupabase();
+  const router = useRouter();
+  const { mutate: register } = useUserRegistration();
   const form = useForm<RegistrationSchema>({
     resolver: zodResolver(registrationSchema),
   });
 
   async function handleSubmit(data: RegistrationSchema) {
-    await supabase.auth.signInWithPassword({
-      email: data.email,
-      password: data.password,
+    register(data, {
+      onSuccess() {
+        router.push("/login");
+      },
     });
   }
 
@@ -32,6 +35,12 @@ export default function AuthRegisterForm() {
           id="email"
           placeholder="email@example.com"
           {...form.register("email")}
+        />
+         <Input
+          label="Username"
+          id="username"
+          placeholder="john_doe"
+          {...form.register("userName")}
         />
         <div className="flex gap-4">
           <Input

@@ -6,7 +6,7 @@ import TagList from "~/parts/Idea/Index/TagList";
 import IdeasList from "~/parts/Idea/Index/IdeasList";
 import { TAGS } from "~/data/Idea/Index";
 import { useSupabase } from "~/components/Supabase";
-import { useIdeas } from "~/services/idea/select-idea";
+import { useIdeas } from "~/services/idea/all-ideas";
 
 export default function IdeaHomePage() {
   const { session } = useSupabase();
