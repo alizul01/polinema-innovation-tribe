@@ -12,12 +12,12 @@ export interface paths {
       };
     };
   };
-  "/idea_box_tags": {
+  "/idea_tags": {
     get: {
       parameters: {
         query: {
-          idea_box_id?: parameters["rowFilter.idea_box_tags.idea_box_id"];
-          tag_id?: parameters["rowFilter.idea_box_tags.tag_id"];
+          idea_box_id?: parameters["rowFilter.idea_tags.idea_box_id"];
+          tag_id?: parameters["rowFilter.idea_tags.tag_id"];
           /** Filtering Columns */
           select?: parameters["select"];
           /** Ordering */
@@ -39,7 +39,7 @@ export interface paths {
       responses: {
         /** OK */
         200: {
-          schema: definitions["idea_box_tags"][];
+          schema: definitions["idea_tags"][];
         };
         /** Partial Content */
         206: unknown;
@@ -48,8 +48,8 @@ export interface paths {
     post: {
       parameters: {
         body: {
-          /** idea_box_tags */
-          idea_box_tags?: definitions["idea_box_tags"];
+          /** idea_tags */
+          idea_tags?: definitions["idea_tags"];
         };
         query: {
           /** Filtering Columns */
@@ -68,8 +68,8 @@ export interface paths {
     delete: {
       parameters: {
         query: {
-          idea_box_id?: parameters["rowFilter.idea_box_tags.idea_box_id"];
-          tag_id?: parameters["rowFilter.idea_box_tags.tag_id"];
+          idea_box_id?: parameters["rowFilter.idea_tags.idea_box_id"];
+          tag_id?: parameters["rowFilter.idea_tags.tag_id"];
         };
         header: {
           /** Preference */
@@ -84,12 +84,12 @@ export interface paths {
     patch: {
       parameters: {
         query: {
-          idea_box_id?: parameters["rowFilter.idea_box_tags.idea_box_id"];
-          tag_id?: parameters["rowFilter.idea_box_tags.tag_id"];
+          idea_box_id?: parameters["rowFilter.idea_tags.idea_box_id"];
+          tag_id?: parameters["rowFilter.idea_tags.tag_id"];
         };
         body: {
-          /** idea_box_tags */
-          idea_box_tags?: definitions["idea_box_tags"];
+          /** idea_tags */
+          idea_tags?: definitions["idea_tags"];
         };
         header: {
           /** Preference */
@@ -306,20 +306,20 @@ export interface paths {
       };
     };
   };
-  "/idea_boxes": {
+  "/ideas": {
     get: {
       parameters: {
         query: {
-          id?: parameters["rowFilter.idea_boxes.id"];
-          username?: parameters["rowFilter.idea_boxes.username"];
-          title?: parameters["rowFilter.idea_boxes.title"];
-          description?: parameters["rowFilter.idea_boxes.description"];
-          comment?: parameters["rowFilter.idea_boxes.comment"];
-          problem?: parameters["rowFilter.idea_boxes.problem"];
-          solution?: parameters["rowFilter.idea_boxes.solution"];
-          whatsapp?: parameters["rowFilter.idea_boxes.whatsapp"];
-          email?: parameters["rowFilter.idea_boxes.email"];
-          updated_at?: parameters["rowFilter.idea_boxes.updated_at"];
+          id?: parameters["rowFilter.ideas.id"];
+          username?: parameters["rowFilter.ideas.username"];
+          title?: parameters["rowFilter.ideas.title"];
+          description?: parameters["rowFilter.ideas.description"];
+          comment?: parameters["rowFilter.ideas.comment"];
+          problem?: parameters["rowFilter.ideas.problem"];
+          solution?: parameters["rowFilter.ideas.solution"];
+          whatsapp?: parameters["rowFilter.ideas.whatsapp"];
+          email?: parameters["rowFilter.ideas.email"];
+          updated_at?: parameters["rowFilter.ideas.updated_at"];
           /** Filtering Columns */
           select?: parameters["select"];
           /** Ordering */
@@ -341,7 +341,7 @@ export interface paths {
       responses: {
         /** OK */
         200: {
-          schema: definitions["idea_boxes"][];
+          schema: definitions["ideas"][];
         };
         /** Partial Content */
         206: unknown;
@@ -350,8 +350,8 @@ export interface paths {
     post: {
       parameters: {
         body: {
-          /** idea_boxes */
-          idea_boxes?: definitions["idea_boxes"];
+          /** ideas */
+          ideas?: definitions["ideas"];
         };
         query: {
           /** Filtering Columns */
@@ -370,16 +370,16 @@ export interface paths {
     delete: {
       parameters: {
         query: {
-          id?: parameters["rowFilter.idea_boxes.id"];
-          username?: parameters["rowFilter.idea_boxes.username"];
-          title?: parameters["rowFilter.idea_boxes.title"];
-          description?: parameters["rowFilter.idea_boxes.description"];
-          comment?: parameters["rowFilter.idea_boxes.comment"];
-          problem?: parameters["rowFilter.idea_boxes.problem"];
-          solution?: parameters["rowFilter.idea_boxes.solution"];
-          whatsapp?: parameters["rowFilter.idea_boxes.whatsapp"];
-          email?: parameters["rowFilter.idea_boxes.email"];
-          updated_at?: parameters["rowFilter.idea_boxes.updated_at"];
+          id?: parameters["rowFilter.ideas.id"];
+          username?: parameters["rowFilter.ideas.username"];
+          title?: parameters["rowFilter.ideas.title"];
+          description?: parameters["rowFilter.ideas.description"];
+          comment?: parameters["rowFilter.ideas.comment"];
+          problem?: parameters["rowFilter.ideas.problem"];
+          solution?: parameters["rowFilter.ideas.solution"];
+          whatsapp?: parameters["rowFilter.ideas.whatsapp"];
+          email?: parameters["rowFilter.ideas.email"];
+          updated_at?: parameters["rowFilter.ideas.updated_at"];
         };
         header: {
           /** Preference */
@@ -394,20 +394,20 @@ export interface paths {
     patch: {
       parameters: {
         query: {
-          id?: parameters["rowFilter.idea_boxes.id"];
-          username?: parameters["rowFilter.idea_boxes.username"];
-          title?: parameters["rowFilter.idea_boxes.title"];
-          description?: parameters["rowFilter.idea_boxes.description"];
-          comment?: parameters["rowFilter.idea_boxes.comment"];
-          problem?: parameters["rowFilter.idea_boxes.problem"];
-          solution?: parameters["rowFilter.idea_boxes.solution"];
-          whatsapp?: parameters["rowFilter.idea_boxes.whatsapp"];
-          email?: parameters["rowFilter.idea_boxes.email"];
-          updated_at?: parameters["rowFilter.idea_boxes.updated_at"];
+          id?: parameters["rowFilter.ideas.id"];
+          username?: parameters["rowFilter.ideas.username"];
+          title?: parameters["rowFilter.ideas.title"];
+          description?: parameters["rowFilter.ideas.description"];
+          comment?: parameters["rowFilter.ideas.comment"];
+          problem?: parameters["rowFilter.ideas.problem"];
+          solution?: parameters["rowFilter.ideas.solution"];
+          whatsapp?: parameters["rowFilter.ideas.whatsapp"];
+          email?: parameters["rowFilter.ideas.email"];
+          updated_at?: parameters["rowFilter.ideas.updated_at"];
         };
         body: {
-          /** idea_boxes */
-          idea_boxes?: definitions["idea_boxes"];
+          /** ideas */
+          ideas?: definitions["ideas"];
         };
         header: {
           /** Preference */
@@ -513,12 +513,12 @@ export interface paths {
 }
 
 export interface definitions {
-  idea_box_tags: {
+  idea_tags: {
     /**
      * Format: uuid
      * @description Note:
      * This is a Primary Key.<pk/>
-     * This is a Foreign Key to `idea_boxes.id`.<fk table='idea_boxes' column='id'/>
+     * This is a Foreign Key to `ideas.id`.<fk table='ideas' column='id'/>
      */
     idea_box_id: string;
     /**
@@ -565,7 +565,7 @@ export interface definitions {
     /** Format: text */
     email?: string;
   };
-  idea_boxes: {
+  ideas: {
     /**
      * Format: uuid
      * @description Note:
@@ -636,12 +636,12 @@ export interface parameters {
   offset: string;
   /** @description Limiting and Pagination */
   limit: string;
-  /** @description idea_box_tags */
-  "body.idea_box_tags": definitions["idea_box_tags"];
+  /** @description idea_tags */
+  "body.idea_tags": definitions["idea_tags"];
   /** Format: uuid */
-  "rowFilter.idea_box_tags.idea_box_id": string;
+  "rowFilter.idea_tags.idea_box_id": string;
   /** Format: integer */
-  "rowFilter.idea_box_tags.tag_id": string;
+  "rowFilter.idea_tags.tag_id": string;
   /** @description competitions */
   "body.competitions": definitions["competitions"];
   /** Format: uuid */
@@ -670,28 +670,28 @@ export interface parameters {
   "rowFilter.users.bio": string;
   /** Format: text */
   "rowFilter.users.email": string;
-  /** @description idea_boxes */
-  "body.idea_boxes": definitions["idea_boxes"];
+  /** @description ideas */
+  "body.ideas": definitions["ideas"];
   /** Format: uuid */
-  "rowFilter.idea_boxes.id": string;
+  "rowFilter.ideas.id": string;
   /** Format: text */
-  "rowFilter.idea_boxes.username": string;
+  "rowFilter.ideas.username": string;
   /** Format: character varying */
-  "rowFilter.idea_boxes.title": string;
+  "rowFilter.ideas.title": string;
   /** Format: text */
-  "rowFilter.idea_boxes.description": string;
+  "rowFilter.ideas.description": string;
   /** Format: text */
-  "rowFilter.idea_boxes.comment": string;
+  "rowFilter.ideas.comment": string;
   /** Format: text */
-  "rowFilter.idea_boxes.problem": string;
+  "rowFilter.ideas.problem": string;
   /** Format: text */
-  "rowFilter.idea_boxes.solution": string;
+  "rowFilter.ideas.solution": string;
   /** Format: character varying */
-  "rowFilter.idea_boxes.whatsapp": string;
+  "rowFilter.ideas.whatsapp": string;
   /** Format: character varying */
-  "rowFilter.idea_boxes.email": string;
+  "rowFilter.ideas.email": string;
   /** Format: timestamp without time zone */
-  "rowFilter.idea_boxes.updated_at": string;
+  "rowFilter.ideas.updated_at": string;
   /** @description tags */
   "body.tags": definitions["tags"];
   /** Format: integer */

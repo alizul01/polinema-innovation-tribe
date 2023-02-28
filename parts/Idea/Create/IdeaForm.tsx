@@ -11,25 +11,23 @@ import {
 } from "react-icons/hi2";
 import { SubmitHandler, useForm } from "react-hook-form";
 import ProTips from "~/parts/Idea/Create/ProTips";
-import { useSupabase } from "~/components/Supabase/SupabaseProvider";
 import type { definitions } from "~/generated-types";
-import { createIdea } from "~/services/idea/create-idea";
+import { useCreateIdea } from "~/services/idea/create-idea";
 import { Input } from "~/components/Form/Input";
 import { TextAreaInput } from "~/components/Form/TextAreaInput";
 import { type IdeaSchema, ideaSchema } from "~/schema/Idea";
 import { Form } from "~/components/Form";
 
-export type IdeaBox = definitions["idea_boxes"];
+export type IdeaBox = definitions["ideas"];
 
 function IdeaForm() {
+  const { mutate: createIdea } = useCreateIdea();
   const form = useForm<IdeaSchema>({
     resolver: zodResolver(ideaSchema),
   });
-  const { supabase } = useSupabase();
 
   const onSubmit: SubmitHandler<IdeaSchema> = async (values) => {
-    const { data, error } = await createIdea(supabase, values);
-    console.log({ data, error });
+    createIdea(values);
   };
 
   return (

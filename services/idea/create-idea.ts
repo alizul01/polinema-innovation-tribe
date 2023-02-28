@@ -2,11 +2,11 @@ import { useMutation } from "@tanstack/react-query";
 import { useSupabase } from "~/components/Supabase";
 import type { IdeaSchema } from "~/schema/Idea";
 
-export async function useCreateIdea() {
+export function useCreateIdea() {
   const { supabase } = useSupabase();
   return useMutation({
     mutationFn: async (input: IdeaSchema) => {
-      const result = await supabase.from("idea_boxes").insert([
+      const result = await supabase.from("ideas").insert([
         {
           id: crypto.randomUUID().toString(),
           title: input.title,
@@ -15,7 +15,6 @@ export async function useCreateIdea() {
           description: input.description,
           whatsapp: input.whatsapp,
           email: input.email,
-          updated_at: new Date(),
         },
       ]);
       return result;

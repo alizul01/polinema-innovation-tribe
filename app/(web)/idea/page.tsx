@@ -4,13 +4,14 @@ import Header from "~/parts/Idea/Index/Header";
 import SearchInput from "~/parts/Idea/Index/SearchInput";
 import TagList from "~/parts/Idea/Index/TagList";
 import IdeasList from "~/parts/Idea/Index/IdeasList";
-import { TAGS } from "~/data/Idea/Index";
 import { useSupabase } from "~/components/Supabase";
 import { useIdeas } from "~/services/idea/all-ideas";
+import { useTags } from "~/services/tags/all-tags";
 
 export default function IdeaHomePage() {
   const { session } = useSupabase();
   const { data: ideas = [] } = useIdeas();
+  const { data: tags = [] } = useTags();
 
   return (
     <section className="w-full h-full pt-1 md:pt-8 relative">
@@ -18,7 +19,7 @@ export default function IdeaHomePage() {
       {session !== null ? (
         <>
           <SearchInput />
-          <TagList tags={TAGS} />
+          <TagList tags={tags} />
           <IdeasList ideas={ideas} />
         </>
       ) : (

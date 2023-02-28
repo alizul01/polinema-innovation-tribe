@@ -8,11 +8,11 @@ export function useIdeas() {
   return useQuery<Idea[]>({
     queryKey: ["ideas"],
     queryFn: async () => {
-      const ideas = await supabase.from("idea_boxes").select("*");
+      const ideas = await supabase.from("ideas").select("*");
       if (ideas.data === null) return [];
 
       const mappedData: Idea[] = (
-        ideas.data as Array<definitions["idea_boxes"]>
+        ideas.data as Array<definitions["ideas"]>
       ).map((idea) => ({
         // TODO: fill it properly
         author: {

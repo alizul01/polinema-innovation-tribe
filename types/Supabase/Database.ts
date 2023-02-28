@@ -35,78 +35,62 @@ export interface Database {
           title?: string
         }
       }
-      idea_box_tags: {
+      idea_tags: {
         Row: {
-          idea_box_id: string
+          idea_id: string
           tag_id: number
         }
         Insert: {
-          idea_box_id: string
+          idea_id: string
           tag_id: number
         }
         Update: {
-          idea_box_id?: string
+          idea_id?: string
           tag_id?: number
         }
       }
-      idea_boxes: {
+      ideas: {
         Row: {
-          comment: Json | null
-          description: string | null
-          email: string | null
+          created_at: string
+          description: string
           id: string
           problem: string
           solution: string
           title: string
-          updated_at: string | null
+          updated_at: string
+          user_id: string
           username: string | null
-          whatsapp: string | null
         }
         Insert: {
-          comment?: Json | null
-          description?: string | null
-          email?: string | null
+          created_at?: string
+          description: string
           id: string
           problem: string
           solution: string
           title: string
-          updated_at?: string | null
+          updated_at?: string
+          user_id: string
           username?: string | null
-          whatsapp?: string | null
         }
         Update: {
-          comment?: Json | null
-          description?: string | null
-          email?: string | null
+          created_at?: string
+          description?: string
           id?: string
           problem?: string
           solution?: string
           title?: string
-          updated_at?: string | null
+          updated_at?: string
+          user_id?: string
           username?: string | null
-          whatsapp?: string | null
         }
       }
-      tags: {
-        Row: {
-          id: number
-          name: string
-        }
-        Insert: {
-          id?: number
-          name: string
-        }
-        Update: {
-          id?: number
-          name?: string
-        }
-      }
-      users: {
+      profiles: {
         Row: {
           bio: string
           first_name: string
           id: string
           last_name: string
+          profile_image: string | null
           username: string
         }
         Insert: {
@@ -114,6 +98,7 @@ export interface Database {
           first_name: string
           id: string
           last_name: string
+          profile_image?: string | null
           username: string
         }
         Update: {
@@ -121,7 +106,28 @@ export interface Database {
           first_name?: string
           id?: string
           last_name?: string
+          profile_image?: string | null
           username?: string
+        }
+      }
+      tags: {
+        Row: {
+          colour: string
+          id: number
+          name: string
+          slug: string
+        }
+        Insert: {
+          colour: string
+          id?: number
+          name: string
+          slug: string
+        }
+        Update: {
+          colour?: string
+          id?: number
+          name?: string
+          slug?: string
         }
       }
     }
