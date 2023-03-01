@@ -10,7 +10,7 @@ type UseUserLoginProps = {
 export function useUserLogin(props: UseUserLoginProps) {
   const { supabase } = useSupabase();
 
-  async function login(data?: { email: string; password: string }) {
+  async function login(input?: { email: string; password: string }) {
     if (props.provider === "google") {
       await supabase.auth.signInWithOAuth({
         provider: "google",
@@ -21,14 +21,17 @@ export function useUserLogin(props: UseUserLoginProps) {
     }
 
     if (props.provider === "email") {
-      if (data === undefined) {
-        throw new Error("Email or Password can't be empty!");
+      if (input === undefined) {
+        throw new Error("Email or password can't be empty!");
       }
 
-      await supabase.auth.signInWithPassword({
-        email: data.email,
-        password: data.password,
+      const { error } = await supabase.auth.signInWithPassword({
+        email: input.email,
+        password: input.password,
       });
+      if (error !== null) {
+        throw error;
+      }
     }
   }
 
@@ -47,7 +50,13 @@ export function useUserLogin(props: UseUserLoginProps) {
       }
 
       await toast.promise(login(input), {
-        error: (err) => err.message,
+        error: (err: Error) => {
+          // supabase errors
+          if (err.name === "AuthApiError") {
+            return err.message;
+          }
+          return `Failed to login. Reason: ${err.message}`;
+        },
         loading: "Signing in...",
         success: "Signed in successfully",
       });
