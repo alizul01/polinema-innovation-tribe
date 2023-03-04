@@ -6,7 +6,7 @@ import Loading from "~/app/(web)/loading";
 
 export default function RootLayout(props: PropsWithChildren<{}>) {
   return (
-    <div className="flex justify-between flex-col">
+    <div className="flex h-full items-center justify-center">
       <div>
         <Suspense fallback={<Loading />}>
           <main>{props.children}</main>

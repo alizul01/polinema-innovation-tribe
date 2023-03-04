@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import type { Tag } from "../../../types/Idea/Index/Tag";
+import type { Tag } from "~/types/Idea/Index/Tag";
 import TagItem from "./TagItem";
 
 const LIMIT = 8;
@@ -35,14 +35,16 @@ export default function TagList(props: TagListProps) {
           />
         ))}
       </div>
-      <div
-        className="flex p-4 items-center justify-center cursor-pointer text-slate-500 hover:text-slate-400 transition duration-200"
-        onClick={() => setShouldShowMore((prev) => !prev)}
-      >
-        <span className="text-md">
-          {shouldShowMore ? "See less" : "Show more tags"}
-        </span>
-      </div>
+      {props.tags.length > LIMIT && (
+        <div
+          className="flex p-4 items-center justify-center cursor-pointer text-slate-500 hover:text-slate-400 transition duration-200"
+          onClick={() => setShouldShowMore((prev) => !prev)}
+        >
+          <span className="text-md">
+            {shouldShowMore ? "See less" : "Show more tags"}
+          </span>
+        </div>
+      )}
     </div>
   );
 }

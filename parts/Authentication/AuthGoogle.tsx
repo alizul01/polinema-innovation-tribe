@@ -2,25 +2,18 @@ import type { MouseEvent } from "react";
 import GoogleIcon from "~/public/icon/ic_google-icon.svg";
 import Link from "next/link";
 import { HiUser as UserIcon } from "react-icons/hi2";
-import { useSupabase } from "~/components/Supabase/SupabaseProvider";
+import { useUserLogin } from "~/services/user/login";
 
 type GoogleAuthProps = {
   name: "Register" | "Login";
 };
 
 export default function GoogleAuth({ name }: GoogleAuthProps) {
-  const { supabase } = useSupabase();
+  const { mutate: login } = useUserLogin({ provider: "google" });
 
   async function handleGoogleLogin(e: MouseEvent<HTMLButtonElement>) {
     e.preventDefault();
-
-    const { error } = await supabase.auth.signInWithOAuth({
-      provider: "google",
-    });
-
-    if (error !== null) {
-      console.log({ error });
-    }
+    login(undefined);
   }
 
   return (

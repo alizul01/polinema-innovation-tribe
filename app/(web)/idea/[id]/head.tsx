@@ -4,7 +4,7 @@ import type { Idea } from "~/types/Idea/Index/Idea";
 
 type IdeaMeta = {
   params: {
-    id: number;
+    id: string;
   };
 };
 

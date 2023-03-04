@@ -28,7 +28,7 @@ export default function TagItem({ isActive, onClick, ...props }: TagItemProps) {
           : "unset",
       }}
     >
-      {props.text}
+      {props.name}
     </div>
   );
 }

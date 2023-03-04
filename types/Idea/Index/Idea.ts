@@ -3,13 +3,13 @@ import type { Comment } from "./Comment";
 import type { Tag } from "./Tag";
 
 export type Idea = {
-  id: number;
+  id: string;
   title: string;
   author: Author;
   problem?: string;
   solution?: string;
   description: string;
-  createdAt: number;
+  updatedAt: number;
   comments: Comment[];
   tags: Tag[];
   whatsapp ?: string;

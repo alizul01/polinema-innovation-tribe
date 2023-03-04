@@ -1,22 +1,25 @@
 "use client";
 
-import { useSupabase } from "~/components/Supabase/SupabaseProvider";
 import { useForm } from "react-hook-form";
 import { Input } from "~/components/Form/Input";
 import { Form } from "~/components/Form/Form";
 import { authSchema, AuthSchema } from "~/schema/Auth";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useUserLogin } from "~/services/user/login";
+import { useRouter } from "next/navigation";
 
 export default function AuthLoginForm() {
-  const { supabase } = useSupabase();
+  const router = useRouter();
+  const { mutate: login } = useUserLogin({ provider: "email" });
   const form = useForm<AuthSchema>({
     resolver: zodResolver(authSchema),
   });
 
   async function handleSubmit(data: AuthSchema) {
-    await supabase.auth.signInWithPassword({
-      email: data.email,
-      password: data.password,
+    login(data, {
+      onSuccess() {
+        router.push("/");
+      },
     });
   }
 
@@ -25,7 +28,7 @@ export default function AuthLoginForm() {
       <Form
         form={form}
         onSubmit={handleSubmit}
-        className={"my-4 w-full max-w-md"}
+        className="my-4 w-full max-w-md"
       >
         <Input
           label="Email"

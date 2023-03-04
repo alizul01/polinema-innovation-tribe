@@ -4,7 +4,7 @@ import type { Idea } from "~/types/Idea/Index/Idea";
 export const IDEAS: Idea[] = [
   {
     id: 1,
-    createdAt: subDays(new Date(), 4).getTime(),
+    updatedAt: subDays(new Date(), 4).getTime(),
     title: "A new way to recycle plastic",
     author: {
       name: "Jane Doe",
@@ -47,7 +47,7 @@ export const IDEAS: Idea[] = [
   },
   {
     id: 2,
-    createdAt: subDays(new Date(), 3).getTime(),
+    updatedAt: subDays(new Date(), 3).getTime(),
     title: "A new technology for producing clean energy",
     author: {
       name: "John Doe",
@@ -90,7 +90,7 @@ export const IDEAS: Idea[] = [
   },
   {
     id: 2,
-    createdAt: subDays(new Date(), 2).getTime(),
+    updatedAt: subDays(new Date(), 2).getTime(),
     title: "Using Solar Energy to Power Homes",
     author: {
       name: "John Doe",

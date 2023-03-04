@@ -15,8 +15,8 @@ export function Errors(props: ErrorProps) {
   if (error === undefined) return null;
 
   return (
-    <label className="label">
-      <span className="label-text text-error">{error.message as string}</span>
+    <label className="block mt-2">
+      <span className="text-red-500">{error.message as string}</span>
     </label>
   );
 }

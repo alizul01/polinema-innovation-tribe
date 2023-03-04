@@ -4,7 +4,7 @@ import IdeaContent from "~/parts/Idea/Details/IdeaContent";
 
 type IdeaPageProps = {
   params: {
-    id: number;
+    id: string;
   };
 };
 

@@ -1,25 +1,30 @@
 "use client";
 
 import Image from "next/image";
-import { useSupabase } from "~/components/Supabase/SupabaseProvider";
 import { useRouter } from "next/navigation";
+import { useAuth } from "~/services/user/auth";
 
 export default function ProfilePage() {
   const router = useRouter();
-  const { session } = useSupabase();
-  if (session === null) {
+  const user = useAuth();
+  if (user === undefined) {
     router.push("/login");
   }
 
   return (
-    <div className="w-full md:items-center justify-center md:px-56 gap-12 text-gray-200 flex flex-col">
-      <div className="flex gap-4 flex-col lg:max-w-[92rem] w-full">
+    <div className="w-full max-w-screen-lg mx-auto md:items-center justify-center gap-12 text-gray-200 flex flex-col">
+      <div className="flex gap-4 flex-col max-w-screen-lg w-full">
         <div className="flex flex-col md:items-center md:flex-row md:justify-between gap-2">
           <div id="user-profile" className="items-center flex gap-4">
             <div className="bg-gradient-to-tr from-blue-400 to-fuchsia-600 w-fit rounded-full p-[0.15rem]">
               <Image
                 className="w-16 rounded-full"
-                src={session?.user.user_metadata.avatar_url}
+                src={
+                  (user?.user_metadata.profile_image as string | undefined) ??
+                  `https://source.boringavatars.com/beam/120/${encodeURIComponent(
+                    user?.email as string
+                  )}?colors=fca2e1,93b5ff,6be4dc,f9e3a9,4a6cb6`
+                }
                 alt="profile"
                 width={100}
                 height={100}
@@ -27,7 +32,7 @@ export default function ProfilePage() {
             </div>
             <div className="text-start">
               <p className="font-bold text-base">
-                {session?.user.user_metadata.full_name}
+                {user?.user_metadata.full_name}
               </p>
             </div>
           </div>
@@ -54,7 +59,7 @@ export default function ProfilePage() {
             </span>
           </div>
         </div>
-        <section className="flex flex-col gap-2">
+        <section className="flex flex-col gap-2 p-0">
           <div className="flex flex-col gap-4 md:flex-row">
             <div
               id="Information"
@@ -63,7 +68,7 @@ export default function ProfilePage() {
               <h1 className="font-bold py-2 text-xl">Information</h1>
               <section className="py-2 flex flex-col gap-4">
                 <h4 className="text-gray-500">Email</h4>
-                <p>{session?.user.user_metadata.email}</p>
+                <p>{user?.email}</p>
               </section>
             </div>
             <div
