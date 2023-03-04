@@ -5,8 +5,8 @@ import { Form } from "~/components/Form/Form";
 import { registrationSchema, RegistrationSchema } from "~/schema/Registration";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Input } from "~/components/Form/Input";
-import { useUserRegistration } from "~/services/user";
 import { useRouter } from "next/navigation";
+import { useUserRegistration } from '~/services/user/register';
 
 export default function AuthRegisterForm() {
   const router = useRouter();
