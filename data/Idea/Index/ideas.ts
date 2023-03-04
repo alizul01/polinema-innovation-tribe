@@ -3,7 +3,7 @@ import type { Idea } from "~/types/Idea/Index/Idea";
 
 export const IDEAS: Idea[] = [
   {
-    id: 1,
+    id: "1",
     updatedAt: subDays(new Date(), 4).getTime(),
     title: "A new way to recycle plastic",
     author: {
@@ -20,12 +20,12 @@ export const IDEAS: Idea[] = [
       "My proposed solution is to use a special type of enzyme to break down plastic into its original chemical compounds, which can then be repurposed for a variety of applications.",
     tags: [
       {
-        text: "Environment",
+        name: "Environment",
         slug: "environment",
         colour: "#2ecc71",
       },
       {
-        text: "Recycling",
+        name: "Recycling",
         slug: "recycling",
         colour: "#3498db",
       },
@@ -46,7 +46,7 @@ export const IDEAS: Idea[] = [
     email: "mailto:",
   },
   {
-    id: 2,
+    id: "2",
     updatedAt: subDays(new Date(), 3).getTime(),
     title: "A new technology for producing clean energy",
     author: {
@@ -63,12 +63,12 @@ export const IDEAS: Idea[] = [
       "My proposed solution is a new technology for producing clean energy from renewable sources that combines wind, solar, and hydro power to create a hybrid system that is both efficient and cost-effective.",
     tags: [
       {
-        text: "Energy",
+        name: "Energy",
         slug: "energy",
         colour: "#f1c40f",
       },
       {
-        text: "Renewable Energy",
+        name: "Renewable Energy",
         slug: "renewable-energy",
         colour: "#1abc9c",
       },
@@ -89,7 +89,7 @@ export const IDEAS: Idea[] = [
     email: "mailto:",
   },
   {
-    id: 2,
+    id: "2",
     updatedAt: subDays(new Date(), 2).getTime(),
     title: "Using Solar Energy to Power Homes",
     author: {
@@ -106,12 +106,12 @@ export const IDEAS: Idea[] = [
       "My proposed solution is to harness the power of the sun by installing solar panels on the roofs of homes and businesses. This will generate clean energy that can be used to power our daily lives, reducing our dependence on fossil fuels and helping to mitigate the effects of climate change.",
     tags: [
       {
-        text: "Renewable Energy",
+        name: "Renewable Energy",
         slug: "renewable-energy",
         colour: "#f1c40f",
       },
       {
-        text: "Sustainability",
+        name: "Sustainability",
         slug: "sustainability",
         colour: "#1abc9c",
       },
