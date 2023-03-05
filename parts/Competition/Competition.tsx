@@ -1,25 +1,29 @@
-"use client"
-import React from 'react'
-import type { CompetitionType } from '~/types/competition/CompetitionType';
-import Image from 'next/image';
-import tinycolor from 'tinycolor2';
+"use client";
+import React from "react";
+import type { CompetitionType } from "~/types/competition/CompetitionType";
+import Image from "next/image";
+import tinycolor from "tinycolor2";
+import Link from "next/link";
 
 const Competition = (props: CompetitionType) => {
   return (
-    <div className='flex flex-row bg-slate-800 p-4 rounded-lg border-2 border-slate-600 max-w-md gap-4 items-center hover:bg-slate-700 max-h-52 cursor-default'>
-      <div className='w-72 overflow-hidden'>
-        <Image
-          src={`https://picsum.photos/seed/${props.id}/400/500`}
-          alt={props.title}
-          width={1080}
-          height={1080}
-          className='rounded-lg object-fill h-32 w-32'
-        />
-      </div>
-      <div className='flex flex-col gap-2 py-4'>
-        <div className='flex flex-row gap-4' id='tags'>
-          {
-            props.tags.map((tag) => (
+    <>
+      <Link
+        href={`${props.link}`}
+        className="flex flex-row bg-slate-900 p-2 rounded-lg border border-slate-800 gap-4 items-center hover:border-slate-700 cursor-pointer hover:ring-2 hover:ring-purple-700 hover:scale-105 ease-in-out transition-all duration-300 flex-auto"
+      >
+        <div className="min-w-max">
+          <Image
+            src={`https://picsum.photos/seed/${props.id + 4}/400/500`}
+            alt={props.title}
+            className="rounded-lg object-fill h-32 w-32 border border-slate-800"
+            width={1080}
+            height={1080}
+          />
+        </div>
+        <div className="flex flex-col gap-3">
+          <div className="flex flex-row gap-4" id="tags">
+            {props.tags.map((tag) => (
               <span
                 key={tag.slug}
                 className="text-sm"
@@ -31,21 +35,18 @@ const Competition = (props: CompetitionType) => {
               >
                 #{tag.tag}
               </span>
-            ))
-          }
+            ))}
+          </div>
+          <h1 className="text-white text-base text-start max-w-xs font-bold">
+            {props.title}
+          </h1>
+          <p className="text-gray-500 line-clamp-2 max-w-xs text-sm">
+            {props.description}
+          </p>
         </div>
-        <h1 className='text-gray-200 font-bold text-base'>
-          {props.title}
-        </h1>
-        <p className='text-gray-400 text-sm line-clamp-2'>
-          {props.description}
-        </p>
-        <a href={props.link} className='btn btn-primary py-2' target={'_blank'} rel={'noreferrer'}>
-          View
-        </a>
-      </div>
-    </div>
-  )
-}
+      </Link>
+    </>
+  );
+};
 
-export default Competition
+export default Competition;
