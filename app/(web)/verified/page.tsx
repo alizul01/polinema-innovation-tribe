@@ -38,7 +38,7 @@ const Upload: React.FC = () => {
   ));
 
   return (
-    <section className="flex flex-col gap-6 flex-wrap mt-16" >
+    <section className="flex flex-col gap-6 flex-wrap mt-16 max-w-7xl mx-auto">
       <h1 className="text-3xl font-bold text-gray-200 text-center">Verifikasi Akun Mahasiswa / Dosen Politeknik Negeri Malang</h1>
       <div {...getRootProps({ className: "flex flex-col flex-1 p-20 bg-slate-500/30 border-2 border-dashed border-slate-500/50 rounded-2xl cursor-pointer" })}>
         <input {...getInputProps()} />
