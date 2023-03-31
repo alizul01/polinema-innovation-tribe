@@ -26,8 +26,8 @@ export default function Hero() {
           </h4>
 
           <div className="flex flex-row gap-4 justify-start w-full">
-            <Link href="#step" className="btn btn-primary">
-              <h1>Get Started</h1>
+            <Link href="/idea" className="btn btn-primary">
+              <h1>Mulai cari ide</h1>
             </Link>
             <div className="flex flex-row items-center gap-2">
               <div className="relative">
