@@ -1,6 +1,8 @@
-import { IDEAS } from "~/data/Idea/Index/ideas";
+"use client";
+
 import IdeaSidebar from "~/parts/Idea/Details/IdeaSidebar";
 import IdeaContent from "~/parts/Idea/Details/IdeaContent";
+import { useIdeaById } from "~/services/idea/idea-by-id";
 
 type IdeaPageProps = {
   params: {
@@ -9,13 +11,13 @@ type IdeaPageProps = {
 };
 
 export default function IdeaPage({ params }: IdeaPageProps) {
-  const props = IDEAS.find((value) => value.id == params.id);
-  if (props === undefined) return null;
+  const { data: idea } = useIdeaById(params.id);
+  if (idea === null || idea === undefined) return null;
 
   return (
     <div className="w-full justify-center items-center xl:px-56 text-gray-200 flex flex-col lg:flex-row">
-      <IdeaContent key={props.id} {...props} />
-      <IdeaSidebar {...props} />
+      <IdeaContent key={idea.id} {...idea} />
+      <IdeaSidebar {...idea} />
     </div>
   );
 }

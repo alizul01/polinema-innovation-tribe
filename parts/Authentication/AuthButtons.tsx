@@ -8,9 +8,10 @@ type GoogleAuthProps = {
   name: "Register" | "Login";
 };
 
-export default function GoogleAuth({ name }: GoogleAuthProps) {
+export default function AuthButtons({ name }: GoogleAuthProps) {
   const { mutate: login } = useUserLogin({ provider: "google" });
 
+  // temporarily disable google login
   async function handleGoogleLogin(e: MouseEvent<HTMLButtonElement>) {
     e.preventDefault();
     login(undefined);
@@ -18,13 +19,13 @@ export default function GoogleAuth({ name }: GoogleAuthProps) {
 
   return (
     <div className="w-full space-y-3">
-      <button
-        className="flex w-full items-center justify-center space-x-2 text-gray-200 bg-slate-800 hover:bg-slate-700 hover:scale-95 transition-all ease-in-out duration-500 focus:ring-3 focus:ring-blue-700 p-2.5 rounded-lg"
-        onClick={handleGoogleLogin}
-      >
-        <GoogleIcon />
-        <a className="text-sm font-normal">{name} with Google</a>
-      </button>
+      {/*<button*/}
+      {/*  className="flex w-full items-center justify-center space-x-2 text-gray-200 bg-slate-800 hover:bg-slate-700 hover:scale-95 transition-all ease-in-out duration-500 focus:ring-3 focus:ring-blue-700 p-2.5 rounded-lg"*/}
+      {/*  onClick={handleGoogleLogin}*/}
+      {/*>*/}
+      {/*  <GoogleIcon />*/}
+      {/*  <a className="text-sm font-normal">{name} with Google</a>*/}
+      {/*</button>*/}
       <Link
         href={name == "Register" ? "/register/email" : "/login/email"}
         className="flex w-full items-center justify-center space-x-2 text-gray-200 bg-slate-800 hover:bg-slate-700 hover:scale-95 transition-all ease-in-out duration-500 focus:ring-3 focus:ring-blue-700 p-2.5 rounded-lg"

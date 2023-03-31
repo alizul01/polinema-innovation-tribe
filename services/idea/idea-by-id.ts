@@ -1,16 +1,12 @@
 import { useQuery } from "@tanstack/react-query";
 import { useSupabase } from "~/components/Supabase";
-import type { definitions } from "~/generated-types";
 import type { Idea } from "~/types/Idea/Index/Idea";
+import type { IdeaQueryResult } from "~/services/idea/idea-query-result";
 
-type IdeaQueryResult = Pick<definitions["ideas"], "id" | "title" | "description" | "problem" | "updated_at" | "created_at"> & {
-  users: Pick<definitions["profiles"], "id" | "bio" | "first_name" | "last_name" | "username" | "profile_image">
-}
-
-export function useIdeas() {
+export function useIdeaById(id: string) {
   const { supabase } = useSupabase();
-  return useQuery<Idea[]>({
-    queryKey: ["ideas"],
+  return useQuery<Idea | null>({
+    queryKey: ["ideas", id],
     queryFn: async () => {
       const ideas = await supabase
         .from("ideas")
@@ -19,17 +15,25 @@ export function useIdeas() {
           title,
           description,
           problem,
+          solution,
           updated_at,
           created_at,
           users (
-            *
+            id,
+            username,
+            bio,
+            first_name,
+            last_name,
+            profile_image
           )
-        `);
-      if (ideas.data === null) return [];
+        `)
+        .eq("id", id);
+      if (ideas.data === null || ideas.data.length < 1) return null;
 
-      const mappedData: Idea[] = (
-        ideas.data as unknown as IdeaQueryResult[]
-      ).map((idea) => ({
+      const idea = ideas.data[0] as IdeaQueryResult & {
+        solution: string
+      };
+      return {
         id: idea.id,
         author: {
           id: idea.users.id,
@@ -42,10 +46,10 @@ export function useIdeas() {
         title: idea.title,
         updatedAt: new Date(idea.updated_at ?? Date.now()).getTime(),
         description: idea.description ?? "",
+        solution: idea.solution,
         problem: idea.problem,
         tags: []
-      }));
-      return mappedData;
+      };
     }
   });
 }
