@@ -12,14 +12,14 @@ export default function AuthLoginForm() {
   const router = useRouter();
   const { mutate: login } = useUserLogin({ provider: "email" });
   const form = useForm<AuthSchema>({
-    resolver: zodResolver(authSchema),
+    resolver: zodResolver(authSchema)
   });
 
   async function handleSubmit(data: AuthSchema) {
     login(data, {
       onSuccess() {
         router.push("/");
-      },
+      }
     });
   }
 
@@ -40,6 +40,7 @@ export default function AuthLoginForm() {
           label="Password"
           id="password"
           type="password"
+          placeholder="⬤ ⬤ ⬤ ⬤ ⬤ ⬤ ⬤ ⬤"
           {...form.register("password")}
         />
         <button className="btn btn-primary mx-auto">Submit</button>

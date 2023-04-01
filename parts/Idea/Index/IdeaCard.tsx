@@ -4,13 +4,17 @@ import Image from "next/image";
 import { formatDistanceToNow } from "date-fns";
 import tinycolor from "tinycolor2";
 import type { Idea } from "~/types/Idea/Index/Idea";
-import {
-  HiChatBubbleOvalLeft as CommentIcon,
-  HiCalendar as CalendarIcon,
-} from "react-icons/hi2";
+import { HiCalendar as CalendarIcon, HiChatBubbleOvalLeft as CommentIcon } from "react-icons/hi2";
 import Link from "next/link";
+import type { Author } from "~/types/Idea/Index/Author";
+import type { Tag } from "~/types/Idea/Index/Tag";
+import type { Comment } from "~/types/Idea/Index/Comment";
 
-export type IdeaCardProps = Idea & {};
+export type IdeaCardProps = Pick<Idea, "id" | "title" | "description" | "updatedAt"> & {
+  author: Pick<Author, "id" | "name" | "profileImage" | "username">
+  comments: Comment[]
+  tags: Tag[]
+};
 
 export function IdeaCard(props: IdeaCardProps) {
   return (
@@ -80,7 +84,7 @@ export function IdeaCard(props: IdeaCardProps) {
                   style={{
                     color: tinycolor(tag.colour)
                       .desaturate(50)
-                      .toPercentageRgbString(),
+                      .toPercentageRgbString()
                   }}
                 >
                   #{tag.slug}

@@ -48,6 +48,7 @@
     "csstype": "^3.1.1",
     "encoding": "^0.1.13",
     "eslint-config-kentcdodds": "^20.5.0",
+    "openapi-typescript": "5.4.0",
     "postcss": "^8.4.21",
     "prettier": "^2.8.4",
     "supabase": "^1.38.7",
