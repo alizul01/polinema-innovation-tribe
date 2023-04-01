@@ -7,6 +7,7 @@ export const IDEAS: Idea[] = [
     updatedAt: subDays(new Date(), 4).getTime(),
     title: "A new way to recycle plastic",
     author: {
+      id: 'uid-12',
       name: "Jane Doe",
       username: "janedoe",
       profileImage: "https://source.unsplash.com/1080x1080/?person,face",
@@ -34,6 +35,7 @@ export const IDEAS: Idea[] = [
       {
         id: 1,
         author: {
+          id: 'uid-1',
           name: "John Smith",
           username: "johnsmith13",
           profileImage: "https://source.unsplash.com/1080x1080/?person,face",
@@ -50,6 +52,7 @@ export const IDEAS: Idea[] = [
     updatedAt: subDays(new Date(), 3).getTime(),
     title: "A new technology for producing clean energy",
     author: {
+      id: 'uid-2',
       name: "John Doe",
       username: "johndoe",
       profileImage: "https://source.unsplash.com/1080x1080/?person,face,white",
@@ -77,6 +80,7 @@ export const IDEAS: Idea[] = [
       {
         id: 1,
         author: {
+          id: 'uid-3',
           name: "Jane Smith",
           username: "janesmith",
           profileImage: "https://source.unsplash.com/1080x1080/?person,face",
@@ -93,6 +97,7 @@ export const IDEAS: Idea[] = [
     updatedAt: subDays(new Date(), 2).getTime(),
     title: "Using Solar Energy to Power Homes",
     author: {
+      id: 'uid-4',
       name: "John Doe",
       username: "johndoe",
       profileImage: "https://source.unsplash.com/1080x1080/?person,face,asia",
@@ -120,6 +125,7 @@ export const IDEAS: Idea[] = [
       {
         id: 1,
         author: {
+          id: 'uid-5',
           name: "Jane Smith",
           username: "janesmith13",
           profileImage: "https://source.unsplash.com/1080x1080/?person,face",
