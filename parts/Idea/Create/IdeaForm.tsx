@@ -77,13 +77,6 @@ function IdeaForm() {
             icon={<PhoneIcon />}
             {...form.register("whatsapp")}
           />
-          <Input
-            label="Email"
-            id="email"
-            placeholder="example@gmail.com"
-            icon={<EnvelopeIcon />}
-            {...form.register("email")}
-          />
           <button className="btn btn-primary">Submit</button>
         </Form>
       </div>

@@ -6,7 +6,6 @@ export const ideaSchema = z.object({
   solution: z.string().min(20),
   description: z.string().min(20),
   whatsapp: z.string(),
-  email: z.string().email(),
   deadline: z.coerce.date(),
 });
 

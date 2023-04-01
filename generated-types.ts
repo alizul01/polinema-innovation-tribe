@@ -24,6 +24,7 @@ export interface paths {
           updated_at?: parameters["rowFilter.ideas.updated_at"];
           created_at?: parameters["rowFilter.ideas.created_at"];
           user_id?: parameters["rowFilter.ideas.user_id"];
+          whatsapp?: parameters["rowFilter.ideas.whatsapp"];
           /** Filtering Columns */
           select?: parameters["select"];
           /** Ordering */
@@ -567,6 +568,8 @@ export interface definitions {
      */
     id: string;
     /** Format: character varying */
+    whatsapp: string;
+    /** Format: character varying */
     title: string;
     /** Format: text */
     description: string;
@@ -741,6 +744,8 @@ export interface parameters {
   "rowFilter.ideas.description": string;
   /** Format: text */
   "rowFilter.ideas.problem": string;
+  /** Format: text */
+  "rowFilter.ideas.whatsapp": string;
   /** Format: text */
   "rowFilter.ideas.solution": string;
   /** Format: timestamp without time zone */
