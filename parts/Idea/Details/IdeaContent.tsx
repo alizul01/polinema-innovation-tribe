@@ -45,16 +45,14 @@ export default function IdeaContent(props: Idea) {
           </h3>
           <div className="flex flex-row gap-6 items-center pl-8">
             <Link
-              href={`${props.whatsapp}`}
+              href={`https://wa.me/${props.author.whatsapp}/?text=Hi%20${props.author.name},%20I%20am%20interested%20in%20your%20idea%20${props.title}`}
               className="btn btn-primary px-3 py-2"
+              target={"_blank"}
             >
               <AddCallIcon className="inline text-lg" />
               <span className="text-base text-gray-300"> Whatsapp </span>
             </Link>
-            <Link href={`${props.email}`} className="btn btn-primary px-3 py-2">
-              <MailIcon className="inline text-lg" />
-              <span className="text-base text-gray-300">Email</span>
-            </Link>
+            
           </div>
         </div>
       </div>

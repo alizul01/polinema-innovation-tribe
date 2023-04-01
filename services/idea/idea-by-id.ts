@@ -16,6 +16,7 @@ export function useIdeaById(id: string) {
           description,
           problem,
           solution,
+          whatsapp,
           updated_at,
           created_at,
           users (
@@ -39,6 +40,7 @@ export function useIdeaById(id: string) {
           id: idea.users.id,
           username: idea.users.username,
           bio: idea.users.bio,
+          whatsapp: idea.whatsapp,
           name: [idea.users.first_name, idea.users.last_name].join(" "),
           profileImage: idea.users.profile_image
         },

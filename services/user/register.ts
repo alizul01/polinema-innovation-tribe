@@ -19,6 +19,8 @@ export function useUserRegistration() {
                 last_name: input.lastName,
                 // TODO: replace this with a nicer default bio
                 bio: "Hi there! I'm a user",
+                profile_image: `https://source.boringavatars.com/beam/120/${input.email}?colors=fca2e1,93b5ff,6be4dc,f9e3a9,4a6cb6`,
+                
               },
             },
           });

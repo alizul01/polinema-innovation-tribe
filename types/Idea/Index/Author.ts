@@ -4,4 +4,5 @@ export type Author = {
   username: string;
   profileImage: string;
   bio: string;
+  whatsapp?: string;
 };
